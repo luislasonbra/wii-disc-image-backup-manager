@@ -1,3 +1,4 @@
+#labels StyleGuide,Coding
 #Developer coding style guide.
 
 = Introduction =
