@@ -1,4 +1,4 @@
-#Coding style guide.
+#Developer coding style guide.
 
 = Introduction =
 
