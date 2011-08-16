@@ -1,4 +1,4 @@
-#summary Development submitting patche files.
+#summary Developer submitting patche files.
 #labels PatchFiles,Coding
 
 = Introduction =
