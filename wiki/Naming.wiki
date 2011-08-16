@@ -1,4 +1,5 @@
-#Developer naming convention.
+#summary Developer naming convention.
+#labels NamingConvention,Coding
 
 = Introduction =
 
