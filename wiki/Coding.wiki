@@ -1,5 +1,5 @@
+#summary Developer coding style guide.
 #labels StyleGuide,Coding
-#Developer coding style guide.
 
 = Introduction =
 
