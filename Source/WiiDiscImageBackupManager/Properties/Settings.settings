@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WBFS_MANAGER.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FileFolderPaths" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;path&gt;C:\utorrent&lt;/path&gt;&lt;path&gt;W:\utorrent&lt;/path&gt;&lt;path&gt;X:\utorrent&lt;/path&gt;</Value>
+    </Setting>
+    <Setting Name="FileFolderGridViewColumnOrdering" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16</Value>
+    </Setting>
+    <Setting Name="FileFolderGridViewColumnVisibility" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

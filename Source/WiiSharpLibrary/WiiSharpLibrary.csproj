@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B37DC36-EE5A-4F8F-B033-7CE633C1A889}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>libWiiSharp</RootNamespace>
+    <AssemblyName>libWiiSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Source\BNS.cs" />
+    <Compile Include="Source\Brlan.cs" />
+    <Compile Include="Source\Brlyt.cs" />
+    <Compile Include="Source\CertificateChain.cs" />
+    <Compile Include="Source\CommonKey.cs" />
+    <Compile Include="Source\ContentIndices.cs" />
+    <Compile Include="Source\HbcTransmitter.cs" />
+    <Compile Include="Source\Headers.cs" />
+    <Compile Include="Source\HexView.cs" />
+    <Compile Include="Source\IosPatcher.cs" />
+    <Compile Include="Source\Lz77.cs" />
+    <Compile Include="Source\MessageEventArgs.cs" />
+    <Compile Include="Source\NusClient.cs" />
+    <Compile Include="Source\Shared.cs" />
+    <Compile Include="Source\Ticket.cs" />
+    <Compile Include="Source\TMD.cs" />
+    <Compile Include="Source\TPL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\U8.cs" />
+    <Compile Include="Source\WAD.cs" />
+    <Compile Include="Source\Wave.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MEF\ComponentModel\Composition.csproj">
+      <Project>{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}</Project>
+      <Name>Composition</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

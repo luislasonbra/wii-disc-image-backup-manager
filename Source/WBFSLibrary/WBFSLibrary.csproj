@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B5AEE0F-728A-4E4F-8027-6D82FE6C8334}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WBFSLibrary</RootNamespace>
+    <AssemblyName>WBFSLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WINDOWS;CLR40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DocumentationFile>bin\Debug\WBFSLibrary.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS;CLR40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>WBFSLibrary.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.AddIn" />
+    <Reference Include="System.AddIn.Contract" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Data.Services.Design" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Data.SqlXml" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Selectors" />
+    <Reference Include="System.IO.Log" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.DurableInstancing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.ServiceModel.Channels" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.ServiceModel.DomainServices.EntityFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Hosting.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Server, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.Routing" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.DynamicData.Design" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Entity.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.RegularExpressions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Windows.Input.Manipulations" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.WorkflowServices" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\DirectoryInfo.cs" />
+    <Compile Include="Extensions\FileInfo.cs" />
+    <Compile Include="Extensions\FileSystemInfo.cs" />
+    <Compile Include="FileOperations\CFileOperation.cs" />
+    <Compile Include="FileOperations\Interfaces\IFileOperationPlugin.cs" />
+    <Compile Include="FilesSystems\CFileSystem.cs" />
+    <Compile Include="FilesSystems\Interfaces\IFileSystemPlugin.cs" />
+    <Compile Include="FilesSystems\InternalTypes\FAT16Partition.cs" />
+    <Compile Include="Interfaces\IProcessor.cs" />
+    <Compile Include="FileTypes\Interfaces\IFileTypePlugin.cs" />
+    <Compile Include="Native\User32.cs" />
+    <Compile Include="Native\SafeHandle.cs" />
+    <Compile Include="Plugins\PluginBuildFlags.cs" />
+    <Compile Include="Plugins\PluginTypeFlags.cs" />
+    <Compile Include="Plugins\PluginFeatureFlags.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Streams\StreamBase.cs" />
+    <None Include="Documentation\Classes.cs" />
+    <None Include="Documentation\Structures.cs" />
+    <None Include="Documentation\Formats.cs" />
+    <None Include="Documentation\Filetypes.cs" />
+    <Compile Include="Interfaces\IDevice.cs" />
+    <Compile Include="Plugins\Interfaces\IPluginMetaData.cs" />
+    <Compile Include="FilesSystems\Interfaces\IFileSystem.cs" />
+    <Compile Include="FileOperations\Interfaces\IFileOperation.cs" />
+    <Compile Include="Plugins\Interfaces\IPlugin.cs" />
+    <Compile Include="FileTypes\Interfaces\IFileType.cs" />
+    <Compile Include="Streams\CompressionStreamBase.cs" />
+    <Compile Include="FileTypes\CFileType.cs" />
+    <Compile Include="Streams\StreamWriterBase.cs" />
+    <Compile Include="Streams\StreamReaderBase.cs" />
+    <Compile Include="FileTypes\InternalTypes\cISO.cs" />
+    <Compile Include="FileTypes\InternalTypes\BNR.cs" />
+    <Compile Include="FileTypes\InternalTypes\WAD.cs" />
+    <Compile Include="FileTypes\InternalTypes\NRG.cs" />
+    <Compile Include="FileTypes\InternalTypes\WDF.cs" />
+    <Compile Include="FileTypes\InternalTypes\ISO.cs" />
+    <None Include="Documentation\NamingConvention.cs" />
+    <Compile Include="Devices\PATADrive.cs" />
+    <Compile Include="Devices\SATADrive.cs" />
+    <Compile Include="Devices\SDHCDrive.cs" />
+    <Compile Include="Devices\USBDrive.cs" />
+    <Compile Include="Devices\SDDrive.cs" />
+    <Compile Include="FilesSystems\InternalTypes\EXT2Partition.cs" />
+    <Compile Include="Native\Kernel32.cs" />
+    <None Include="WBFSLibrary.snk" />
+    <Compile Include="Plugins\Plugins.cs" />
+    <Compile Include="DataTypes\large_integer.cs" />
+    <Compile Include="Streams\StreamDelegates.cs" />
+    <Compile Include="Interfaces\IStream.cs" />
+    <Compile Include="Native\WindowsDeviceIOControlCodes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WBFSLibrary.cs" />
+    <Compile Include="FilesSystems\InternalTypes\NTFSPartition.cs" />
+    <Compile Include="FilesSystems\InternalTypes\FAT32Partition.cs" />
+    <Compile Include="FilesSystems\InternalTypes\WBFSPartition.cs" />
+    <Compile Include="FileTypes\InternalTypes\WBFS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WiiSharpLibrary\WiiSharpLibrary.csproj">
+      <Project>{2B37DC36-EE5A-4F8F-B033-7CE633C1A889}</Project>
+      <Name>WiiSharpLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MEF\ComponentModel\Composition.csproj">
+      <Project>{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}</Project>
+      <Name>Composition</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Trinet.NTFS\Trinet.NTFS.csproj">
+      <Project>{520A3DF2-071D-47AE-9B25-2A286306DDF5}</Project>
+      <Name>Trinet.NTFS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstract\" />
+    <Folder Include="Directory\" />
+    <Folder Include="Drive\" />
+    <Folder Include="FileOperations\InternalTypes\" />
+    <Folder Include="File\" />
+    <Folder Include="NewFolder1\" />
+    <Folder Include="Threading\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextFile1.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
