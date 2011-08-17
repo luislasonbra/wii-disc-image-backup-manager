@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B057D246-FD24-446F-B91C-7A237D0FDF11}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WBFSManager</RootNamespace>
+    <AssemblyName>WBFSManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WINDOWS;CLR40</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\WBFSManager.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <DocumentationFile>bin\Debug\WBFSManager.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS;CLR40</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\WBFSManager.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.C1Excel.4, Version=4.1.20112.197, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Command.4, Version=4.0.20112.19483, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20112.613, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Input.4, Version=4.0.20111.33261, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1List.4, Version=4.1.20112.181, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1TrueDBGrid.4, Version=4.0.20111.61222, Culture=neutral, PublicKeyToken=75ae3fb0e2b1e0da, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Shared.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.Misc.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinDataSource.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinExplorerBar.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinListBar.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinStatusBar.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadDock, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.BreezeExtended, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Miscellaneous, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Telerik, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Vista, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2010.3.10.1109, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="native.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PluginProjects\FileType_WBFS_Plugin\FileType_WBFS_Plugin.csproj">
+      <Project>{ACAB2D08-ECCE-4D32-90C8-987EF137D87C}</Project>
+      <Name>FileType_WBFS_Plugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WBFSLibrary\WBFSLibrary.csproj">
+      <Project>{2B5AEE0F-728A-4E4F-8027-6D82FE6C8334}</Project>
+      <Name>WBFSLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WiiSharpLibrary\WiiSharpLibrary.csproj">
+      <Project>{2B37DC36-EE5A-4F8F-B033-7CE633C1A889}</Project>
+      <Name>WiiSharpLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MEF\ComponentModel\Composition.csproj">
+      <Project>{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}</Project>
+      <Name>Composition</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Trinet.NTFS\Trinet.NTFS.csproj">
+      <Project>{520A3DF2-071D-47AE-9B25-2A286306DDF5}</Project>
+      <Name>Trinet.NTFS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiitdb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WiiMote.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\800px-Wii_tab_blank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Network.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiinunchaku.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiibox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiiconsole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiicontroller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wii-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classiccontroller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_donate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_iconsize_content.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_iconsize_detail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_iconsize_extralarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_iconsize_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_iconsize_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_iconsize_medium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_iconsize_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_iconsize_tile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_libs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_recent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_removable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_win.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_cd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_comp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_desktop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_docs.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_downl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_drive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_fav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WiiMote.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

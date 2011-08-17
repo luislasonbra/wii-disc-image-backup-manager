@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WBFSLibrary", "WBFSLibrary\WBFSLibrary.csproj", "{2B5AEE0F-728A-4E4F-8027-6D82FE6C8334}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WBFSManager", "WiiDiscImageBackupManager\WBFSManager.csproj", "{B057D246-FD24-446F-B91C-7A237D0FDF11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiiSharpLibrary", "WiiSharpLibrary\WiiSharpLibrary.csproj", "{2B37DC36-EE5A-4F8F-B033-7CE633C1A889}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEF", "MEF\ComponentModel\Composition.csproj", "{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trinet.NTFS", "Trinet.NTFS\Trinet.NTFS.csproj", "{520A3DF2-071D-47AE-9B25-2A286306DDF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileType_WBFS_Plugin", "PluginProjects\FileType_WBFS_Plugin\FileType_WBFS_Plugin.csproj", "{ACAB2D08-ECCE-4D32-90C8-987EF137D87C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B5AEE0F-728A-4E4F-8027-6D82FE6C8334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B5AEE0F-728A-4E4F-8027-6D82FE6C8334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B5AEE0F-728A-4E4F-8027-6D82FE6C8334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B5AEE0F-728A-4E4F-8027-6D82FE6C8334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B057D246-FD24-446F-B91C-7A237D0FDF11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B057D246-FD24-446F-B91C-7A237D0FDF11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B057D246-FD24-446F-B91C-7A237D0FDF11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B057D246-FD24-446F-B91C-7A237D0FDF11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B37DC36-EE5A-4F8F-B033-7CE633C1A889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B37DC36-EE5A-4F8F-B033-7CE633C1A889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B37DC36-EE5A-4F8F-B033-7CE633C1A889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B37DC36-EE5A-4F8F-B033-7CE633C1A889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{520A3DF2-071D-47AE-9B25-2A286306DDF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{520A3DF2-071D-47AE-9B25-2A286306DDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{520A3DF2-071D-47AE-9B25-2A286306DDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{520A3DF2-071D-47AE-9B25-2A286306DDF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACAB2D08-ECCE-4D32-90C8-987EF137D87C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACAB2D08-ECCE-4D32-90C8-987EF137D87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACAB2D08-ECCE-4D32-90C8-987EF137D87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACAB2D08-ECCE-4D32-90C8-987EF137D87C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
