@@ -138,6 +138,8 @@
     <Compile Include="FilesSystems\InternalTypes\FAT16Partition.cs" />
     <Compile Include="Interfaces\IProcessor.cs" />
     <Compile Include="FileTypes\Interfaces\IFileTypePlugin.cs" />
+    <Compile Include="Native\WindowMessages.cs" />
+    <Compile Include="Native\Win32Abstraction.cs" />
     <Compile Include="Native\User32.cs" />
     <Compile Include="Native\SafeHandle.cs" />
     <Compile Include="Plugins\PluginBuildFlags.cs" />
@@ -210,7 +212,7 @@
     <Folder Include="Drive\" />
     <Folder Include="FileOperations\InternalTypes\" />
     <Folder Include="File\" />
-    <Folder Include="NewFolder1\" />
+    <Folder Include="Internet\" />
     <Folder Include="Threading\" />
   </ItemGroup>
   <ItemGroup>

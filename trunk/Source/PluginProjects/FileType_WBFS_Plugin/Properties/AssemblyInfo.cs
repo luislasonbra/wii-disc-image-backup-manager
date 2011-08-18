@@ -6,11 +6,11 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Working.Title.Default.Plugin")]
+[assembly: AssemblyTitle("Plugin")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Working Title Inc")]
-[assembly: AssemblyProduct("Working.Title.Default.Plugin")]
+[assembly: AssemblyProduct("Plugin")]
 [assembly: AssemblyCopyright("Copyright Working Title Inc © 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
