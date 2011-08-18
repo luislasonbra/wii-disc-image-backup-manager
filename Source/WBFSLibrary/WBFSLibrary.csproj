@@ -128,6 +128,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Directories\Directory.cs" />
+    <Compile Include="Directories\DirectoryInfoCollection.cs" />
+    <Compile Include="Drive\DriveInfoCollection.cs" />
+    <Compile Include="Drive\Drive.cs" />
     <Compile Include="Extensions\DirectoryInfo.cs" />
     <Compile Include="Extensions\FileInfo.cs" />
     <Compile Include="Extensions\FileSystemInfo.cs" />
@@ -136,6 +140,8 @@
     <Compile Include="FilesSystems\CFileSystem.cs" />
     <Compile Include="FilesSystems\Interfaces\IFileSystemPlugin.cs" />
     <Compile Include="FilesSystems\InternalTypes\FAT16Partition.cs" />
+    <Compile Include="File\FileInfoCollection.cs" />
+    <Compile Include="File\File.cs" />
     <Compile Include="Interfaces\IProcessor.cs" />
     <Compile Include="FileTypes\Interfaces\IFileTypePlugin.cs" />
     <Compile Include="Native\WindowMessages.cs" />
@@ -150,6 +156,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Streams\StreamBuffer.cs" />
     <Compile Include="Streams\StreamBase.cs" />
     <None Include="Documentation\Classes.cs" />
     <None Include="Documentation\Structures.cs" />
@@ -161,7 +168,7 @@
     <Compile Include="FileOperations\Interfaces\IFileOperation.cs" />
     <Compile Include="Plugins\Interfaces\IPlugin.cs" />
     <Compile Include="FileTypes\Interfaces\IFileType.cs" />
-    <Compile Include="Streams\CompressionStreamBase.cs" />
+    <Compile Include="Streams\StreamCompressor.cs" />
     <Compile Include="FileTypes\CFileType.cs" />
     <Compile Include="Streams\StreamWriterBase.cs" />
     <Compile Include="Streams\StreamReaderBase.cs" />
@@ -186,6 +193,7 @@
     <Compile Include="Interfaces\IStream.cs" />
     <Compile Include="Native\WindowsDeviceIOControlCodes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Streams\SectorStream.cs" />
     <Compile Include="WBFSLibrary.cs" />
     <Compile Include="FilesSystems\InternalTypes\NTFSPartition.cs" />
     <Compile Include="FilesSystems\InternalTypes\FAT32Partition.cs" />
@@ -208,10 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstract\" />
-    <Folder Include="Directory\" />
-    <Folder Include="Drive\" />
     <Folder Include="FileOperations\InternalTypes\" />
-    <Folder Include="File\" />
     <Folder Include="Internet\" />
     <Folder Include="Threading\" />
   </ItemGroup>

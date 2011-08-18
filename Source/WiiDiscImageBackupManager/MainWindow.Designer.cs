@@ -695,7 +695,6 @@ namespace WBFSManager
 			// 
 			this.radMenuItem_Folders_Add_Files.Name = "radMenuItem_Folders_Add_Files";
 			this.radMenuItem_Folders_Add_Files.Text = "Files...";
-			this.radMenuItem_Folders_Add_Files.Click += new System.EventHandler(this.radMenuItem_Folders_Add_Files_Click);
 			// 
 			// radMenuItem_Folders_Add_Folders
 			// 

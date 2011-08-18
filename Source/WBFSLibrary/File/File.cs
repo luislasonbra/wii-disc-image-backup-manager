@@ -143,9 +143,22 @@ using WBFSLibrary.IO;
 using WBFSLibrary.IO.FileSystems;
 using WBFSLibrary.IO.FileOperations;
 
-namespace WBFSLibrary.IO.Streams
+namespace WBFSLibrary
 {
 
-    public delegate void StreamClosedDelegate(IStream stream);
+    public class File
+    {
+		#region Fields
+
+		#endregion
+
+		#region Properties
+
+		#endregion
+
+		#region Members
+
+		#endregion
+    }
 
 }
