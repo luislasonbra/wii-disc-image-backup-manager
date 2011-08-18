@@ -11,7 +11,7 @@
 	using System.ComponentModel.Composition.AttributedModel;
 	using System.ComponentModel.Composition.Diagnostics;
 	using System.ComponentModel.Composition.Hosting;
-	//using System.ComponentModel.Composition.Primitives;
+	using System.ComponentModel.Composition.Primitives;
 	using System.ComponentModel.Composition.ReflectionModel;
 	using System.ComponentModel.DataAnnotations;
 	using System.ComponentModel.DataAnnotations.Resources;
@@ -135,24 +135,74 @@
 	using Microsoft.Win32;
 	using Microsoft.Win32.SafeHandles;
 
+	using Trinet.NTFS;
+
 #endregion
 
-using WBFSLibrary.Plugins;
-
+using WBFSLibrary.Devices;
+using WBFSLibrary.Drives;
 using WBFSLibrary.IO;
 using WBFSLibrary.IO.FileSystems;
+using WBFSLibrary.IO.FileTypes;
 using WBFSLibrary.IO.FileOperations;
+using WBFSLibrary.IO.Streams;
+using WBFSLibrary.Plugins;
+using WBFSLibrary.Properties;
 
-namespace WBFSLibrary
+namespace WBFSLibrary.IO
 {
 
-    public class File
+    public class File : IFile
     {
 		#region Fields
+
+			FileInfo info;
 
 		#endregion
 
 		#region Properties
+
+			/* The file's archive status. Applications use this attribute to mark files for backup or removal. */
+			public Boolean IsArchived { get; set; }
+
+			/* The file is compressed. */
+			public Boolean IsCompressed { get; set; }
+
+			/*  Reserved for future use. */
+			public Boolean IsDevice { get; set; }
+
+			/* The file is a directory. */
+			public Boolean IsDirectory { get; set; }
+
+			/* The file or directory is encrypted. For a file, this means that all data in the file is encrypted. For a directory, this means that encryption is the default for newly created files and directories. */
+			public Boolean IsEncrypted { get; set; }
+
+			/* The file is hidden, and thus is not included in an ordinary directory listing. */
+			public Boolean IsHidden { get; set; }
+
+			/* The file is normal and has no other attributes set. This attribute is valid only if used alone. */
+			public Boolean IsNormal { get; set; }
+
+			/* The file will not be indexed by the operating system's content indexing service. */
+			public Boolean IsNotContentIndexed { get; set; }
+
+			/* The file is offline. The data of the file is not immediately available. */
+			public Boolean IsOffline { get; set; }
+
+			/* The file is read-only. */
+			public Boolean IsReadOnly { get; set; }
+
+			/* The file contains a reparse point, which is a block of user-defined data associated with a file or a directory. */
+			public Boolean IsReparsePoint { get; set; }
+
+			/* The file is a sparse file. Sparse files are typically large files whose data are mostly zeros. */
+			public Boolean IsSparseFile { get; set; }
+
+			/* The file is a system file. The file is part of the operating system or is used exclusively by the operating system. */
+			public Boolean IsSystem { get; set; }
+
+			/* The file is temporary. File systems attempt to keep all of the data in memory for quicker access rather than flushing the data back to mass storage. A temporary file should be deleted by the application as soon as it is no longer needed. */
+			public Boolean IsTemporary { get; set; }
 
 		#endregion
 

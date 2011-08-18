@@ -148,7 +148,7 @@ namespace WBFSLibrary.Plugins
 {
 
 	[Export("Game Loop Draw", typeof(IFileTypePlugin))]
-	public class WBFS : CFileType, IFileTypePlugin
+	public class WBFS : FileType, IFileTypePlugin
 	{
 
 	}

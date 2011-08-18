@@ -147,11 +147,38 @@ namespace WBFSManager
 
 			if(folderBrowserDialog1.ShowDialog() == DialogResult.OK)
 			{
-				System.IO.BufferedStream
-				String[] folders = Directory.GetDirectories(folderBrowserDialog1.SelectedPath, "*", SearchOption.AllDirectories);
+				IEnumerable<String> items = Directory.EnumerateFileSystemEntries(folderBrowserDialog1.SelectedPath);
+				using (IEnumerator<String> en = items.GetEnumerator())
+				{
+					return !en.MoveNext();
+				}
+
+				//String[] folders = Directory.EnumerateFileSystemEntries(folderBrowserDialog1.SelectedPath, "*", SearchOption.TopDirectoryOnly);
+
+			    for (int i = 0; i < folders.Length; ++i)
+			    {
+					FileAttributes attributes = File.GetAttributes(folders[i]);
+
+					Boolean archive = attributes.HasFlag(FileAttributes.Archive);
+					Boolean compressed = attributes.HasFlag(FileAttributes.Compressed);
+					Boolean device = attributes.HasFlag(FileAttributes.Device);
+					Boolean directory = attributes.HasFlag(FileAttributes.Directory);
+					Boolean reparse_point = attributes.HasFlag(FileAttributes.Encrypted);
+					Boolean reparse_point = attributes.HasFlag(FileAttributes.Hidden);
+					Boolean reparse_point = attributes.HasFlag(FileAttributes.Normal);
+					Boolean reparse_point = attributes.HasFlag(FileAttributes.NotContentIndexed);
+					Boolean reparse_point = attributes.HasFlag(FileAttributes.Offline);
+					Boolean reparse_point = attributes.HasFlag(FileAttributes.ReadOnly);
+					Boolean reparse_point = attributes.HasFlag(FileAttributes.ReparsePoint);
+					Boolean reparse_point = attributes.HasFlag(FileAttributes.SparseFile);
+					Boolean reparse_point = attributes.HasFlag(FileAttributes.System);
+					Boolean reparse_point = attributes.HasFlag(FileAttributes.Temporary);
 
 
 
+(File.GetAttributes(subdir) &
+            FileAttributes.ReparsePoint) !=
+                FileAttributes.ReparsePoint)
 
 			}
 
@@ -221,6 +248,21 @@ namespace WBFSManager
 
 				//}
 			}
+
+		private void radMenuItem6_Click_1(object sender, EventArgs e)
+		{
+		
+		}
+
+		private void radMenuItem_Settings_Click(object sender, EventArgs e)
+		{
+		
+		}
+
+		private void radMenuItem10_Click(object sender, EventArgs e)
+		{
+		
+		}
 
 
 

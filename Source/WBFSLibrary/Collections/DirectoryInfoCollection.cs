@@ -7,6 +7,17 @@
 	using System.Collections.ObjectModel;
 	using System.Collections.Specialized;
 	using System.ComponentModel;
+	using System.ComponentModel.Composition;
+	using System.ComponentModel.Composition.AttributedModel;
+	using System.ComponentModel.Composition.Diagnostics;
+	using System.ComponentModel.Composition.Hosting;
+	using System.ComponentModel.Composition.Primitives;
+	using System.ComponentModel.Composition.ReflectionModel;
+	using System.ComponentModel.DataAnnotations;
+	using System.ComponentModel.DataAnnotations.Resources;
+	using System.ComponentModel.Design;
+	using System.ComponentModel.Design.Data;
+	using System.ComponentModel.Design.Serialization;
 	using System.Configuration;
 	using System.Configuration.Assemblies;
 	using System.Data;
@@ -20,7 +31,7 @@
 	using System.Diagnostics;
 	using System.Diagnostics.Contracts;
 	using System.Diagnostics.Contracts.Internal;
-	using System.Diagnostics.PerDriveInfoanceData;
+	using System.Diagnostics.PerformanceData;
 	using System.Dynamic;
 	using System.Globalization;
 	using System.IO;
@@ -39,7 +50,7 @@
 	using System.Net.Configuration;
 	using System.Net.Mail;
 	using System.Net.Mime;
-	using System.Net.NetworkInDriveInfoation;
+	using System.Net.NetworkInformation;
 	using System.Net.Security;
 	using System.Net.Sockets;
 	using System.Reflection;
@@ -78,9 +89,9 @@
 	using System.Runtime.Serialization;
 	using System.Runtime.Serialization.Configuration;
 	using System.Runtime.Serialization.Diagnostics;
-	using System.Runtime.Serialization.DriveInfoatters;
-	using System.Runtime.Serialization.DriveInfoatters.Binary;
-	using System.Runtime.Serialization.DriveInfoatters.Soap;
+	using System.Runtime.Serialization.Formatters;
+	using System.Runtime.Serialization.Formatters.Binary;
+	using System.Runtime.Serialization.Formatters.Soap;
 	using System.Runtime.Serialization.Json;
 	using System.Runtime.Versioning;
 	using System.Security;
@@ -111,30 +122,37 @@
 	using System.Xml.XPath;
 	using System.Xml.Xsl;
 	using System.Web;
-	using System.Windows.DriveInfos;
+	using System.Windows.Forms;
 
 	using Microsoft;
 	using Microsoft.Runtime;
 	using Microsoft.Runtime.Hosting;
+	using Microsoft.Internal;
 	using Microsoft.Internal.Collections;
-	using Microsoft.Internal.PerDriveInfoance;
+	using Microsoft.Internal.Performance;
 	using Microsoft.Internal.Runtime;
 	using Microsoft.Internal.Runtime.Serialization;
 	using Microsoft.Win32;
 	using Microsoft.Win32.SafeHandles;
 
+	using Trinet.NTFS;
+
 #endregion
 
-using WBFSLibrary.Plugins;
-
+using WBFSLibrary.Devices;
+using WBFSLibrary.Drives;
 using WBFSLibrary.IO;
 using WBFSLibrary.IO.FileSystems;
+using WBFSLibrary.IO.FileTypes;
 using WBFSLibrary.IO.FileOperations;
+using WBFSLibrary.IO.Streams;
+using WBFSLibrary.Plugins;
+using WBFSLibrary.Properties;
 
 namespace WBFSLibrary
 {
 
-	public class DriveInfoCollection : CollectionBase
+	public class DirectoryInfoCollection : Collection<DirectoryInfo>
     {
 		#region Fields
 
@@ -142,71 +160,9 @@ namespace WBFSLibrary
 
 		#region Properties
 
-            public DriveInfo this[Int32 index]
-            {
-                get { return (DriveInfo)this.List[index]; }
-                set { this.List[index] = value; }
-            }
-
 		#endregion
 
 		#region Public Methods
-
-            #region Methods
-
-                public Int32 IndexOf(DriveInfo item)
-                {
-                    return base.List.IndexOf(item);
-                }
-
-                public Int32 Add(DriveInfo item)
-                {
-                    return this.List.Add(item);
-                }
-
-                public void Remove(DriveInfo item)
-                {
-                    this.InnerList.Remove(item);
-                }
-
-                public void CopyTo(Array array, Int32 index)
-                {
-                    this.List.CopyTo(array, index);
-                }
-
-                public void AddRange(DriveInfoCollection collection)
-                {
-                    for (Int32 i = 0; i < collection.Count; i++)
-                    {
-                        this.List.Add(collection[i]);
-                    }
-                }
-
-                public void AddRange(DriveInfo[] collection)
-                {
-                    this.AddRange(collection);
-                }
-
-                public Boolean Contains(DriveInfo item)
-                {
-                    return this.List.Contains(item);
-                }
-
-                public void Insert(Int32 index, DriveInfo item)
-                {
-                    this.List.Insert(index, item);
-                }
-
-            #endregion
-
-            #region Construction & Initialization
-
-                public DriveInfoCollection()
-                {
-
-                }
-
-			#endregion
 
 		#endregion
     }

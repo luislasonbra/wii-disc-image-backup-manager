@@ -129,32 +129,46 @@ using WBFSLibrary.Plugins;
 
 using WBFSLibrary.IO;
 using WBFSLibrary.IO.FileSystems;
-using WBFSLibrary.IO.FileTypes;
+using WBFSLibrary.IO.FileOperations;
 
-namespace WBFSLibrary.IO.FileOperations
+namespace WBFSLibrary.IO.FileTypes
 {
 
-    public abstract class CFileOperation : IFileOperation
+    public abstract class FileType : IFileType
     {
-        public abstract String Extension { get; }
+		#region Fields
 
-        public abstract Int32 MinSplitSize { get; }
+			public Int32 sector_size;
 
-        public abstract Int32 MaxSplitSize { get; }
+		#endregion
 
-        public abstract Int32 MinSplitFiles { get; }
+		#region Properties
 
-        public abstract Int32 MaxSplitFiles { get; }
+			public abstract String Extension { get; }
 
-        public abstract Boolean FixedSectorSize { get; }
+			public abstract Int32 MinSplitSize { get; }
 
-        public abstract int DefaultSectorSize { get; }
+			public abstract Int32 MaxSplitSize { get; }
 
-        public abstract bool ReadOnlyFormat { get; }
+			public abstract Int32 MinSplitFiles { get; }
 
-        //public abstract WbfsFormatReader InvokeReader();
+			public abstract Int32 MaxSplitFiles { get; }
 
-        //public abstract WbfsFormatCreator InvokeCreator();
+			public abstract Boolean FixedSectorSize { get; }
+
+			public abstract Int32 DefaultSectorSize { get; }
+
+			public abstract Boolean ReadOnlyFormat { get; }
+
+			//public abstract WbfsFormatReader InvokeReader();
+
+			//public abstract WbfsFormatCreator InvokeCreator();
+
+		#endregion
+
+		#region Members
+
+		#endregion
     }
 
 }

@@ -128,29 +128,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Directories\Directory.cs" />
-    <Compile Include="Directories\DirectoryInfoCollection.cs" />
-    <Compile Include="Drive\DriveInfoCollection.cs" />
+    <Compile Include="Collections\DeviceCollection.cs" />
+    <Compile Include="Collections\FileTypeCollection.cs" />
+    <Compile Include="Collections\FileSystemCollection.cs" />
+    <Compile Include="Collections\DriveCollection.cs" />
+    <Compile Include="Collections\FileCollection.cs" />
+    <Compile Include="Collections\FolderCollection.cs" />
+    <Compile Include="Collections\FileAttributesCollection.cs" />
+    <Compile Include="Devices\Device.cs" />
+    <Compile Include="Drive\InternalTypes\PATADrive.cs" />
+    <Compile Include="Drive\InternalTypes\SATADrive.cs" />
+    <Compile Include="Drive\InternalTypes\SDDrive.cs" />
+    <Compile Include="Drive\InternalTypes\SDHCDrive.cs" />
+    <Compile Include="Drive\InternalTypes\USBDrive.cs" />
+    <Compile Include="Extensions\Collection.cs" />
+    <Compile Include="File\Interfaces\IFile.cs" />
+    <Compile Include="File\Interfaces\IFilePlugin.cs" />
+    <Compile Include="Folders\Folder.cs" />
+    <Compile Include="Collections\DirectoryInfoCollection.cs" />
+    <Compile Include="Collections\DriveInfoCollection.cs" />
     <Compile Include="Drive\Drive.cs" />
     <Compile Include="Extensions\DirectoryInfo.cs" />
     <Compile Include="Extensions\FileInfo.cs" />
     <Compile Include="Extensions\FileSystemInfo.cs" />
-    <Compile Include="FileOperations\CFileOperation.cs" />
+    <Compile Include="FileOperations\FileOperation.cs" />
     <Compile Include="FileOperations\Interfaces\IFileOperationPlugin.cs" />
-    <Compile Include="FilesSystems\CFileSystem.cs" />
+    <Compile Include="FilesSystems\FileSystem.cs" />
     <Compile Include="FilesSystems\Interfaces\IFileSystemPlugin.cs" />
     <Compile Include="FilesSystems\InternalTypes\FAT16Partition.cs" />
-    <Compile Include="File\FileInfoCollection.cs" />
+    <Compile Include="Collections\FileInfoCollection.cs" />
     <Compile Include="File\File.cs" />
+    <Compile Include="Folders\Interfaces\IFolderPlugin.cs" />
+    <Compile Include="Folders\Interfaces\IFolder.cs" />
     <Compile Include="Interfaces\IProcessor.cs" />
     <Compile Include="FileTypes\Interfaces\IFileTypePlugin.cs" />
+    <Compile Include="Native\Callbacks\LPOVERLAPPED_COMPLETION_ROUTINE.cs" />
+    <Compile Include="Native\Constants\SECURITY.cs" />
+    <Compile Include="Native\Constants\SORT.cs" />
+    <Compile Include="Native\Constants\MANIFEST_RESOURCE_ID.cs" />
+    <Compile Include="Native\Constants\SUBLANG.cs" />
+    <Compile Include="Native\Constants\LANG.cs" />
+    <Compile Include="Native\Constants\DBT.cs" />
+    <Compile Include="Native\Enumerations\template.cs" />
+    <Compile Include="Native\Structures\SECURITY_ATTRIBUTES.cs" />
+    <Compile Include="Native\Structures\DEV_BROADCAST_VOLUME.cs" />
+    <Compile Include="Native\Structures\DEV_BROADCAST_HDR.cs" />
+    <Compile Include="Native\Constants\RT.cs" />
     <Compile Include="Native\WindowMessages.cs" />
     <Compile Include="Native\Win32Abstraction.cs" />
     <Compile Include="Native\User32.cs" />
     <Compile Include="Native\SafeHandle.cs" />
-    <Compile Include="Plugins\PluginBuildFlags.cs" />
-    <Compile Include="Plugins\PluginTypeFlags.cs" />
-    <Compile Include="Plugins\PluginFeatureFlags.cs" />
+    <Compile Include="Plugins\InternalTypes\PluginBuildFlags.cs" />
+    <Compile Include="Plugins\InternalTypes\PluginTypeFlags.cs" />
+    <Compile Include="Plugins\InternalTypes\PluginFeatureFlags.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -162,14 +192,14 @@
     <None Include="Documentation\Structures.cs" />
     <None Include="Documentation\Formats.cs" />
     <None Include="Documentation\Filetypes.cs" />
-    <Compile Include="Interfaces\IDevice.cs" />
+    <Compile Include="Devices\Interfaces\IDevice.cs" />
     <Compile Include="Plugins\Interfaces\IPluginMetaData.cs" />
     <Compile Include="FilesSystems\Interfaces\IFileSystem.cs" />
     <Compile Include="FileOperations\Interfaces\IFileOperation.cs" />
     <Compile Include="Plugins\Interfaces\IPlugin.cs" />
     <Compile Include="FileTypes\Interfaces\IFileType.cs" />
     <Compile Include="Streams\StreamCompressor.cs" />
-    <Compile Include="FileTypes\CFileType.cs" />
+    <Compile Include="FileTypes\FileType.cs" />
     <Compile Include="Streams\StreamWriterBase.cs" />
     <Compile Include="Streams\StreamReaderBase.cs" />
     <Compile Include="FileTypes\InternalTypes\cISO.cs" />
@@ -179,18 +209,18 @@
     <Compile Include="FileTypes\InternalTypes\WDF.cs" />
     <Compile Include="FileTypes\InternalTypes\ISO.cs" />
     <None Include="Documentation\NamingConvention.cs" />
-    <Compile Include="Devices\PATADrive.cs" />
-    <Compile Include="Devices\SATADrive.cs" />
-    <Compile Include="Devices\SDHCDrive.cs" />
-    <Compile Include="Devices\USBDrive.cs" />
-    <Compile Include="Devices\SDDrive.cs" />
+    <Compile Include="Devices\InternalTypes\PATADevice.cs" />
+    <Compile Include="Devices\InternalTypes\SATADevice.cs" />
+    <Compile Include="Devices\InternalTypes\SDHCDevice.cs" />
+    <Compile Include="Devices\InternalTypes\USBDevice.cs" />
+    <Compile Include="Devices\InternalTypes\SDDevice.cs" />
     <Compile Include="FilesSystems\InternalTypes\EXT2Partition.cs" />
     <Compile Include="Native\Kernel32.cs" />
     <None Include="WBFSLibrary.snk" />
     <Compile Include="Plugins\Plugins.cs" />
-    <Compile Include="DataTypes\large_integer.cs" />
+    <Compile Include="DataTypes\LargeInteger.cs" />
     <Compile Include="Streams\StreamDelegates.cs" />
-    <Compile Include="Interfaces\IStream.cs" />
+    <Compile Include="Streams\Interfaces\IStream.cs" />
     <Compile Include="Native\WindowsDeviceIOControlCodes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Streams\SectorStream.cs" />
@@ -215,9 +245,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abstract\" />
+    <Folder Include="Drive\Interfaces\" />
     <Folder Include="FileOperations\InternalTypes\" />
+    <Folder Include="File\InternalTypes\" />
+    <Folder Include="Folders\InternalTypes\" />
     <Folder Include="Internet\" />
+    <Folder Include="Streams\InternalTypes\" />
     <Folder Include="Threading\" />
   </ItemGroup>
   <ItemGroup>

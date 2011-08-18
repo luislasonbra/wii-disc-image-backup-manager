@@ -7,6 +7,17 @@
 	using System.Collections.ObjectModel;
 	using System.Collections.Specialized;
 	using System.ComponentModel;
+	using System.ComponentModel.Composition;
+	using System.ComponentModel.Composition.AttributedModel;
+	using System.ComponentModel.Composition.Diagnostics;
+	using System.ComponentModel.Composition.Hosting;
+	using System.ComponentModel.Composition.Primitives;
+	using System.ComponentModel.Composition.ReflectionModel;
+	using System.ComponentModel.DataAnnotations;
+	using System.ComponentModel.DataAnnotations.Resources;
+	using System.ComponentModel.Design;
+	using System.ComponentModel.Design.Data;
+	using System.ComponentModel.Design.Serialization;
 	using System.Configuration;
 	using System.Configuration.Assemblies;
 	using System.Data;
@@ -116,6 +127,7 @@
 	using Microsoft;
 	using Microsoft.Runtime;
 	using Microsoft.Runtime.Hosting;
+	using Microsoft.Internal;
 	using Microsoft.Internal.Collections;
 	using Microsoft.Internal.Performance;
 	using Microsoft.Internal.Runtime;
@@ -123,49 +135,128 @@
 	using Microsoft.Win32;
 	using Microsoft.Win32.SafeHandles;
 
+	using Trinet.NTFS;
+
 #endregion
 
-using WBFSLibrary.Plugins;
-
+using WBFSLibrary.Devices;
+using WBFSLibrary.Drives;
 using WBFSLibrary.IO;
 using WBFSLibrary.IO.FileSystems;
 using WBFSLibrary.IO.FileTypes;
 using WBFSLibrary.IO.FileOperations;
+using WBFSLibrary.IO.Streams;
+using WBFSLibrary.Plugins;
+using WBFSLibrary.Properties;
 
-namespace WBFSLibrary.IO.Streams
+namespace WBFSLibrary
 {
+	#region Unmanaged Type Mapping Aliases Block v0.27
 
-    public interface IStream : IPluginMetaData
-    {
-		#region Properties
+		using s8 = SByte;
+		using u8 = Byte;
+		using S8 = SByte;
+		using U8 = Byte;
+		using s16 = Int16;
+		using u16 = UInt16;
+		using le16_t = UInt16;
+		using be16_t = UInt16;
+		using s32 = Int32;
+		using u32 = UInt32;
+		using S32 = Int32;
+		using U32 = UInt32;
+		using le32_t = UInt32;
+		using be32_t = UInt32;
+		using s64 = Int64;
+		using u64 = UInt64;
+		using S64 = Int64;
+		using U64 = UInt64;
+		using le64_t = UInt32;
+		using be64_t = UInt32;
+		using f32 = Single;
+		using f64 = Double;
+		using F32 = Single;
+		using F64 = Double;
 
-			Int32 SectorSize { get; }
+		using BOOL = Boolean;
+		using BOOLEAN = Boolean;
 
-			IFileType FileType { get; }
+		using BYTE = Byte;
 
-		#endregion
+		using WORD = UInt16;
+		using DWORD = UInt32;
+		using QWORD = UInt64;
 
-		#region Events
+		using CHAR = Char;
+		using TCHAR = Char;
+		using WCHAR = Char;
 
-			event StreamClosedDelegate StreamClosed;
+		using INT = Int32;
+		using UINT = UInt32;
 
-		#endregion
+		using LONG = Int32;
+		using ULONG = UInt32;
 
-		#region Event Handlers
+		using LONGLONG = UInt64;
+		using ULONGLONG = UInt64;
 
-			void OnStreamClosed();
+		using DEVICE_TYPE = UInt16;
+		using ACCESS_MASK = UInt16;
 
-		#endregion
+		using HANDLE = SafeFileHandle;
+		using HINSTANCE = SafeHandle;
+		using HLOCAL = SafeHandle;
+		using HWND = SafeHandle;
 
-		#region Methods
+		using PVOID = IntPtr;
+		using LPVOID = IntPtr;
+		using LPCVOID = IntPtr;
 
-			Int32 ReadSector(Int32 sector, IntPtr array, Int32 offset);
+		using POVERLAPPED = NativeOverlapped;
+		using LPOVERLAPPED = NativeOverlapped;
 
-			Int32 WriteSector(Int32 sector, IntPtr array, Int32 offset);
+		using CString = String;
+		using LPCTSTR = String;
+		using LPTSTR = StringBuilder;
+		
+		using __in = InAttribute;
+		using __out = OutAttribute;
+		using __opt = OptionalAttribute;
 
-			void WriteEmptyBlock(Int32 count);
+		using _in = InAttribute;
+		using _out = OutAttribute;
+		using _opt = OptionalAttribute;
 
-		#endregion
-    }
+		using Opt = OptionalAttribute;
 
+	#endregion
+	
+	#region MANIFEST_RESOURCE_ID
+
+		public class MANIFEST_RESOURCE_ID
+		{
+			/*
+				#ifdef RC_INVOKED
+				#define CREATEPROCESS_MANIFEST_RESOURCE_ID  1
+				#define ISOLATIONAWARE_MANIFEST_RESOURCE_ID 2
+				#define ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID 3
+				#define MINIMUM_RESERVED_MANIFEST_RESOURCE_ID 1   // inclusive
+				#define MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID 16  // inclusive
+				#else  // RC_INVOKED
+				#define CREATEPROCESS_MANIFEST_RESOURCE_ID MAKEINTRESOURCE( 1)
+				#define ISOLATIONAWARE_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(2)
+				#define ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(3)
+				#define MINIMUM_RESERVED_MANIFEST_RESOURCE_ID MAKEINTRESOURCE( 1 ) // inclusive
+				#define MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(16 ) // inclusive
+				#endif // RC_INVOKED
+			*/
+
+			public static readonly UInt32	CREATEPROCESS					=	1;
+			public static readonly UInt32	ISOLATIONAWARE					=	2;
+			public static readonly UInt32	ISOLATIONAWARE_NOSTATICIMPORT	=	3;
+			public static readonly UInt32	MINIMUM_RESERVED				=	1;
+			public static readonly UInt32	MAXIMUM_RESERVED				=	16;
+		};
+
+	#endregion
 }

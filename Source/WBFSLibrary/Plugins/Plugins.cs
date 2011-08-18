@@ -139,12 +139,15 @@
 
 #endregion
 
-using WBFSLibrary.Plugins;
-
+using WBFSLibrary.Devices;
+using WBFSLibrary.Drives;
 using WBFSLibrary.IO;
 using WBFSLibrary.IO.FileSystems;
 using WBFSLibrary.IO.FileTypes;
 using WBFSLibrary.IO.FileOperations;
+using WBFSLibrary.IO.Streams;
+using WBFSLibrary.Plugins;
+using WBFSLibrary.Properties;
 
 namespace WBFSLibrary.Plugins
 {

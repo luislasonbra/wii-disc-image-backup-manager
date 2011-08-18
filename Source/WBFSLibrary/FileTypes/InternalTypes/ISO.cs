@@ -134,7 +134,7 @@ using WBFSLibrary.IO.FileOperations;
 namespace WBFSLibrary.IO.FileTypes
 {
 
-	public class ISO : CFileType
+	public class ISO : FileType
 	{
 
 	}
