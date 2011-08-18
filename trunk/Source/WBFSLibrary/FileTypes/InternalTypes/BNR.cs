@@ -134,7 +134,7 @@ using WBFSLibrary.IO.FileOperations;
 namespace WBFSLibrary.IO.FileTypes
 {
 
-	public class BNR : CFileType
+	public class BNR : FileType
 	{
 
 	}

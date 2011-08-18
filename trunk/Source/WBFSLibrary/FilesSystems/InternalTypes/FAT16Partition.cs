@@ -134,7 +134,7 @@ using WBFSLibrary.IO.FileOperations;
 namespace WBFSLibrary.IO.FileSystems
 {
 
-	public class FAT16Partition : CFileSystem
+	public class FAT16Partition : FileSystem
 	{
 
 	}

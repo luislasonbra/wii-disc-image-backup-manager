@@ -134,7 +134,7 @@ using WBFSLibrary.IO.FileOperations;
 namespace WBFSLibrary.IO.FileTypes
 {
 
-	public class WDF : CFileType
+	public class WDF : FileType
 	{
 
 	}

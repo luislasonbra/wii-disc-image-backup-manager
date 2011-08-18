@@ -146,7 +146,7 @@ using WBFSLibrary.IO.FileOperations;
 namespace WBFSLibrary.IO.Streams
 {
 
-    public abstract class StreamBuffer : Stream, IStream
+    public abstract class StreamBuffer
     {
 		#region Fields
 
@@ -160,8 +160,6 @@ namespace WBFSLibrary.IO.Streams
 
 			public abstract String Name { get; }
 
-			public Int32 SectorSize { get { return this.sector_size; } }
-
 		#endregion
 
 		#region Events
@@ -172,39 +170,22 @@ namespace WBFSLibrary.IO.Streams
 
 		#region Event Handlers
 
-			protected void OnStreamClosed()
-			{
-				if (StreamClosed != null) { StreamClosed(this); }
-			}
-
 		#endregion
 
 		#region Construction & Initialization
 
-			public BufferedStreamBase(Int32 Sector_Size)
+			public StreamBuffer()
 			{
-				this.sector_size = Sector_Size;
+
 			}
 
 		#endregion
 
 		#region public abstract Methods
 
-			public abstract Int32 ReadSector(Int32 sector, IntPtr array, Int32 offset);
-
-			public abstract Int32 WriteSector(Int32 sector, IntPtr array, Int32 offset);
-
-			public abstract void WriteEmptyBlock(Int32 count);
-
 		#endregion
 
 		#region Override Methods
-
-			public override void Close()
-			{
-				OnStreamClosed();
-				base.Close();
-			}
 
 		#endregion
     }

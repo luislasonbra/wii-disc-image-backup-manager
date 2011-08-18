@@ -252,6 +252,7 @@ namespace WBFSManager
 			// 
 			this.radMenuItem6.Name = "radMenuItem6";
 			this.radMenuItem6.Text = "Exit";
+			this.radMenuItem6.Click += new System.EventHandler(this.radMenuItem6_Click_1);
 			// 
 			// radMenuItem_View
 			// 
@@ -306,6 +307,7 @@ namespace WBFSManager
 			// 
 			this.radMenuItem_Settings.Name = "radMenuItem_Settings";
 			this.radMenuItem_Settings.Text = "Settings";
+			this.radMenuItem_Settings.Click += new System.EventHandler(this.radMenuItem_Settings_Click);
 			// 
 			// radMenuItem_Help
 			// 
@@ -334,6 +336,7 @@ namespace WBFSManager
 			// 
 			this.radMenuItem10.Name = "radMenuItem10";
 			this.radMenuItem10.Text = "www.wiitdb.com";
+			this.radMenuItem10.Click += new System.EventHandler(this.radMenuItem10_Click);
 			// 
 			// radMenuItem11
 			// 

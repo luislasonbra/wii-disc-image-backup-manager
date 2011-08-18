@@ -134,7 +134,7 @@ using WBFSLibrary.IO.FileOperations;
 namespace WBFSLibrary.IO.FileSystems
 {
 
-	public class NTFSPartition : CFileSystem
+	public class NTFSPartition : FileSystem
 	{
 
 	}

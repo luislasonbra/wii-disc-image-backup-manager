@@ -7,6 +7,17 @@
 	using System.Collections.ObjectModel;
 	using System.Collections.Specialized;
 	using System.ComponentModel;
+	using System.ComponentModel.Composition;
+	using System.ComponentModel.Composition.AttributedModel;
+	using System.ComponentModel.Composition.Diagnostics;
+	using System.ComponentModel.Composition.Hosting;
+	using System.ComponentModel.Composition.Primitives;
+	using System.ComponentModel.Composition.ReflectionModel;
+	using System.ComponentModel.DataAnnotations;
+	using System.ComponentModel.DataAnnotations.Resources;
+	using System.ComponentModel.Design;
+	using System.ComponentModel.Design.Data;
+	using System.ComponentModel.Design.Serialization;
 	using System.Configuration;
 	using System.Configuration.Assemblies;
 	using System.Data;
@@ -116,6 +127,7 @@
 	using Microsoft;
 	using Microsoft.Runtime;
 	using Microsoft.Runtime.Hosting;
+	using Microsoft.Internal;
 	using Microsoft.Internal.Collections;
 	using Microsoft.Internal.Performance;
 	using Microsoft.Internal.Runtime;
@@ -123,7 +135,19 @@
 	using Microsoft.Win32;
 	using Microsoft.Win32.SafeHandles;
 
+	using Trinet.NTFS;
+
 #endregion
+
+using WBFSLibrary.Devices;
+using WBFSLibrary.Drives;
+using WBFSLibrary.IO;
+using WBFSLibrary.IO.FileSystems;
+using WBFSLibrary.IO.FileTypes;
+using WBFSLibrary.IO.FileOperations;
+using WBFSLibrary.IO.Streams;
+using WBFSLibrary.Plugins;
+using WBFSLibrary.Properties;
 
 namespace WBFSLibrary
 {
@@ -185,8 +209,6 @@ namespace WBFSLibrary
 		using HINSTANCE = SafeHandle;
 		using HLOCAL = SafeHandle;
 		using HWND = SafeHandle;
-	
-		//using VOID = Void;
 
 		using PVOID = IntPtr;
 		using LPVOID = IntPtr;
@@ -209,29 +231,21 @@ namespace WBFSLibrary
 
 		using Opt = OptionalAttribute;
 
-		#region Kernel32
-
-			using _SECURITY_ATTRIBUTES = Kernel32.SECURITY_ATTRIBUTES;
-			using PSECURITY_ATTRIBUTES = Kernel32.SECURITY_ATTRIBUTES;
-			using LPSECURITY_ATTRIBUTES = Kernel32.SECURITY_ATTRIBUTES;
-
-		#endregion
-
 	#endregion
 
 	public static class WindowsAbstraction
 	{
 
-        public static Boolean GetDeviceBroadcast(IntPtr lParam, out Kernel32.DEV_BROADCAST_HDR device)
+        public static Boolean GetDeviceBroadcast(IntPtr lParam, out DEV_BROADCAST_HDR device)
         {
             try
             {
-                device = (Kernel32.DEV_BROADCAST_HDR)Marshal.PtrToStructure(lParam, typeof(Kernel32.DEV_BROADCAST_HDR));
+                device = (DEV_BROADCAST_HDR)Marshal.PtrToStructure(lParam, typeof(DEV_BROADCAST_HDR));
                 return true;
             }
             catch
             {
-                device = new Kernel32.DEV_BROADCAST_HDR();
+                device = new DEV_BROADCAST_HDR();
                 return false;
             }
         }

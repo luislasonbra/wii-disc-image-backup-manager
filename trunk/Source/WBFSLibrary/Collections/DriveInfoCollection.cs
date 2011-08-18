@@ -7,6 +7,17 @@
 	using System.Collections.ObjectModel;
 	using System.Collections.Specialized;
 	using System.ComponentModel;
+	using System.ComponentModel.Composition;
+	using System.ComponentModel.Composition.AttributedModel;
+	using System.ComponentModel.Composition.Diagnostics;
+	using System.ComponentModel.Composition.Hosting;
+	using System.ComponentModel.Composition.Primitives;
+	using System.ComponentModel.Composition.ReflectionModel;
+	using System.ComponentModel.DataAnnotations;
+	using System.ComponentModel.DataAnnotations.Resources;
+	using System.ComponentModel.Design;
+	using System.ComponentModel.Design.Data;
+	using System.ComponentModel.Design.Serialization;
 	using System.Configuration;
 	using System.Configuration.Assemblies;
 	using System.Data;
@@ -116,6 +127,7 @@
 	using Microsoft;
 	using Microsoft.Runtime;
 	using Microsoft.Runtime.Hosting;
+	using Microsoft.Internal;
 	using Microsoft.Internal.Collections;
 	using Microsoft.Internal.Performance;
 	using Microsoft.Internal.Runtime;
@@ -123,50 +135,34 @@
 	using Microsoft.Win32;
 	using Microsoft.Win32.SafeHandles;
 
+	using Trinet.NTFS;
+
 #endregion
 
-using WBFSLibrary.Plugins;
-
+using WBFSLibrary.Devices;
+using WBFSLibrary.Drives;
 using WBFSLibrary.IO;
 using WBFSLibrary.IO.FileSystems;
+using WBFSLibrary.IO.FileTypes;
 using WBFSLibrary.IO.FileOperations;
+using WBFSLibrary.IO.Streams;
+using WBFSLibrary.Plugins;
+using WBFSLibrary.Properties;
 
-namespace WBFSLibrary.IO.FileTypes
+namespace WBFSLibrary
 {
 
-    public abstract class CFileType : IFileType
+	public class DriveInfoCollection : Collection<DriveInfo>
     {
 		#region Fields
-
-			public Int32 sector_size;
 
 		#endregion
 
 		#region Properties
 
-			public abstract String Extension { get; }
-
-			public abstract Int32 MinSplitSize { get; }
-
-			public abstract Int32 MaxSplitSize { get; }
-
-			public abstract Int32 MinSplitFiles { get; }
-
-			public abstract Int32 MaxSplitFiles { get; }
-
-			public abstract Boolean FixedSectorSize { get; }
-
-			public abstract Int32 DefaultSectorSize { get; }
-
-			public abstract Boolean ReadOnlyFormat { get; }
-
-			//public abstract WbfsFormatReader InvokeReader();
-
-			//public abstract WbfsFormatCreator InvokeCreator();
-
 		#endregion
 
-		#region Members
+		#region Public Methods
 
 		#endregion
     }
