@@ -146,6 +146,49 @@ using WBFSLibrary.IO.FileOperations;
 namespace WBFSLibrary.IO.Streams
 {
 
-    public delegate void StreamClosedDelegate(IStream stream);
+    public abstract class StreamCompressor
+    {
+		#region Fields
+
+			protected CompressionMode compression_mode;
+		
+			protected Int32 compression_level;
+
+		#endregion
+
+		#region Properties
+
+			public CompressionMode CompressionMode { get { return compression_mode; } }
+
+			public Int32 CompressionLevel { get { return compression_level; } }
+
+		#endregion
+
+		#region Events
+
+		#endregion
+
+		#region Event Handlers
+
+		#endregion
+
+		#region Construction & Initialization
+
+			public StreamCompressor(CompressionMode Compression_Mode, Int32 Compression_Level)
+			{
+				compression_mode = Compression_Mode;
+				compression_level = Compression_Level;
+			}
+
+		#endregion
+
+		#region public abstract Methods
+
+		#endregion
+
+		#region Override Methods
+
+		#endregion
+    }
 
 }

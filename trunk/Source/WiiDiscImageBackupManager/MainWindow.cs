@@ -147,67 +147,77 @@ namespace WBFSManager
 
 			if(folderBrowserDialog1.ShowDialog() == DialogResult.OK)
 			{
-				//IWbfsDriveInfo drive = WBFSe.WbfsEngine.GetDrive(folderBrowserDialog1.SelectedPath);
-				////String[] files = drive.GetFilenames(folderBrowserDialog1.SelectedPath);
-				//System.Diagnostics.Debug.WriteLine("{0} - {1} - {2} - {3} - {4}", folderBrowserDialog1.SelectedPath, drive.FileSystem, drive.Free, drive.IsWbfsFat, drive.IsReady);
-
+				System.IO.BufferedStream
 				String[] folders = Directory.GetDirectories(folderBrowserDialog1.SelectedPath, "*", SearchOption.AllDirectories);
 
-				//System.Diagnostics.Debug.WriteLine("{0} - {1}", folders.Length, files.Length);
-				//IWbfsFormat[] formats = WbfsEngine.GetLoadedFormats();
-
-				WBFSe3.IO.WbfsLoader.LoadBuiltIn();
-
-
-				for (int i = 0; i < folders.Length; ++i)
-				{
-					WBFSe3.IO.WbfsPath path = new WBFSe3.IO.WbfsPath(folders[i]);
-
-					String[] files = Directory.GetFiles(folders[i], "*", SearchOption.AllDirectories);
-
-				for (int j = 0; j < files.Length; ++i)
-				{
-
-					WBFSe3.IO.WbfsLoader.LoadFile(path, folders[i] );
 
 
 
+			}
 
-				WBFSe3.IO.WbfsSearch.InsertDirectory(folderBrowserDialog1.SelectedPath);
 
-				WBFSe3.IO.WbfsFileInfo[] file_infos = WBFSe3.IO.WbfsSearch.GetFiles(folderBrowserDialog1.SelectedPath, true);
 
-				System.Diagnostics.Debug.WriteLine("{0} - {1}", file_infos.Length, file_infos.LongLength);
+			//    //IWbfsDriveInfo drive = WBFSe.WbfsEngine.GetDrive(folderBrowserDialog1.SelectedPath);
+			//    ////String[] files = drive.GetFilenames(folderBrowserDialog1.SelectedPath);
+			//    //System.Diagnostics.Debug.WriteLine("{0} - {1} - {2} - {3} - {4}", folderBrowserDialog1.SelectedPath, drive.FileSystem, drive.Free, drive.IsWbfsFat, drive.IsReady);
 
-				for (int i = 0; i < file_infos.Length; ++i)
-				{
-					WBFSe3.IO.WbfsFileInfo file_info = file_infos[i];
-				    if(file_info != null)
-					//{
-					//    System.Diagnostics.Debug.WriteLine("{0} - {1} - {2} - {3} - {4} - {5}", Path.GetFullPath(file_infos[i].FullName), Path.GetPathRoot(file_infos[i].FullName), Path.GetDirectoryName(file_infos[i].FullName), Path.GetFileName(file_infos[i].FullName), Path.GetFileNameWithoutExtension(file_infos[i].FullName), Path.GetExtension(file_infos[i].FullName));
-					//}
-					//else
-				    {
-				        System.Diagnostics.Debug.WriteLine("{0} - {1} - {2} - {3} - {4}", file_info.Code, file_info.Name, file_info.State, file_info.Name, file_info.Region);
-				    }
+			//    String[] folders = Directory.GetDirectories(folderBrowserDialog1.SelectedPath, "*", SearchOption.AllDirectories);
 
-				}
+			//    //System.Diagnostics.Debug.WriteLine("{0} - {1}", folders.Length, files.Length);
+			//    //IWbfsFormat[] formats = WbfsEngine.GetLoadedFormats();
 
-				//for (int i = 0; i < files.Length; ++i)
-				//{
-				//    IWbfsFileInfo file_info;
-				//    Boolean error = WbfsEngine.LoadGame(Path.GetFullPath(files[i]), files, files[i], null, out file_info);
+			//    WBFSe3.IO.WbfsLoader.LoadBuiltIn();
 
-				//    System.Diagnostics.Debug.WriteLine("{0} - {1} - {2}", files[i], error, file_info);
 
-				//    if(error || file_info == null)
-				//    {
-				//        System.Diagnostics.Debug.WriteLine("{0} - {1} - {2} - {3} - {4} - {5}", Path.GetFullPath(files[i]), Path.GetPathRoot(files[i]), Path.GetDirectoryName(files[i]), Path.GetFileName(files[i]), Path.GetFileNameWithoutExtension(files[i]), Path.GetExtension(files[i]));
-				//    }
-				//    else
-				//    {
-				//        System.Diagnostics.Debug.WriteLine("{0} - {1} - {2} - {3} - {4}", file_info.Code, file_info.Name, file_info.Type, file_info.Path, file_info.Format.Description);
-				//    }
+			//    for (int i = 0; i < folders.Length; ++i)
+			//    {
+			//        WBFSe3.IO.WbfsPath path = new WBFSe3.IO.WbfsPath(folders[i]);
+
+			//        String[] files = Directory.GetFiles(folders[i], "*", SearchOption.AllDirectories);
+
+			//    for (int j = 0; j < files.Length; ++i)
+			//    {
+
+			//        WBFSe3.IO.WbfsLoader.LoadFile(path, folders[i] );
+
+
+
+
+			//    WBFSe3.IO.WbfsSearch.InsertDirectory(folderBrowserDialog1.SelectedPath);
+
+			//    WBFSe3.IO.WbfsFileInfo[] file_infos = WBFSe3.IO.WbfsSearch.GetFiles(folderBrowserDialog1.SelectedPath, true);
+
+			//    System.Diagnostics.Debug.WriteLine("{0} - {1}", file_infos.Length, file_infos.LongLength);
+
+			//    for (int i = 0; i < file_infos.Length; ++i)
+			//    {
+			//        WBFSe3.IO.WbfsFileInfo file_info = file_infos[i];
+			//        if(file_info != null)
+			//        //{
+			//        //    System.Diagnostics.Debug.WriteLine("{0} - {1} - {2} - {3} - {4} - {5}", Path.GetFullPath(file_infos[i].FullName), Path.GetPathRoot(file_infos[i].FullName), Path.GetDirectoryName(file_infos[i].FullName), Path.GetFileName(file_infos[i].FullName), Path.GetFileNameWithoutExtension(file_infos[i].FullName), Path.GetExtension(file_infos[i].FullName));
+			//        //}
+			//        //else
+			//        {
+			//            System.Diagnostics.Debug.WriteLine("{0} - {1} - {2} - {3} - {4}", file_info.Code, file_info.Name, file_info.State, file_info.Name, file_info.Region);
+			//        }
+
+			//    }
+
+			//    //for (int i = 0; i < files.Length; ++i)
+			//    //{
+			//    //    IWbfsFileInfo file_info;
+			//    //    Boolean error = WbfsEngine.LoadGame(Path.GetFullPath(files[i]), files, files[i], null, out file_info);
+
+			//    //    System.Diagnostics.Debug.WriteLine("{0} - {1} - {2}", files[i], error, file_info);
+
+			//    //    if(error || file_info == null)
+			//    //    {
+			//    //        System.Diagnostics.Debug.WriteLine("{0} - {1} - {2} - {3} - {4} - {5}", Path.GetFullPath(files[i]), Path.GetPathRoot(files[i]), Path.GetDirectoryName(files[i]), Path.GetFileName(files[i]), Path.GetFileNameWithoutExtension(files[i]), Path.GetExtension(files[i]));
+			//    //    }
+			//    //    else
+			//    //    {
+			//    //        System.Diagnostics.Debug.WriteLine("{0} - {1} - {2} - {3} - {4}", file_info.Code, file_info.Name, file_info.Type, file_info.Path, file_info.Format.Description);
+			//    //    }
 
 				//}
 			}

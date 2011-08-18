@@ -7,17 +7,6 @@
 	using System.Collections.ObjectModel;
 	using System.Collections.Specialized;
 	using System.ComponentModel;
-	using System.ComponentModel.Composition;
-	using System.ComponentModel.Composition.AttributedModel;
-	using System.ComponentModel.Composition.Diagnostics;
-	using System.ComponentModel.Composition.Hosting;
-	//using System.ComponentModel.Composition.Primitives;
-	using System.ComponentModel.Composition.ReflectionModel;
-	using System.ComponentModel.DataAnnotations;
-	using System.ComponentModel.DataAnnotations.Resources;
-	using System.ComponentModel.Design;
-	using System.ComponentModel.Design.Data;
-	using System.ComponentModel.Design.Serialization;
 	using System.Configuration;
 	using System.Configuration.Assemblies;
 	using System.Data;
@@ -31,7 +20,7 @@
 	using System.Diagnostics;
 	using System.Diagnostics.Contracts;
 	using System.Diagnostics.Contracts.Internal;
-	using System.Diagnostics.PerformanceData;
+	using System.Diagnostics.PerFileInfoanceData;
 	using System.Dynamic;
 	using System.Globalization;
 	using System.IO;
@@ -50,7 +39,7 @@
 	using System.Net.Configuration;
 	using System.Net.Mail;
 	using System.Net.Mime;
-	using System.Net.NetworkInformation;
+	using System.Net.NetworkInFileInfoation;
 	using System.Net.Security;
 	using System.Net.Sockets;
 	using System.Reflection;
@@ -89,9 +78,9 @@
 	using System.Runtime.Serialization;
 	using System.Runtime.Serialization.Configuration;
 	using System.Runtime.Serialization.Diagnostics;
-	using System.Runtime.Serialization.Formatters;
-	using System.Runtime.Serialization.Formatters.Binary;
-	using System.Runtime.Serialization.Formatters.Soap;
+	using System.Runtime.Serialization.FileInfoatters;
+	using System.Runtime.Serialization.FileInfoatters.Binary;
+	using System.Runtime.Serialization.FileInfoatters.Soap;
 	using System.Runtime.Serialization.Json;
 	using System.Runtime.Versioning;
 	using System.Security;
@@ -122,14 +111,13 @@
 	using System.Xml.XPath;
 	using System.Xml.Xsl;
 	using System.Web;
-	using System.Windows.Forms;
+	using System.Windows.FileInfos;
 
 	using Microsoft;
 	using Microsoft.Runtime;
 	using Microsoft.Runtime.Hosting;
-	using Microsoft.Internal;
 	using Microsoft.Internal.Collections;
-	using Microsoft.Internal.Performance;
+	using Microsoft.Internal.PerFileInfoance;
 	using Microsoft.Internal.Runtime;
 	using Microsoft.Internal.Runtime.Serialization;
 	using Microsoft.Win32;
@@ -143,68 +131,85 @@ using WBFSLibrary.IO;
 using WBFSLibrary.IO.FileSystems;
 using WBFSLibrary.IO.FileOperations;
 
-namespace WBFSLibrary.IO.Streams
+namespace WBFSLibrary
 {
 
-    public abstract class CompressionStreamBase : StreamBase
+	public class FileInfoCollection : CollectionBase
     {
 		#region Fields
-
-			protected CompressionMode compression_mode;
 
 		#endregion
 
 		#region Properties
 
-			public abstract String Name { get; }
-
-			public abstract Int32 SectorSize { get { return this.sector_size; } }
-
-		#endregion
-
-		#region Events
-
-			public event StreamClosedDelegate StreamClosed;
+            public FileInfo this[Int32 index]
+            {
+                get { return (FileInfo)this.List[index]; }
+                set { this.List[index] = value; }
+            }
 
 		#endregion
 
-		#region Event Handlers
+		#region Public Methods
 
-			protected void OnStreamClosed()
-			{
-				if (this.StreamClosed != null) { this.StreamClosed(this); }
-			}
+            #region Methods
 
-		#endregion
+                public Int32 IndexOf(FileInfo item)
+                {
+                    return base.List.IndexOf(item);
+                }
 
-		#region Construction & Initialization
+                public Int32 Add(FileInfo item)
+                {
+                    return this.List.Add(item);
+                }
 
-			public CompressionStreamBase(Int32 Sector_Size, CompressionMode Compression_Mode) : base(Sector_Size)
-			{
-				compression_mode = Compression_Mode;
-			}
+                public void Remove(FileInfo item)
+                {
+                    this.InnerList.Remove(item);
+                }
 
-		#endregion
+                public void CopyTo(Array array, Int32 index)
+                {
+                    this.List.CopyTo(array, index);
+                }
 
-		#region public abstract Methods
+                public void AddRange(FileInfoCollection collection)
+                {
+                    for (Int32 i = 0; i < collection.Count; i++)
+                    {
+                        this.List.Add(collection[i]);
+                    }
+                }
 
-			public abstract Int32 ReadSector(Int32 Sector, IntPtr array, Int32 offset);
+                public void AddRange(FileInfo[] collection)
+                {
+                    this.AddRange(collection);
+                }
 
-			public abstract Int32 WriteSector(Int32 Sector, IntPtr array, Int32 offset);
+                public Boolean Contains(FileInfo item)
+                {
+                    return this.List.Contains(item);
+                }
 
-			public abstract void WriteEmptyBlock(Int32 Count);
+                public void Insert(Int32 index, FileInfo item)
+                {
+                    this.List.Insert(index, item);
+                }
 
-		#endregion
+            #endregion
 
-		#region Override Methods
+            #region Construction & Initialization
 
-			public override void Close()
-			{
-				OnStreamClosed();
-				base.Close();
-			}
+                public FileInfoCollection()
+                {
+
+                }
+
+			#endregion
 
 		#endregion
     }
+
 
 }
