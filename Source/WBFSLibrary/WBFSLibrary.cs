@@ -169,6 +169,97 @@ namespace WBFSLibrary
 
 		//    return 0;
 		//}
+		
+			//[Flags]
+			//public enum FileAccess : uint
+			//{
+			//    GenericRead = 0x80000000,
+			//    GenericWrite = 0x40000000,
+			//    GenericExecute = 0x20000000,
+			//    GenericAll = 0x10000000,
+
+			//    GenericReadWrite = GenericRead | GenericWrite,
+			//}
+
+			//[Flags]
+			//public enum FileShare : uint
+			//{
+			//    None = 0,
+			//    Read = 1,
+			//    Write = 2,
+			//    Delete = 4,
+
+			//    ReadWrite = Read | Write,
+			//}
+
+			//public enum CreationDisposition : uint
+			//{
+			//    New = 1,
+			//    CreateAlways = 2,
+			//    OpenExisting = 3,
+			//    OpenAlways = 4,
+			//    TruncateExisting = 5,
+			//}
+
+			//[Flags]
+			//public enum FileAttributes : uint
+			//{
+			//    None = 0,
+			//    Readonly = 0x00000001,
+			//    Hidden = 0x00000002,
+			//    System = 0x00000004,
+			//    Directory = 0x00000010,
+			//    Archive = 0x00000020,
+			//    Device = 0x00000040,
+			//    Normal = 0x00000080,
+			//    Temporary = 0x00000100,
+			//    SparseFile = 0x00000200,
+			//    ReparsePoint = 0x00000400,
+			//    Compressed = 0x00000800,
+			//    Offline = 0x00001000,
+			//    NotContentIndexed = 0x00002000,
+			//    Encrypted = 0x00004000,
+			//    WriteThrough = 0x80000000,
+			//    Overlapped = 0x40000000,
+			//    NoBuffering = 0x20000000,
+			//    RandomAccess = 0x10000000,
+			//    SequentialScan = 0x08000000,
+			//    DeleteOnClose = 0x04000000,
+			//    BackupSemantics = 0x02000000,
+			//    PosixSemantics = 0x01000000,
+			//    OpenReparsePoint = 0x00200000,
+			//    OpenNoRecall = 0x00100000,
+			//    FirstPipeInstance = 0x00080000
+			//}
+  
+			//public enum StdHandle : int
+			//{
+			//    StdInput = -10,
+			//    StdOutput = -11,
+			//    StdError = -12,
+			//}
+
+			//public enum ConsoleScreenBufferFlags
+			//{
+			//    TextModeBuffer = 1,
+			//}
+
+			//[Flags]
+			//public enum ConsoleOutputModeFlags : uint
+			//{
+			//    EnableProcessedOutput = 1,
+			//    EnableWrapAtEolOutput = 2,
+			//}
+
+			//[Flags]
+			//public enum ConsoleInputModeFlags : uint
+			//{
+			//    EnableProcessedInput = 0x0001,
+			//    EnableLineInput = 0x0002,
+			//    EnableEchoInput = 0x0004,
+			//    EnableWindowInput = 0x0008,
+			//    EnableMouseInput = 0x0010,
+			//}
 
 
 		// use this in headers?
