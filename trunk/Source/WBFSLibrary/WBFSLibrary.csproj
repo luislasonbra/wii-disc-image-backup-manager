@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <DocumentationFile>bin\Debug\WBFSLibrary.XML</DocumentationFile>
+    <BaseAddress>67108864</BaseAddress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -240,6 +241,10 @@
     <Compile Include="FileTypes\InternalTypes\WBFS.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UnrarDLL\UnrarDLL.csproj">
+      <Project>{2F343733-20A0-4AD0-88B2-762977614D67}</Project>
+      <Name>UnrarDLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WiiSharpLibrary\WiiSharpLibrary.csproj">
       <Project>{2B37DC36-EE5A-4F8F-B033-7CE633C1A889}</Project>
       <Name>WiiSharpLibrary</Name>

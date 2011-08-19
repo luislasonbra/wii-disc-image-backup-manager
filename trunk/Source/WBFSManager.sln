@@ -7,11 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WBFSManager", "WiiDiscImage
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiiSharpLibrary", "WiiSharpLibrary\WiiSharpLibrary.csproj", "{2B37DC36-EE5A-4F8F-B033-7CE633C1A889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEF", "MEF\ComponentModel\Composition.csproj", "{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composition", "MEF\ComponentModel\Composition.csproj", "{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trinet.NTFS", "Trinet.NTFS\Trinet.NTFS.csproj", "{520A3DF2-071D-47AE-9B25-2A286306DDF5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileType_WBFS_Plugin", "PluginProjects\FileType_WBFS_Plugin\FileType_WBFS_Plugin.csproj", "{ACAB2D08-ECCE-4D32-90C8-987EF137D87C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnrarDLL", "UnrarDLL\UnrarDLL.csproj", "{2F343733-20A0-4AD0-88B2-762977614D67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{ACAB2D08-ECCE-4D32-90C8-987EF137D87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACAB2D08-ECCE-4D32-90C8-987EF137D87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACAB2D08-ECCE-4D32-90C8-987EF137D87C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F343733-20A0-4AD0-88B2-762977614D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F343733-20A0-4AD0-88B2-762977614D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F343733-20A0-4AD0-88B2-762977614D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F343733-20A0-4AD0-88B2-762977614D67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
