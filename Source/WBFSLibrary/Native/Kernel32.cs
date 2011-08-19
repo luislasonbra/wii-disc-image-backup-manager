@@ -151,7 +151,7 @@ using WBFSLibrary.Properties;
 
 namespace WBFSLibrary
 {
-	#region Unmanaged Type Mapping Aliases Block v0.27
+	#region Unmanaged Type Mapping Aliases Block v0.33
 
 		using s8 = SByte;
 		using u8 = Byte;
@@ -194,6 +194,9 @@ namespace WBFSLibrary
 		using INT = Int32;
 		using UINT = UInt32;
 
+		using SHORT = Int16;
+		using USHORT = UInt16;
+
 		using LONG = Int32;
 		using ULONG = UInt32;
 
@@ -214,11 +217,32 @@ namespace WBFSLibrary
 
 		using POVERLAPPED = NativeOverlapped;
 		using LPOVERLAPPED = NativeOverlapped;
+		using LPCOVERLAPPED = NativeOverlapped;
 
 		using CString = String;
+		using cString = String;
+
+		using StdString = String;
+		using stdstring = String;
+
 		using LPCTSTR = String;
 		using LPTSTR = StringBuilder;
-		
+
+		using PCTSTR = String;
+		using PTSTR = StringBuilder;
+
+		using LPCWSTR = String;
+		using LPWSTR = StringBuilder;
+
+		using PCWSTR = String;
+		using PWSTR = StringBuilder;
+
+		using LPCSTR = String;
+		using LPSTR = StringBuilder;
+	
+		using PCSTR = String;
+		using PSTR = StringBuilder;
+
 		using __in = InAttribute;
 		using __out = OutAttribute;
 		using __opt = OptionalAttribute;
@@ -228,14 +252,6 @@ namespace WBFSLibrary
 		using _opt = OptionalAttribute;
 
 		using Opt = OptionalAttribute;
-
-	#endregion
-	
-	#region Kernel32 Specific Unmanaged Type Mapping Aliases Block
-
-	    using _SECURITY_ATTRIBUTES = SECURITY_ATTRIBUTES;
-	    using PSECURITY_ATTRIBUTES = SECURITY_ATTRIBUTES;
-	    using LPSECURITY_ATTRIBUTES = SECURITY_ATTRIBUTES;
 
 	#endregion
 
@@ -258,7 +274,10 @@ namespace WBFSLibrary
 					);
 				*/
 
-				[DllImport("kernel32.dll", CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Auto, SetLastError = true)]
+				[DllImport("kernel32.dll",
+					CallingConvention = CallingConvention.Winapi,
+					CharSet = CharSet.Auto,
+					SetLastError = true)]
 				public static extern HANDLE CreateFile
 				(
 					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpFileName,
@@ -270,6 +289,44 @@ namespace WBFSLibrary
 					[In][Opt]								HANDLE hTemplateFile
 				);
 
+			#endregion
+
+			#region CreateFileTransacted
+
+				/*
+					HANDLE WINAPI CreateFileTransacted
+					(
+						__in        LPCTSTR lpFileName,
+						__in        DWORD dwDesiredAccess,
+						__in        DWORD dwShareMode,
+						__in_opt    LPSECURITY_ATTRIBUTES lpSecurityAttributes,
+						__in        DWORD dwCreationDisposition,
+						__in        DWORD dwFlagsAndAttributes,
+						__in_opt    HANDLE hTemplateFile,
+						__in        HANDLE hTransaction,
+						__in_opt    PUSHORT pusMiniVersion,
+						__reserved  PVOID pExtendedParameter
+					);
+				*/
+
+				[DllImport("kernel32.dll",
+					CallingConvention = CallingConvention.Winapi,
+					CharSet = CharSet.Auto,
+					SetLastError = true)]
+				public static extern HANDLE CreateFileTransacted
+				(
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpFileName,
+					[In]									DWORD dwDesiredAccess,
+					[In]									DWORD dwShareMode,
+					[In][Opt]							ref SECURITY_ATTRIBUTES lpSecurityAttributes,
+					[In]									DWORD dwCreationDisposition,
+					[In]									DWORD dwFlagsAndAttributes,
+					[In][Opt]								HANDLE hTemplateFile,
+					[In]									HANDLE hTransaction,
+					[In][Opt]							ref	USHORT pusMiniVersion,
+					/*Reserved*/							PVOID pExtendedParameter
+				);
+		
 			#endregion
 
 			#region CloseHandle
@@ -351,14 +408,14 @@ namespace WBFSLibrary
 				[return: MarshalAs(UnmanagedType.Bool)]
 				public static extern BOOL GetVolumeInformation
 				(
-					[In][Opt][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR RootPathName,
-					[Out][MarshalAs(UnmanagedType.LPTStr)]		LPTSTR VolumeNameBuffer,
-					[In]										DWORD VolumeNameSize,
-					[Out][Opt]								ref DWORD VolumeSerialNumber,
-					[Out][Opt]								ref DWORD MaximumComponentLength,
-					[Out][Opt]								ref DWORD FileSystemFlags,
-					[Out]										LPTSTR FileSystemNameBuffer,
-					[In]										DWORD nFileSystemNameSize
+					[In][Opt][MarshalAs(UnmanagedType.LPTStr)]		LPCTSTR lpRootPathName,
+					[Out][MarshalAs(UnmanagedType.LPTStr)]		ref LPTSTR lpVolumeNameBuffer,
+					[In]											DWORD nVolumeNameSize,
+					[Out][Opt]									ref DWORD lpVolumeSerialNumber,
+					[Out][Opt]									ref DWORD lpMaximumComponentLength,
+					[Out][Opt]									ref DWORD lpFileSystemFlags,
+					[Out][MarshalAs(UnmanagedType.LPTStr)]		ref LPTSTR lpFileSystemNameBuffer,
+					[In]											DWORD nFileSystemNameSize
 				);
 
 			#endregion
@@ -643,13 +700,13 @@ namespace WBFSLibrary
 				[return: MarshalAs(UnmanagedType.U4)]
 				public static extern DWORD FormatMessage
 				(
-					[In]			DWORD dwFlags,
-					[In][Opt]		LPCVOID lpSource,
-					[In]			DWORD dwMessageId,
-					[In]			DWORD dwLanguageId,
-					[Out]		ref LPTSTR lpBuffer,
-					[In]			DWORD nSize,
-					[In][Opt]		String[] pArguments
+					[In]										DWORD dwFlags,
+					[In][Opt]									LPCVOID lpSource,
+					[In]										DWORD dwMessageId,
+					[In]										DWORD dwLanguageId,
+					[Out][MarshalAs(UnmanagedType.LPTStr)]	ref LPTSTR lpBuffer,
+					[In]										DWORD nSize,
+					[In][Opt]									String[] pArguments
 				);
 
 			#endregion
@@ -809,29 +866,6 @@ namespace WBFSLibrary
 
 			#endregion
 
-			#region FindVolumeMountPointClose
-
-				/*
-					BOOL WINAPI FindVolumeMountPointClose
-					(
-						__in  HANDLE hFindVolumeMountPoint
-					);
-				*/
-
-				[SuppressUnmanagedCodeSecurity]
-				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
-				[DllImport("kernel32.dll",
-						CallingConvention = CallingConvention.Winapi,
-						CharSet = CharSet.Auto,
-						SetLastError = true)]
-				[return: MarshalAs(UnmanagedType.Bool)]
-				public static extern BOOL FindVolumeMountPointClose
-				(
-					[In]	SafeVolumeMountPointHandle hFindVolumeMountPoint
-				);
-
-			#endregion
-
 			#region GetShortPathName
 
 				/*
@@ -851,9 +885,9 @@ namespace WBFSLibrary
 						SetLastError = true)]
 				public static extern DWORD GetShortPathName
 				(
-					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpszLongPath,
-					[Out][MarshalAs(UnmanagedType.LPTStr)]	LPTSTR lpszShortPath,
-					[In]									DWORD cchBuffer
+					[In][MarshalAs(UnmanagedType.LPTStr)]		LPCTSTR lpszLongPath,
+					[Out][MarshalAs(UnmanagedType.LPTStr)]	ref LPTSTR lpszShortPath,
+					[In]										DWORD cchBuffer
 				);
 
 			#endregion
@@ -878,9 +912,38 @@ namespace WBFSLibrary
 				[return: MarshalAs(UnmanagedType.Bool)]
 				public static extern BOOL CreateHardLink
 				(
-					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpFileName,
-					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpExistingFileName,
-					/*Reserved*/							LPSECURITY_ATTRIBUTES lpSecurityAttributes
+					[In][MarshalAs(UnmanagedType.LPTStr)]		LPCTSTR lpFileName,
+					[In][MarshalAs(UnmanagedType.LPTStr)]		LPCTSTR lpExistingFileName,
+					/*Reserved*/							ref	SECURITY_ATTRIBUTES lpSecurityAttributes
+				);
+
+			#endregion
+
+			#region CreateHardLinkTransacted
+
+				/*
+					BOOL WINAPI CreateHardLinkTransacted
+					(
+						__in        LPCTSTR lpFileName,
+						__in        LPCTSTR lpExistingFileName,
+						__reserved  LPSECURITY_ATTRIBUTES lpSecurityAttributes,
+						__in        HANDLE hTransaction
+					);
+				*/
+
+				[SuppressUnmanagedCodeSecurity]
+				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+				[DllImport("kernel32.dll",
+						CallingConvention = CallingConvention.Winapi,
+						CharSet = CharSet.Auto,
+						SetLastError = true)]
+				[return: MarshalAs(UnmanagedType.Bool)]
+				public static extern BOOL CreateHardLinkTransacted
+				(
+					[In][MarshalAs(UnmanagedType.LPTStr)]		LPCTSTR lpFileName,
+					[In][MarshalAs(UnmanagedType.LPTStr)]		LPCTSTR lpExistingFileName,
+					/*Reserved*/							ref	SECURITY_ATTRIBUTES lpSecurityAttributes,
+					[In]										HANDLE hTransaction
 				);
 
 			#endregion
@@ -905,45 +968,225 @@ namespace WBFSLibrary
 				[return: MarshalAs(UnmanagedType.Bool)]
 				public static extern BOOLEAN CreateSymbolicLink
 				(
-					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpSymlinkFileName,
-					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpTargetFileName,
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPTSTR lpSymlinkFileName,
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPTSTR lpTargetFileName,
 					[In]									DWORD dwFlags
 				);
 
 			#endregion
 
+			#region CreateSymbolicLinkTransacted
+
+				/*
+					BOOLEAN WINAPI CreateSymbolicLinkTransacted
+					(
+						__in  LPTSTR lpSymlinkFileName,
+						__in  LPTSTR lpTargetFileName,
+						__in  DWORD dwFlags,
+						__in  HANDLE hTransaction
+					);
+				*/
+
+				[SuppressUnmanagedCodeSecurity]
+				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+				[DllImport("kernel32.dll",
+						CallingConvention = CallingConvention.Winapi,
+						CharSet = CharSet.Auto,
+						SetLastError = true)]
+				[return: MarshalAs(UnmanagedType.Bool)]
+				public static extern BOOLEAN CreateSymbolicLinkTransacted
+				(
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPTSTR lpSymlinkFileName,
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPTSTR lpTargetFileName,
+					[In]									DWORD dwFlags,
+					[In]									HANDLE hTransaction
+				);
+
+			#endregion
+
+			#region DeleteFile
+
+				/*
+					BOOL WINAPI DeleteFile
+					(
+						__in  LPCTSTR lpFileName
+					);
+				*/
+
+				[SuppressUnmanagedCodeSecurity]
+				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+				[DllImport("kernel32.dll",
+						CallingConvention = CallingConvention.Winapi,
+						CharSet = CharSet.Auto,
+						SetLastError = true)]
+				[return: MarshalAs(UnmanagedType.Bool)]
+				public static extern BOOL DeleteFile
+				(
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpFileName
+				);
+
+			#endregion
+
+			#region DeleteFileTransacted
+
+				/*
+					BOOL WINAPI DeleteFileTransacted
+					(
+						__in  LPCTSTR lpFileName,
+						__in  HANDLE hTransaction
+					);
+				*/
+
+				[SuppressUnmanagedCodeSecurity]
+				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+				[DllImport("kernel32.dll",
+						CallingConvention = CallingConvention.Winapi,
+						CharSet = CharSet.Auto,
+						SetLastError = true)]
+				[return: MarshalAs(UnmanagedType.Bool)]
+				public static extern BOOL DeleteFileTransacted
+				(
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpFileName,
+					[In]									HANDLE hTransaction
+				);
+
+			#endregion
+
+			#region RemoveDirectory
+
+				/*
+					BOOL WINAPI RemoveDirectory
+					(
+						__in  LPCTSTR lpPathName
+					);
+				*/
+
+				[SuppressUnmanagedCodeSecurity]
+				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+				[DllImport("kernel32.dll",
+						CallingConvention = CallingConvention.Winapi,
+						CharSet = CharSet.Auto,
+						SetLastError = true)]
+				[return: MarshalAs(UnmanagedType.Bool)]
+				public static extern BOOL RemoveDirectory
+				(
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpPathName
+				);
+
+			#endregion
+
+			#region RemoveDirectoryTransacted
+
+				/*
+					BOOL WINAPI RemoveDirectoryTransacted
+					(
+						__in  LPCTSTR lpPathName,
+						__in  HANDLE hTransaction
+					);
+				*/
+
+				[SuppressUnmanagedCodeSecurity]
+				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+				[DllImport("kernel32.dll",
+						CallingConvention = CallingConvention.Winapi,
+						CharSet = CharSet.Auto,
+						SetLastError = true)]
+				[return: MarshalAs(UnmanagedType.Bool)]
+				public static extern BOOL RemoveDirectoryTransacted
+				(
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpPathName,
+					[In]									HANDLE hTransaction
+				);
+
+			#endregion
+
+			#region FindVolumeMountPointClose
+
+				/*
+					BOOL WINAPI FindVolumeMountPointClose
+					(
+						__in  HANDLE hFindVolumeMountPoint
+					);
+				*/
+
+				[SuppressUnmanagedCodeSecurity]
+				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+				[DllImport("kernel32.dll",
+						CallingConvention = CallingConvention.Winapi,
+						CharSet = CharSet.Auto,
+						SetLastError = true)]
+				[return: MarshalAs(UnmanagedType.Bool)]
+				public static extern BOOL FindVolumeMountPointClose
+				(
+					[In]	SafeVolumeMountPointHandle hFindVolumeMountPoint
+				);
+
+			#endregion
+
+			#region FindFirstVolumeMountPoint
+
+				/*
+					HANDLE WINAPI FindFirstVolumeMountPoint
+					(
+						__in   LPTSTR lpszRootPathName,
+						__out  LPTSTR lpszVolumeMountPoint,
+						__in   DWORD cchBufferLength
+					);
+				*/
+
+				[SuppressUnmanagedCodeSecurity]
+				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+				[DllImport("kernel32.dll",
+						CallingConvention = CallingConvention.Winapi,
+						CharSet = CharSet.Auto,
+						SetLastError = true)]
+				public static extern SafeVolumeMountPointHandle FindFirstVolumeMountPoint
+				(
+					[In]		LPTSTR lpszRootPathName,
+					[Out]	ref LPTSTR lpszVolumeMountPointName,
+					[In]		DWORD cchStringBufferLength
+				);
+
+			#endregion
+		
+
+
+
+
+        #region kernel32!FindNextVolumeMountPoint
+
+			[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+			public static extern bool FindNextVolumeMountPoint(
+				SafeVolumeMountPointHandle hFindVolume,
+				StringBuilder lpszVolumeMountPointName,
+				int cchStringBufferLength);
+
+        #endregion
+
+        #region kernel32!GetVolumeNameForVolumeMountPoint
+
+			[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+			public static extern bool GetVolumeNameForVolumeMountPoint(
+				string lpszVolumeMountPoint,
+				StringBuilder lpszVolumeName,
+				int cchStringBufferLength);
+
+        #endregion
 
 
 
 
 
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-        public static extern bool CreateSymbolicLink(string lpSymlinkFileName, string lpTargetFileName, int dwFlags);
-
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-        public static extern bool DeleteFile(string lpFileName);
-
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-        public static extern bool RemoveDirectory(string lpPathName);
 
 
-
-
-
-        [DllImport("kernel32.dll")]
-        public static extern IntPtr GetConsoleWindow();
+		//[DllImport("kernel32.dll")]
+		//public static extern IntPtr GetConsoleWindow();
 
         //[DllImport("kernel32.dll")]
         //public static extern Size GetConsoleFontSize(SafeFileHandle hConsoleOutput, int nFont);
 
         //[DllImport("kernel32.dll")]
         //public static extern bool GetCurrentConsoleFont(SafeFileHandle hConsoleOutput, bool bMaximumWindow, out ConsoleFontInfo lpConsoleCurrentFont);
-
-
-
 
 		//[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
 		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
@@ -955,9 +1198,9 @@ namespace WBFSLibrary
 		//    IntPtr lpScreenBufferData
 		//);
 
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-        public static extern bool SetConsoleActiveScreenBuffer(SafeFileHandle hConsoleOutput);
+		//[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
+		//public static extern bool SetConsoleActiveScreenBuffer(SafeFileHandle hConsoleOutput);
 
 		//[DllImport("kernel32.dll", EntryPoint = "GetConsoleMode", SetLastError = true, CharSet = CharSet.Unicode)]
 		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
@@ -983,34 +1226,6 @@ namespace WBFSLibrary
 		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
 		//public static extern SafeFileHandle GetStdHandle(StdHandle nStdHandle);
 		//#endregion
-
-        #region kernel32!FindFirstVolumeMountPoint
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        public static extern SafeVolumeMountPointHandle FindFirstVolumeMountPoint(
-            string lpszRootPathName,
-            StringBuilder lpszVolumeMountPointName,
-            int cchStringBufferLength);
-        #endregion
-
-        #region kernel32!FindNextVolumeMountPoint
-
-			[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-			public static extern bool FindNextVolumeMountPoint(
-				SafeVolumeMountPointHandle hFindVolume,
-				StringBuilder lpszVolumeMountPointName,
-				int cchStringBufferLength);
-
-        #endregion
-
-        #region kernel32!GetVolumeNameForVolumeMountPoint
-
-			[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-			public static extern bool GetVolumeNameForVolumeMountPoint(
-				string lpszVolumeMountPoint,
-				StringBuilder lpszVolumeName,
-				int cchStringBufferLength);
-
-        #endregion
 
         #region kernel32!GetCurrentProcess
 

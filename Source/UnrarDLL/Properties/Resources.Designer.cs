@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Trinet.NTFS.Properties {
+namespace Rarlabs.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Trinet.NTFS.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Trinet.NTFS.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Rarlabs.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,51 +57,6 @@ namespace Trinet.NTFS.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The specified stream name contains invalid characters..
-        /// </summary>
-        internal static string Error_InvalidFileChars {
-            get {
-                return ResourceManager.GetString("Error_InvalidFileChars", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The specified mode &apos;{0}&apos; is not supported..
-        /// </summary>
-        internal static string Error_InvalidMode {
-            get {
-                return ResourceManager.GetString("Error_InvalidMode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The specified file name &apos;{0}&apos; is not a disk-based file..
-        /// </summary>
-        internal static string Error_NonFile {
-            get {
-                return ResourceManager.GetString("Error_NonFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The specified alternate data stream &apos;{0}&apos; already exists on file &apos;{1}&apos;..
-        /// </summary>
-        internal static string Error_StreamExists {
-            get {
-                return ResourceManager.GetString("Error_StreamExists", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The specified alternate data stream &apos;{0}&apos; does not exist on file &apos;{1}&apos;..
-        /// </summary>
-        internal static string Error_StreamNotFound {
-            get {
-                return ResourceManager.GetString("Error_StreamNotFound", resourceCulture);
             }
         }
     }
