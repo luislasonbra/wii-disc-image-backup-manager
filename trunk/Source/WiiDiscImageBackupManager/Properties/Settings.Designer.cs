@@ -25,31 +25,185 @@ namespace WBFSManager.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<path>C:\\utorrent</path><path>W:\\utorrent</path><path>X:\\utorrent</path>")]
-        public string FileFolderPaths {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>C:\utorrent</string>
+  <string>W:\utorrent</string>
+  <string>Q:\utorrent</string>
+  <string>V:\utorrent</string>
+  <string>X:\utorrent</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection FileFolderPaths {
             get {
-                return ((string)(this["FileFolderPaths"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["FileFolderPaths"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16")]
-        public string FileFolderGridViewColumnOrdering {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>C=System</string>
+  <string>X=DownloadedWBFS</string>
+  <string>Q=WiiWBFSDrive</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection FriendlyDeviceNames {
             get {
-                return ((string)(this["FileFolderGridViewColumnOrdering"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["FriendlyDeviceNames"]));
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1")]
-        public string FileFolderGridViewColumnVisibility {
+        public global::System.Collections.Specialized.StringCollection ColumnOrdering_Device_0x00000000 {
             get {
-                return ((string)(this["FileFolderGridViewColumnVisibility"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnOrdering_Device_0x00000000"]));
             }
             set {
-                this["FileFolderGridViewColumnVisibility"] = value;
+                this["ColumnOrdering_Device_0x00000000"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ColumnVisibility_Device_0x00000000 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnVisibility_Device_0x00000000"]));
+            }
+            set {
+                this["ColumnVisibility_Device_0x00000000"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ColumnOrdering_Device_0x00000001 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnOrdering_Device_0x00000001"]));
+            }
+            set {
+                this["ColumnOrdering_Device_0x00000001"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ColumnVisibility_Device_0x00000001 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnVisibility_Device_0x00000001"]));
+            }
+            set {
+                this["ColumnVisibility_Device_0x00000001"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ColumnOrdering_Device_0x00000002 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnOrdering_Device_0x00000002"]));
+            }
+            set {
+                this["ColumnOrdering_Device_0x00000002"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ColumnVisibility_Device_0x00000002 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnVisibility_Device_0x00000002"]));
+            }
+            set {
+                this["ColumnVisibility_Device_0x00000002"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ColumnOrdering_Device_0x00000004 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnOrdering_Device_0x00000004"]));
+            }
+            set {
+                this["ColumnOrdering_Device_0x00000004"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ColumnVisibility_Device_0x00000004 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnVisibility_Device_0x00000004"]));
+            }
+            set {
+                this["ColumnVisibility_Device_0x00000004"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ColumnOrdering_Device_0x00000008 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnOrdering_Device_0x00000008"]));
+            }
+            set {
+                this["ColumnOrdering_Device_0x00000008"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ColumnVisibility_Device_0x00000008 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnVisibility_Device_0x00000008"]));
+            }
+            set {
+                this["ColumnVisibility_Device_0x00000008"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ColumnOrdering_Device_0x00000010 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnOrdering_Device_0x00000010"]));
+            }
+            set {
+                this["ColumnOrdering_Device_0x00000010"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ColumnVisibility_Device_0x00000010 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnVisibility_Device_0x00000010"]));
+            }
+            set {
+                this["ColumnVisibility_Device_0x00000010"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ColumnOrdering_Device_0x00000020 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnOrdering_Device_0x00000020"]));
+            }
+            set {
+                this["ColumnOrdering_Device_0x00000020"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ColumnVisibility_Device_0x00000020 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ColumnVisibility_Device_0x00000020"]));
+            }
+            set {
+                this["ColumnVisibility_Device_0x00000020"] = value;
             }
         }
     }

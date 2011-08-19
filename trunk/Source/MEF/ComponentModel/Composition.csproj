@@ -28,7 +28,7 @@
     <Reference Include="System.Data.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Microsoft\Internal\Assumes.cs" />
     <Compile Include="Microsoft\Internal\AttributeServices.cs" />
     <Compile Include="Microsoft\Internal\Collections\CollectionServices.cs" />
@@ -205,7 +205,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Application\System.ComponentModel.Composition.Codeplex.snk" />
+    <None Include="Properties\System.ComponentModel.Composition.Codeplex.snk" />
   </ItemGroup>
   <!-- Code Contract Assembly rewriter section -->
   <PropertyGroup Condition="'$(DebugBuild)' == 'true' and '$(IsSilverlight)' != 'true'">
@@ -217,7 +217,7 @@
     <BuildForCodeContractAssemblyRewriterButDoNotRewrite>false</BuildForCodeContractAssemblyRewriterButDoNotRewrite>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Application\System.ComponentModel.Composition.Codeplex.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Properties\System.ComponentModel.Composition.Codeplex.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>false</DelaySign>

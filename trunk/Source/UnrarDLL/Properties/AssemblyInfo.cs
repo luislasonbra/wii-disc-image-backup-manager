@@ -1,13 +1,12 @@
+using System;
 using System.Reflection;
+using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Resources;
 
-//
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-//
 [assembly: AssemblyTitle("Unrar DLL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
@@ -16,8 +15,8 @@ using System.Resources;
 [assembly: AssemblyCopyright("Copyright © 2011 Alexander Roshal. All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
+[assembly: CLSCompliant(true)]
 
-//
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version
@@ -55,9 +54,9 @@ using System.Resources;
 //   (*) Delay Signing is an advanced option - see the Microsoft .NET Framework
 //       documentation for more information on this.
 //
-[assembly: AssemblyDelaySign(false)]
-[assembly: AssemblyKeyFile("")]
-[assembly: AssemblyKeyName("")]
+//[assembly: AssemblyDelaySign(false)]
+//[assembly: AssemblyKeyFile("")]
+//[assembly: AssemblyKeyName("")]
 [assembly: AssemblyFileVersionAttribute("4.0.7.2011")]
 [assembly: GuidAttribute("aa7a4412-8e96-4022-a04f-f17a81e8114d")]
 [assembly: NeutralResourcesLanguageAttribute("en-US")]

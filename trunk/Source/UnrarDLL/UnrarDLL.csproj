@@ -10,7 +10,7 @@
     <ApplicationIcon />
     <AssemblyKeyContainerName />
     <AssemblyName>UnrarDLL</AssemblyName>
-    <AssemblyOriginatorKeyFile>Application\UnrarDLL.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Properties\UnrarDLL.snk</AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
@@ -48,7 +48,8 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <ConfigurationOverrideFile />
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>bin\Debug\UnrarDLL.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>512</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -112,7 +113,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Unrar.cs">
+    <Compile Include="unrar.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -134,7 +135,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Application\UnrarDLL.snk" />
+    <None Include="Properties\UnrarDLL.snk" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
