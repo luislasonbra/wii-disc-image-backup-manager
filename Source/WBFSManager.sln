@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WBFSLibrary", "WBFSLibrary\WBFSLibrary.csproj", "{2B5AEE0F-728A-4E4F-8027-6D82FE6C8334}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WBFSManager", "WiiDiscImageBackupManager\WBFSManager.csproj", "{B057D246-FD24-446F-B91C-7A237D0FDF11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiiDiscImageBackupManager", "WiiDiscImageBackupManager\WiiDiscImageBackupManager.csproj", "{B057D246-FD24-446F-B91C-7A237D0FDF11}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiiSharpLibrary", "WiiSharpLibrary\WiiSharpLibrary.csproj", "{2B37DC36-EE5A-4F8F-B033-7CE633C1A889}"
 EndProject

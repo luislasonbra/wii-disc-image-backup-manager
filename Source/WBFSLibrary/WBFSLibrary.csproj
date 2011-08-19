@@ -40,7 +40,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>WBFSLibrary.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Properties\WBFSLibrary.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -221,7 +221,7 @@
     <Compile Include="Devices\InternalTypes\SDDevice.cs" />
     <Compile Include="FilesSystems\InternalTypes\EXT2Partition.cs" />
     <Compile Include="Native\Kernel32.cs" />
-    <None Include="WBFSLibrary.snk" />
+    <None Include="Properties\WBFSLibrary.snk" />
     <Compile Include="Plugins\Plugins.cs" />
     <Compile Include="DataTypes\LargeInteger.cs" />
     <Compile Include="Streams\StreamDelegates.cs" />

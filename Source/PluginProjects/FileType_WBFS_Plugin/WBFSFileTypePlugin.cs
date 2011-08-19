@@ -135,20 +135,25 @@
 	using Microsoft.Win32;
 	using Microsoft.Win32.SafeHandles;
 
+	using Trinet.NTFS;
+
 #endregion
 
-using WBFSLibrary.Plugins;
-
+using WBFSLibrary.Devices;
+using WBFSLibrary.Drives;
 using WBFSLibrary.IO;
 using WBFSLibrary.IO.FileSystems;
 using WBFSLibrary.IO.FileTypes;
 using WBFSLibrary.IO.FileOperations;
+using WBFSLibrary.IO.Streams;
+using WBFSLibrary.Plugins;
+using WBFSLibrary.Properties;
 
 namespace WBFSLibrary.Plugins
 {
 
 	[Export("Game Loop Draw", typeof(IFileTypePlugin))]
-	public class WBFS : FileType, IFileTypePlugin
+	public class WBFSFileTypePlugin : FileType, IFileTypePlugin
 	{
 
 	}
