@@ -476,15 +476,15 @@ namespace WBFSLibrary
 				#define SUBLANG_YORUBA_NIGERIA                      0x01    // Yoruba (Nigeria) 046a yo-NG
 				#define SUBLANG_ZULU_SOUTH_AFRICA                   0x01    // isiZulu / Zulu (South Africa) 0x0435 zu-ZA
 			*/
-		
-			/*
-				#define SUBLANG_NEUTRAL                             0x00
-				#define SUBLANG_DEFAULT                             0x01
-				#define SUBLANG_SYS_DEFAULT                         0x02
-				#define SUBLANG_CUSTOM_DEFAULT                      0x03
-				#define SUBLANG_CUSTOM_UNSPECIFIED                  0x04
-				#define SUBLANG_UI_CUSTOM_DEFAULT                   0x05
 
+			public static readonly UInt32	NEUTRAL							=	0x0047;
+			public static readonly UInt32	DEFAULT							=	0x0048;
+			public static readonly UInt32	SYS_DEFAULT						=	0x7FFF;
+			public static readonly UInt32	CUSTOM_DEFAULT					=	0x8000;
+			public static readonly UInt32	CUSTOM_UNSPECIFIED				=	0x8001;
+			public static readonly UInt32	SUBLANG_UI_CUSTOM_DEFAULT		=	0x8001;
+
+			/*
 				#define SUBLANG_AFRIKAANS_SOUTH_AFRICA              0x01
 				#define SUBLANG_ALBANIAN_ALBANIA                    0x01
 				#define SUBLANG_ALSATIAN_FRANCE                     0x01

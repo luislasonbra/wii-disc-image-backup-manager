@@ -149,158 +149,100 @@ using WBFSLibrary.IO.Streams;
 using WBFSLibrary.Plugins;
 using WBFSLibrary.Properties;
 
-namespace WBFSLibrary.IO
+namespace WBFSLibrary
 {
+	#region Unmanaged Type Mapping Aliases Block v0.27
 
-    public class File : IFile, INullOrEmpty
-    {
-		#region Fields
+		using s8 = SByte;
+		using u8 = Byte;
+		using S8 = SByte;
+		using U8 = Byte;
+		using s16 = Int16;
+		using u16 = UInt16;
+		using le16_t = UInt16;
+		using be16_t = UInt16;
+		using s32 = Int32;
+		using u32 = UInt32;
+		using S32 = Int32;
+		using U32 = UInt32;
+		using le32_t = UInt32;
+		using be32_t = UInt32;
+		using s64 = Int64;
+		using u64 = UInt64;
+		using S64 = Int64;
+		using U64 = UInt64;
+		using le64_t = UInt32;
+		using be64_t = UInt32;
+		using f32 = Single;
+		using f64 = Double;
+		using F32 = Single;
+		using F64 = Double;
 
-			FileInfo info;
+		using BOOL = Boolean;
+		using BOOLEAN = Boolean;
 
-		#endregion
+		using BYTE = Byte;
 
-		#region Properties
+		using WORD = UInt16;
+		using DWORD = UInt32;
+		using QWORD = UInt64;
 
-			#region File
+		using CHAR = Char;
+		using TCHAR = Char;
+		using WCHAR = Char;
 
-				/* Provides attributes for files and directories. */
-				public String Path { get; protected set; }
+		using INT = Int32;
+		using UINT = UInt32;
 
-			#endregion
+		using LONG = Int32;
+		using ULONG = UInt32;
 
-			#region FileInfo
+		using LONGLONG = UInt64;
+		using ULONGLONG = UInt64;
 
-				/* Provides instance methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of System.IO.FileStream objects. This class cannot be inherited. */
-				public FileInfo FileInfo { get; protected set; }
+		using DEVICE_TYPE = UInt16;
+		using ACCESS_MASK = UInt16;
 
-				#region FileInfo Accessors
+		using HANDLE = SafeFileHandle;
+		using HINSTANCE = SafeHandle;
+		using HLOCAL = SafeHandle;
+		using HWND = SafeHandle;
 
-					/*  Gets or sets the creation time of the current file or directory. */
-					public DateTime CreationTime { get { return FileInfo.CreationTime; } }
+		using PVOID = IntPtr;
+		using LPVOID = IntPtr;
+		using LPCVOID = IntPtr;
 
-				#endregion
+		using POVERLAPPED = NativeOverlapped;
+		using LPOVERLAPPED = NativeOverlapped;
 
-			#endregion
+		using CString = String;
+		using LPCTSTR = String;
+		using LPTSTR = StringBuilder;
+		
+		using __in = InAttribute;
+		using __out = OutAttribute;
+		using __opt = OptionalAttribute;
 
-			#region FileAttributes
+		using _in = InAttribute;
+		using _out = OutAttribute;
+		using _opt = OptionalAttribute;
 
-				/* Provides attributes for files and directories. */
-				public FileAttributes FileAttributes { get; protected set; }
+		using Opt = OptionalAttribute;
 
-				#region FileAttributes Accessors
+	#endregion
 
-					/* The file's archive status. Applications use this attribute to mark files for backup or removal. */
-					public Boolean IsArchived { get { return FileAttributes.HasFlag(FileAttributes.Archive); } }
+	#region DBT
 
-					/* The file is compressed. */
-					public Boolean IsCompressed { get { return FileAttributes.HasFlag(FileAttributes.Compressed); } }
+		public class Uncategorised
+		{
+			/*
 
-					/*  Reserved for future use. */
-					public Boolean IsDevice { get { return FileAttributes.HasFlag(FileAttributes.Device); } }
+			*/
 
-					/* The file is a directory. */
-					public Boolean IsDirectory { get { return FileAttributes.HasFlag(FileAttributes.Directory); } }
+			public static readonly UInt32	LOAD_LIBRARY_AS_DATAFILE		=	0x00000002;
 
-					/* The file or directory is encrypted. For a file, this means that all data in the file is encrypted. For a directory, this means that encryption is the default for newly created files and directories. */
-					public Boolean IsEncrypted { get { return FileAttributes.HasFlag(FileAttributes.Directory); } }
+			public static readonly UInt32	LANGID							=	(UInt32)((((ushort)(SUBLANG.DEFAULT)) << 10) | (ushort)(LANG.NEUTRAL));
+		};
 
-					/* The file is hidden, and thus is not included in an ordinary directory listing. */
-					public Boolean IsHidden { get; set; }
-
-					/* The file is normal and has no other attributes set. This attribute is valid only if used alone. */
-					public Boolean IsNormal { get; set; }
-
-					/* The file will not be indexed by the operating system's content indexing service. */
-					public Boolean IsNotContentIndexed { get; set; }
-
-					/* The file is offline. The data of the file is not immediately available. */
-					public Boolean IsOffline { get; set; }
-
-					/* The file is read-only. */
-					public Boolean IsReadOnly { get; set; }
-
-					/* The file contains a reparse point, which is a block of user-defined data associated with a file or a directory. */
-					public Boolean IsReparsePoint { get; set; }
-
-					/* The file is a sparse file. Sparse files are typically large files whose data are mostly zeros. */
-					public Boolean IsSparseFile { get; set; }
-
-					/* The file is a system file. The file is part of the operating system or is used exclusively by the operating system. */
-					public Boolean IsSystem { get; set; }
-
-					/* The file is temporary. File systems attempt to keep all of the data in memory for quicker access rather than flushing the data back to mass storage. A temporary file should be deleted by the application as soon as it is no longer needed. */
-					public Boolean IsTemporary { get; set; }
-
-				#endregion
-
-			#endregion
-
-			#region FileSecurity
-
-				/* Provides attributes for files and directories. */
-				public FileSecurity FileSecurity { get; protected set; }
-
-				#region FileSecurity Accessors
-
-				#endregion
-
-			#endregion
-
-		#endregion
-
-		#region Members
-
-			#region Construction
-
-				public File()
-				{
-				}
-
-				public File(String path)
-				{
-					this.FileInfo = new FileInfo(path);
-					if(this.FileInfo.Exists)
-					{
-						this.FileAttributes = this.FileInfo.Attributes;
-						if(this.FileAttributes != null)
-						{
-							if(this.FileAttributes.HasFlag(FileAttributes.Directory))
-							{
-
-							}
-							else
-							{
-								this.FileSecurity = this.FileInfo.GetAccessControl();
-								if(this.FileSecurity != null)
-								{
-
-								}
-								else
-								{
-
-								}
-							}
-						}
-						else
-						{
-
-						}
-					}
-					else
-					{
-
-					}
-				}
-
-			#endregion
-
-			#region Members
-
-
-			#endregion
-
-		#endregion
-    }
-
+	#endregion
 }

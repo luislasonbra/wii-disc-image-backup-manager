@@ -241,21 +241,6 @@ namespace WBFSLibrary
 
 	public class Kernel32
 	{
-		#region Uncategorised Constants
-
-			//public class Uncategorised
-			//{
-			//    public static readonly UInt32	LOAD_LIBRARY_AS_DATAFILE		=	0x00000002;
-
-			//    public static readonly UInt32	SUBLANG_DEFAULT					=	0x01;
-			//    public static readonly UInt32	LANG_NEUTRAL					=	0x00;
-			//    public static readonly UInt32	LANGID							=	(UInt32)((((ushort)(SUBLANG_DEFAULT)) << 10) | (ushort)(LANG_NEUTRAL));
-
-			//    public static readonly UInt32	WM_DEVICECHANGE					=	537;
-			//};
-
-		#endregion
-
 		#region DLL Imports
 
 			#region CreateFile
@@ -276,13 +261,13 @@ namespace WBFSLibrary
 				[DllImport("kernel32.dll", CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Auto, SetLastError = true)]
 				public static extern HANDLE CreateFile
 				(
-					[In]			LPCTSTR lpFileName,
-					[In]			DWORD dwDesiredAccess,
-					[In]			DWORD dwShareMode,
-					[In][Opt]	ref SECURITY_ATTRIBUTES lpSecurityAttributes,
-					[In]			DWORD dwCreationDisposition,
-					[In]			DWORD dwFlagsAndAttributes,
-					[In][Opt]		HANDLE hTemplateFile
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpFileName,
+					[In]									DWORD dwDesiredAccess,
+					[In]									DWORD dwShareMode,
+					[In][Opt]							ref SECURITY_ATTRIBUTES lpSecurityAttributes,
+					[In]									DWORD dwCreationDisposition,
+					[In]									DWORD dwFlagsAndAttributes,
+					[In][Opt]								HANDLE hTemplateFile
 				);
 
 			#endregion
@@ -366,14 +351,14 @@ namespace WBFSLibrary
 				[return: MarshalAs(UnmanagedType.Bool)]
 				public static extern BOOL GetVolumeInformation
 				(
-					[In][Opt]		LPCTSTR RootPathName,
-					[Out]			LPTSTR VolumeNameBuffer,
-					[In]			DWORD VolumeNameSize,
-					[Out][Opt]	ref DWORD VolumeSerialNumber,
-					[Out][Opt]	ref DWORD MaximumComponentLength,
-					[Out][Opt]	ref DWORD FileSystemFlags,
-					[Out]			LPTSTR FileSystemNameBuffer,
-					[In]			DWORD nFileSystemNameSize
+					[In][Opt][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR RootPathName,
+					[Out][MarshalAs(UnmanagedType.LPTStr)]		LPTSTR VolumeNameBuffer,
+					[In]										DWORD VolumeNameSize,
+					[Out][Opt]								ref DWORD VolumeSerialNumber,
+					[Out][Opt]								ref DWORD MaximumComponentLength,
+					[Out][Opt]								ref DWORD FileSystemFlags,
+					[Out]										LPTSTR FileSystemNameBuffer,
+					[In]										DWORD nFileSystemNameSize
 				);
 
 			#endregion
@@ -730,7 +715,7 @@ namespace WBFSLibrary
 						SetLastError = true)]
 				public static extern SafeLibraryHandle LoadLibrary
 				(
-					[In]	LPCTSTR lpFileName
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpFileName
 				);
 
 			#endregion
@@ -754,9 +739,9 @@ namespace WBFSLibrary
 						SetLastError = true)]
 				public static extern SafeLibraryHandle LoadLibraryEx
 				(
-					[In]			LPCTSTR lpFileName,
-					/*Reserved*/	HANDLE hFile,
-					[In]			DWORD dwFlags
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpFileName,
+					/*Reserved*/							HANDLE hFile,
+					[In]									DWORD dwFlags
 				);
 
 			#endregion
@@ -789,8 +774,8 @@ namespace WBFSLibrary
 				/*
 					FARPROC WINAPI GetProcAddress
 					(
-					  __in  HMODULE hModule,
-					  __in  LPCSTR lpProcName
+						__in  HMODULE hModule,
+						__in  LPCSTR lpProcName
 					);
 				*/
 
@@ -807,6 +792,310 @@ namespace WBFSLibrary
 				);
 
 			#endregion
+
+			#region GetCurrentThreadId
+
+				/*
+					DWORD WINAPI GetCurrentThreadId(void);
+				*/
+
+				[SuppressUnmanagedCodeSecurity]
+				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+				[DllImport("kernel32.dll",
+						CallingConvention = CallingConvention.Winapi,
+						CharSet = CharSet.Auto,
+						SetLastError = true)]
+				public static extern DWORD GetCurrentThreadId();
+
+			#endregion
+
+			#region FindVolumeMountPointClose
+
+				/*
+					BOOL WINAPI FindVolumeMountPointClose
+					(
+						__in  HANDLE hFindVolumeMountPoint
+					);
+				*/
+
+				[SuppressUnmanagedCodeSecurity]
+				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+				[DllImport("kernel32.dll",
+						CallingConvention = CallingConvention.Winapi,
+						CharSet = CharSet.Auto,
+						SetLastError = true)]
+				[return: MarshalAs(UnmanagedType.Bool)]
+				public static extern BOOL FindVolumeMountPointClose
+				(
+					[In]	SafeVolumeMountPointHandle hFindVolumeMountPoint
+				);
+
+			#endregion
+
+			#region GetShortPathName
+
+				/*
+					DWORD WINAPI GetShortPathName
+					(
+						__in   LPCTSTR lpszLongPath,
+						__out  LPTSTR lpszShortPath,
+						__in   DWORD cchBuffer
+					);
+				*/
+
+				[SuppressUnmanagedCodeSecurity]
+				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+				[DllImport("kernel32.dll",
+						CallingConvention = CallingConvention.Winapi,
+						CharSet = CharSet.Auto,
+						SetLastError = true)]
+				public static extern DWORD GetShortPathName
+				(
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpszLongPath,
+					[Out][MarshalAs(UnmanagedType.LPTStr)]	LPTSTR lpszShortPath,
+					[In]									DWORD cchBuffer
+				);
+
+			#endregion
+
+			#region CreateHardLink
+
+				/*
+					BOOL WINAPI CreateHardLink
+					(
+						__in        LPCTSTR lpFileName,
+						__in        LPCTSTR lpExistingFileName,
+						__reserved  LPSECURITY_ATTRIBUTES lpSecurityAttributes
+					);
+				*/
+
+				[SuppressUnmanagedCodeSecurity]
+				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+				[DllImport("kernel32.dll",
+						CallingConvention = CallingConvention.Winapi,
+						CharSet = CharSet.Auto,
+						SetLastError = true)]
+				[return: MarshalAs(UnmanagedType.Bool)]
+				public static extern BOOL CreateHardLink
+				(
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpFileName,
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpExistingFileName,
+					/*Reserved*/							LPSECURITY_ATTRIBUTES lpSecurityAttributes
+				);
+
+			#endregion
+
+			#region CreateSymbolicLink
+
+				/*
+					BOOLEAN WINAPI CreateSymbolicLink
+					(
+						__in  LPTSTR lpSymlinkFileName,
+						__in  LPTSTR lpTargetFileName,
+						__in  DWORD dwFlags
+					);
+				*/
+
+				[SuppressUnmanagedCodeSecurity]
+				[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+				[DllImport("kernel32.dll",
+						CallingConvention = CallingConvention.Winapi,
+						CharSet = CharSet.Auto,
+						SetLastError = true)]
+				[return: MarshalAs(UnmanagedType.Bool)]
+				public static extern BOOLEAN CreateSymbolicLink
+				(
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpSymlinkFileName,
+					[In][MarshalAs(UnmanagedType.LPTStr)]	LPCTSTR lpTargetFileName,
+					[In]									DWORD dwFlags
+				);
+
+			#endregion
+
+
+
+
+
+
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
+        public static extern bool CreateSymbolicLink(string lpSymlinkFileName, string lpTargetFileName, int dwFlags);
+
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
+        public static extern bool DeleteFile(string lpFileName);
+
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
+        public static extern bool RemoveDirectory(string lpPathName);
+
+
+
+
+
+        [DllImport("kernel32.dll")]
+        public static extern IntPtr GetConsoleWindow();
+
+        //[DllImport("kernel32.dll")]
+        //public static extern Size GetConsoleFontSize(SafeFileHandle hConsoleOutput, int nFont);
+
+        //[DllImport("kernel32.dll")]
+        //public static extern bool GetCurrentConsoleFont(SafeFileHandle hConsoleOutput, bool bMaximumWindow, out ConsoleFontInfo lpConsoleCurrentFont);
+
+
+
+
+		//[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
+		//public static extern SafeFileHandle CreateConsoleScreenBuffer(
+		//    FileAccess dwDesiredAccess,
+		//    FileShare dwShareMode,
+		//    IntPtr lpSecurityAttributes,
+		//    ConsoleScreenBufferFlags dwFlags,
+		//    IntPtr lpScreenBufferData
+		//);
+
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
+        public static extern bool SetConsoleActiveScreenBuffer(SafeFileHandle hConsoleOutput);
+
+		//[DllImport("kernel32.dll", EntryPoint = "GetConsoleMode", SetLastError = true, CharSet = CharSet.Unicode)]
+		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
+		//public static extern bool GetConsoleInputMode(SafeFileHandle handle, out ConsoleInputModeFlags flags);
+
+		//[DllImport("kernel32.dll", EntryPoint = "GetConsoleMode", SetLastError = true, CharSet = CharSet.Unicode)]
+		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
+		//public static extern bool GetConsoleOutputMode(SafeFileHandle handle, out ConsoleOutputModeFlags flags);
+
+		//#region kernel32!ReadConsoleInput
+		//[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
+		//public static extern bool ReadConsoleInput(
+		//    SafeFileHandle hConsoleInput,
+		//    InputRecord[] lpBuffer,
+		//    int nLength,
+		//    ref int lpNumberOfEventsRead
+		//);
+		//#endregion
+
+		//#region kernel32!GetStdHandle
+		//[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
+		//public static extern SafeFileHandle GetStdHandle(StdHandle nStdHandle);
+		//#endregion
+
+        #region kernel32!FindFirstVolumeMountPoint
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        public static extern SafeVolumeMountPointHandle FindFirstVolumeMountPoint(
+            string lpszRootPathName,
+            StringBuilder lpszVolumeMountPointName,
+            int cchStringBufferLength);
+        #endregion
+
+        #region kernel32!FindNextVolumeMountPoint
+
+			[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+			public static extern bool FindNextVolumeMountPoint(
+				SafeVolumeMountPointHandle hFindVolume,
+				StringBuilder lpszVolumeMountPointName,
+				int cchStringBufferLength);
+
+        #endregion
+
+        #region kernel32!GetVolumeNameForVolumeMountPoint
+
+			[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+			public static extern bool GetVolumeNameForVolumeMountPoint(
+				string lpszVolumeMountPoint,
+				StringBuilder lpszVolumeName,
+				int cchStringBufferLength);
+
+        #endregion
+
+        #region kernel32!GetCurrentProcess
+
+			[DllImport("kernel32.dll")]
+			public static extern IntPtr GetCurrentProcess();
+
+        #endregion
+
+        #region kernel32!GetModuleHandle
+
+			[DllImport("kernel32.dll", CharSet = CharSet.Auto)]
+			public static extern IntPtr GetModuleHandle(string lpModuleName);
+
+        #endregion
+
+        #region kernel32!IsWow64Process
+
+			[DllImport("kernel32.dll", SetLastError = true, CallingConvention = CallingConvention.Winapi)]
+			[return: MarshalAs(UnmanagedType.Bool)]
+			public static extern bool IsWow64Process(
+				 [In] IntPtr hProcess,
+				 [Out] out bool wow64Process);
+
+        #endregion
+
+        #region kernel32!DeleteVolumeMountPoint
+
+			[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+			public static extern bool DeleteVolumeMountPoint(string lpwszVolumeMountPoint);
+
+        #endregion
+
+        [DllImport("Kernel32.dll", SetLastError = true)]
+        public static extern bool ReadFile(SafeFileHandle hFile, IntPtr lpBuffer, uint nNumberOfBytesToRead, out uint lpNumberOfBytesRead, IntPtr lpOverLapped);
+        [return: MarshalAs(UnmanagedType.Bool)]
+
+        [DllImport("Kernel32.dll", SetLastError = true)]
+        public static extern bool ReadFile(SafeFileHandle hFile, [MarshalAs(UnmanagedType.LPArray)] byte[] lpBuffer, uint nNumberOfBytesToRead, out uint lpNumberOfBytesRead, IntPtr lpOverLapped);
+
+       
+		/*
+	    public static Boolean GetVolumeBroadcast(IntPtr lParam, out DEV_BROADCAST_VOLUME volume)
+        {
+            try
+            {
+                volume = (DEV_BROADCAST_VOLUME)Marshal.PtrToStructure(
+                    lParam, typeof(DEV_BROADCAST_VOLUME));
+                return true;
+            }
+            catch
+            {
+                volume = new DEV_BROADCAST_VOLUME();
+                return false;
+            }
+        }
+	    */
+
+        [DllImport("kernel32", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern IntPtr LoadLibraryEx(String lpFileName, IntPtr hFile, uint dwFlags);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern IntPtr LoadResource(IntPtr hModule, IntPtr hResInfo);
+
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern uint SizeofResource(IntPtr hModule, IntPtr hResInfo);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern IntPtr LockResource(IntPtr hResData);
+
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern IntPtr FindResourceEx(IntPtr hModule, IntPtr lpType, IntPtr lpName, ushort wLanguage);
+
+
+
+		//[DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+		//public static extern bool EnumResourceNames(IntPtr hModule, IntPtr lpszType,
+		//    EnumResNameDelegate lpEnumFunc, Object lParam);
+
+
+        [DllImport("Kernel32.dll", SetLastError = true)]
+        public static extern uint FormatMessage(uint dwFlags, IntPtr lpSource,
+            uint dwMessageId, uint dwLanguageId, ref IntPtr lpBuffer,
+            uint nSize, IntPtr pArguments);
 
 
 				/*
@@ -1001,240 +1290,6 @@ namespace WBFSLibrary
 					  __inout  LPPROCESS_HEAP_ENTRY lpEntry
 					);
 				*/
-
-		#region kernel32!FindVolumeMountPointClose
-
-			[DllImport("kernel32.dll", SetLastError = true)]
-			public static extern bool FindVolumeMountPointClose(IntPtr hFindVolumeMountPoint);
-
-		#endregion
-
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        public static extern bool GetShortPathName(
-           [MarshalAs(UnmanagedType.LPTStr)] String lpszLongPath,
-           [MarshalAs(UnmanagedType.LPTStr)] StringBuilder lpszShortPath,
-           uint cchBuffer);
-
-        [DllImport("kernel32.dll", SetLastError = true)]
-        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-        public static extern bool CreateHardLink(
-            string lpszHardLinkPath,
-            string lpszExistingFileName,
-            IntPtr lpSecurityAttributes);
-
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-        public static extern bool CreateSymbolicLink(string lpSymlinkFileName, string lpTargetFileName, int dwFlags);
-
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-        public static extern bool DeleteFile(string lpFileName);
-
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-        public static extern bool RemoveDirectory(string lpPathName);
-
-        //[DllImport("kernel32.dll")]
-        //public static extern Size GetConsoleFontSize(SafeFileHandle hConsoleOutput, int nFont);
-
-        [DllImport("kernel32.dll")]
-        public static extern IntPtr GetConsoleWindow();
-
-        //[DllImport("kernel32.dll")]
-        //public static extern bool GetCurrentConsoleFont(SafeFileHandle hConsoleOutput, bool bMaximumWindow, out ConsoleFontInfo lpConsoleCurrentFont);
-
-        #region kernel32!CreateFile
-
-		//[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-		//public static extern SafeFileHandle CreateFile(
-		//    string lpFileName,
-		//    FileAccess dwDesiredAccess,
-		//    FileShare dwShareMode,
-		//    IntPtr lpSecurityAttributes,
-		//    CreationDisposition dwCreationDisposition,
-		//    FileAttributes dwFlagsAndAttributes,
-		//    IntPtr hTemplateFile);
-
-		#endregion
-
-        #region kernel32!CreateConsoleScreenBuffer
-
-		//[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-		//public static extern SafeFileHandle CreateConsoleScreenBuffer(
-		//    FileAccess dwDesiredAccess,
-		//    FileShare dwShareMode,
-		//    IntPtr lpSecurityAttributes,
-		//    ConsoleScreenBufferFlags dwFlags,
-		//    IntPtr lpScreenBufferData
-		//);
-
-        #endregion
-
-        #region kernel32!SetConsoleActiveScreenBuffer
-
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-        public static extern bool SetConsoleActiveScreenBuffer(SafeFileHandle hConsoleOutput);
-
-        #endregion
-
-		//[DllImport("kernel32.dll", EntryPoint = "GetConsoleMode", SetLastError = true, CharSet = CharSet.Unicode)]
-		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-		//public static extern bool GetConsoleInputMode(SafeFileHandle handle, out ConsoleInputModeFlags flags);
-
-		//[DllImport("kernel32.dll", EntryPoint = "GetConsoleMode", SetLastError = true, CharSet = CharSet.Unicode)]
-		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-		//public static extern bool GetConsoleOutputMode(SafeFileHandle handle, out ConsoleOutputModeFlags flags);
-
-		//#region kernel32!ReadConsoleInput
-		//[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-		//public static extern bool ReadConsoleInput(
-		//    SafeFileHandle hConsoleInput,
-		//    InputRecord[] lpBuffer,
-		//    int nLength,
-		//    ref int lpNumberOfEventsRead
-		//);
-		//#endregion
-
-		//#region kernel32!GetStdHandle
-		//[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-		//[ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-		//public static extern SafeFileHandle GetStdHandle(StdHandle nStdHandle);
-		//#endregion
-
-        #region kernel32!FindFirstVolumeMountPoint
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        public static extern SafeVolumeMountPointHandle FindFirstVolumeMountPoint(
-            string lpszRootPathName,
-            StringBuilder lpszVolumeMountPointName,
-            int cchStringBufferLength);
-        #endregion
-
-        #region kernel32!FindNextVolumeMountPoint
-
-			[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-			public static extern bool FindNextVolumeMountPoint(
-				SafeVolumeMountPointHandle hFindVolume,
-				StringBuilder lpszVolumeMountPointName,
-				int cchStringBufferLength);
-
-        #endregion
-
-        #region kernel32!GetVolumeNameForVolumeMountPoint
-
-			[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-			public static extern bool GetVolumeNameForVolumeMountPoint(
-				string lpszVolumeMountPoint,
-				StringBuilder lpszVolumeName,
-				int cchStringBufferLength);
-
-        #endregion
-
-        #region kernel32!GetCurrentProcess
-
-			[DllImport("kernel32.dll")]
-			public static extern IntPtr GetCurrentProcess();
-
-        #endregion
-
-        #region kernel32!GetModuleHandle
-
-			[DllImport("kernel32.dll", CharSet = CharSet.Auto)]
-			public static extern IntPtr GetModuleHandle(string lpModuleName);
-
-        #endregion
-
-        #region kernel32!IsWow64Process
-
-			[DllImport("kernel32.dll", SetLastError = true, CallingConvention = CallingConvention.Winapi)]
-			[return: MarshalAs(UnmanagedType.Bool)]
-			public static extern bool IsWow64Process(
-				 [In] IntPtr hProcess,
-				 [Out] out bool wow64Process);
-
-        #endregion
-
-        #region kernel32!DeleteVolumeMountPoint
-
-			[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-			public static extern bool DeleteVolumeMountPoint(string lpwszVolumeMountPoint);
-
-        #endregion
-
-        [DllImport("Kernel32.dll", SetLastError = true)]
-        public static extern bool ReadFile(SafeFileHandle hFile, IntPtr lpBuffer, uint nNumberOfBytesToRead, out uint lpNumberOfBytesRead, IntPtr lpOverLapped);
-        [return: MarshalAs(UnmanagedType.Bool)]
-
-        [DllImport("Kernel32.dll", SetLastError = true)]
-        public static extern bool ReadFile(SafeFileHandle hFile, [MarshalAs(UnmanagedType.LPArray)] byte[] lpBuffer, uint nNumberOfBytesToRead, out uint lpNumberOfBytesRead, IntPtr lpOverLapped);
-
-        //---------------------------------------------------------------------------------------------------
-        //
-        //---------------------------------------------------------------------------------------------------
-       
-		/*
-	    public static Boolean GetVolumeBroadcast(IntPtr lParam, out DEV_BROADCAST_VOLUME volume)
-        {
-            try
-            {
-                volume = (DEV_BROADCAST_VOLUME)Marshal.PtrToStructure(
-                    lParam, typeof(DEV_BROADCAST_VOLUME));
-                return true;
-            }
-            catch
-            {
-                volume = new DEV_BROADCAST_VOLUME();
-                return false;
-            }
-        }
-	    */
-
-        [DllImport("kernel32", CharSet = CharSet.Auto, SetLastError = true)]
-        public static extern IntPtr LoadLibraryEx(String lpFileName, IntPtr hFile, uint dwFlags);
-
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        public static extern IntPtr LoadResource(IntPtr hModule, IntPtr hResInfo);
-
-
-        //---------------------------------------------------------------------------------------------------
-        //
-        //---------------------------------------------------------------------------------------------------
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        public static extern uint SizeofResource(IntPtr hModule, IntPtr hResInfo);
-
-        //---------------------------------------------------------------------------------------------------
-        //
-        //---------------------------------------------------------------------------------------------------
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        public static extern IntPtr LockResource(IntPtr hResData);
-
-
-        //---------------------------------------------------------------------------------------------------
-        //
-        //---------------------------------------------------------------------------------------------------
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        public static extern IntPtr FindResourceEx(IntPtr hModule, IntPtr lpType, IntPtr lpName, ushort wLanguage);
-
-
-        //---------------------------------------------------------------------------------------------------
-        //
-        //---------------------------------------------------------------------------------------------------
-		//[DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-		//public static extern bool EnumResourceNames(IntPtr hModule, IntPtr lpszType,
-		//    EnumResNameDelegate lpEnumFunc, Object lParam);
-
-
-        //------------------------------------------------------------------------------------------
-        // Returns a message from an error code
-        //------------------------------------------------------------------------------------------
-        [DllImport("Kernel32.dll", SetLastError = true)]
-        public static extern uint FormatMessage(uint dwFlags, IntPtr lpSource,
-            uint dwMessageId, uint dwLanguageId, ref IntPtr lpBuffer,
-            uint nSize, IntPtr pArguments);
-
 
 		#endregion
 	}
