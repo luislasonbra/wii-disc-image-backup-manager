@@ -160,7 +160,8 @@
     <Compile Include="File\File.cs" />
     <Compile Include="Folders\Interfaces\IFolderPlugin.cs" />
     <Compile Include="Folders\Interfaces\IFolder.cs" />
-    <Compile Include="Interfaces\IProcessor.cs" />
+    <Compile Include="Native\Constants\Uncategorised.cs" />
+    <Compile Include="Shared\Interfaces\IProcessor.cs" />
     <Compile Include="FileTypes\Interfaces\IFileTypePlugin.cs" />
     <Compile Include="Native\Callbacks\LPOVERLAPPED_COMPLETION_ROUTINE.cs" />
     <Compile Include="Native\Constants\SECURITY.cs" />
@@ -186,6 +187,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Shared\Interfaces\INullOrEmpty.cs" />
+    <Compile Include="Shared\Interfaces\IDirty.cs" />
+    <Compile Include="Shared\Singleton.cs" />
     <Compile Include="Streams\StreamBuffer.cs" />
     <Compile Include="Streams\StreamBase.cs" />
     <None Include="Documentation\Classes.cs" />
@@ -224,6 +228,11 @@
     <Compile Include="Native\WindowsDeviceIOControlCodes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Streams\SectorStream.cs" />
+    <Compile Include="Threading\AffineThreadPool.cs" />
+    <Compile Include="Threading\ThreadCallbackOperation.cs" />
+    <Compile Include="Threading\ThreadManager.cs" />
+    <Compile Include="Threading\ThreadOperation.cs" />
+    <Compile Include="Threading\Threads.cs" />
     <Compile Include="WBFSLibrary.cs" />
     <Compile Include="FilesSystems\InternalTypes\NTFSPartition.cs" />
     <Compile Include="FilesSystems\InternalTypes\FAT32Partition.cs" />
@@ -249,9 +258,9 @@
     <Folder Include="FileOperations\InternalTypes\" />
     <Folder Include="File\InternalTypes\" />
     <Folder Include="Folders\InternalTypes\" />
-    <Folder Include="Internet\" />
+    <Folder Include="Network\Internet\" />
+    <Folder Include="Network\Local\" />
     <Folder Include="Streams\InternalTypes\" />
-    <Folder Include="Threading\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -397,7 +397,10 @@ namespace WBFSLibrary
 				#define LANG_YORUBA                      0x6a
 				#define LANG_ZULU                        0x35
 			*/
-					
+
+			public static readonly UInt32	NEUTRAL							=	0x00;
+			public static readonly UInt32	INVARIANT						=	0x7f;
+
 			/*
 			#define LANG_BOSNIAN                     0x1a   // Use with SUBLANG_BOSNIAN_* Sublanguage IDs
 			#define LANG_BOSNIAN_NEUTRAL           0x781a   // Use with the ConvertDefaultLocale function
@@ -410,8 +413,6 @@ namespace WBFSLibrary
 
 			#define LANG_FARSI                       0x29   // Deprecated: use LANG_PERSIAN instead
 
-			#define LANG_NEUTRAL                     0x00
-			#define LANG_INVARIANT                   0x7f
 			#define LANG_AFRIKAANS                   0x36
 			#define LANG_ALBANIAN                    0x1c
 			#define LANG_ALSATIAN                    0x84
