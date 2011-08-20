@@ -264,6 +264,11 @@ namespace WBFSManager
 		
 		}
 
+		private void radScrollablePanel1_Click(object sender, EventArgs e)
+		{
+		
+		}
+
 
 
 
