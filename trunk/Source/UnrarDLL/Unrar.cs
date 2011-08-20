@@ -130,64 +130,66 @@ namespace Rarlabs
 			private struct RARHeaderData
 		{
 			[MarshalAs(UnmanagedType.ByValTStr, SizeConst=260)]
-			public string ArcName;
+			public String ArcName;
 			[MarshalAs(UnmanagedType.ByValTStr, SizeConst=260)]
-			public string FileName;
-			public uint Flags;
-			public uint PackSize;
-			public uint UnpSize;
-			public uint HostOS;
-			public uint FileCRC;
-			public uint FileTime;
-			public uint UnpVer;
-			public uint Method;
-			public uint FileAttr;
+			public String FileName;
+			public UInt32 Flags;
+			public UInt32 PackSize;
+			public UInt32 UnpSize;
+			public UInt32 HostOS;
+			public UInt32 FileCRC;
+			public UInt32 FileTime;
+			public UInt32 UnpVer;
+			public UInt32 Method;
+			public UInt32 FileAttr;
 			[MarshalAs(UnmanagedType.LPStr)]
-			public string CmtBuf;
-			public uint CmtBufSize;
-			public uint CmtSize;
-			public uint CmtState;
+			public String CmtBuf;
+			public UInt32 CmtBufSize;
+			public UInt32 CmtSize;
+			public UInt32 CmtState;
 
 			public void Initialize()
 			{
-				this.CmtBuf=new string((char)0, 65536);
+				this.CmtBuf=new String((char)0, 65536);
 				this.CmtBufSize=65536;
 			}
 		}
 
 		[StructLayout(LayoutKind.Sequential, CharSet=CharSet.Unicode)]
-			public struct RARHeaderDataEx
+		public struct RARHeaderDataEx
 		{
 			[MarshalAs(UnmanagedType.ByValTStr, SizeConst=512)]
-			public string ArcName;
+			public String ArcName;
 			[MarshalAs(UnmanagedType.ByValTStr, SizeConst=1024)]
-			public string ArcNameW;
+			public String ArcNameW;
 			[MarshalAs(UnmanagedType.ByValTStr, SizeConst=512)]
-			public string FileName;
+			public String FileName;
 			[MarshalAs(UnmanagedType.ByValTStr, SizeConst=1024)]
-			public string FileNameW;
-			public uint Flags;
-			public uint PackSize;
-			public uint PackSizeHigh;
-			public uint UnpSize;
-			public uint UnpSizeHigh;
-			public uint HostOS;
-			public uint FileCRC;
-			public uint FileTime;
-			public uint UnpVer;
-			public uint Method;
-			public uint FileAttr;
+			public String FileNameW;
+			[MarshalAs(UnmanagedType.U4)]
+			public UInt32 Flags;
+			[MarshalAs(UnmanagedType.U4)]
+			public UInt32 PackSize;
+			public UInt32 PackSizeHigh;
+			public UInt32 UnpSize;
+			public UInt32 UnpSizeHigh;
+			public UInt32 HostOS;
+			public UInt32 FileCRC;
+			public UInt32 FileTime;
+			public UInt32 UnpVer;
+			public UInt32 Method;
+			public UInt32 FileAttr;
 			[MarshalAs(UnmanagedType.LPStr)]
-			public string CmtBuf;
-			public uint CmtBufSize;
-			public uint CmtSize;
-			public uint CmtState;
+			public String CmtBuf;
+			public UInt32 CmtBufSize;
+			public UInt32 CmtSize;
+			public UInt32 CmtState;
 			[MarshalAs(UnmanagedType.ByValArray, SizeConst=1024)]
-			public uint[] Reserved;
+			public UInt32[] Reserved;
 
 			public void Initialize()
 			{
-				this.CmtBuf=new string((char)0, 65536);
+				this.CmtBuf=new String((char)0, 65536);
 				this.CmtBufSize=65536;
 			}
 		}
@@ -196,18 +198,18 @@ namespace Rarlabs
 			public struct RAROpenArchiveData
 		{
 			[MarshalAs(UnmanagedType.ByValTStr, SizeConst=260)]
-			public string ArcName;
-			public uint OpenMode;
-			public uint OpenResult;
+			public String ArcName;
+			public UInt32 OpenMode;
+			public UInt32 OpenResult;
 			[MarshalAs(UnmanagedType.LPStr)]
-			public string CmtBuf;
-			public uint CmtBufSize;
-			public uint CmtSize;
-			public uint CmtState;
+			public String CmtBuf;
+			public UInt32 CmtBufSize;
+			public UInt32 CmtSize;
+			public UInt32 CmtState;
 
 			public void Initialize()
 			{
-				this.CmtBuf=new string((char)0,65536);
+				this.CmtBuf=new String((char)0,65536);
 				this.CmtBufSize=65536;
 			}
 		}
@@ -216,25 +218,25 @@ namespace Rarlabs
 			public struct RAROpenArchiveDataEx
 		{
 			[MarshalAs(UnmanagedType.LPStr)]
-			public string ArcName;
+			public String ArcName;
 			[MarshalAs(UnmanagedType.LPWStr)]
-			public string ArcNameW;
-			public uint OpenMode;
-			public uint OpenResult;
+			public String ArcNameW;
+			public UInt32 OpenMode;
+			public UInt32 OpenResult;
 			[MarshalAs(UnmanagedType.LPStr)]
-			public string CmtBuf;
-			public uint CmtBufSize;
-			public uint CmtSize;
-			public uint CmtState;
-			public uint Flags;
+			public String CmtBuf;
+			public UInt32 CmtBufSize;
+			public UInt32 CmtSize;
+			public UInt32 CmtState;
+			public UInt32 Flags;
 			[MarshalAs(UnmanagedType.ByValArray, SizeConst=32)]
-			public uint[] Reserved;
+			public UInt32[] Reserved;
 
 			public void Initialize()
 			{
-				this.CmtBuf=new string((char)0,65536);
+				this.CmtBuf=new String((char)0,65536);
 				this.CmtBufSize=65536;
-				this.Reserved=new uint[32];
+				this.Reserved=new UInt32[32];
 			}
 		}
 
@@ -249,28 +251,28 @@ namespace Rarlabs
 		private static extern IntPtr RAROpenArchiveEx(ref RAROpenArchiveDataEx archiveData);
 
 		[DllImport("unrar.dll")]
-		private static extern int RARCloseArchive(IntPtr hArcData);
+		private static extern Int32 RARCloseArchive(IntPtr hArcData);
 
 		[DllImport("unrar.dll")]
-		private static extern int RARReadHeader(IntPtr hArcData, ref RARHeaderData headerData);
+		private static extern Int32 RARReadHeader(IntPtr hArcData, ref RARHeaderData headerData);
 
 		[DllImport("unrar.dll")]
-		private static extern int RARReadHeaderEx(IntPtr hArcData, ref RARHeaderDataEx headerData);
+		private static extern Int32 RARReadHeaderEx(IntPtr hArcData, ref RARHeaderDataEx headerData);
 
 		[DllImport("unrar.dll")]
-		private static extern int RARProcessFile(IntPtr hArcData, int operation,
-			[MarshalAs(UnmanagedType.LPStr)] string destPath, 
-			[MarshalAs(UnmanagedType.LPStr)] string destName );
+		private static extern Int32 RARProcessFile(IntPtr hArcData, Int32 operation,
+			[MarshalAs(UnmanagedType.LPStr)] String destPath, 
+			[MarshalAs(UnmanagedType.LPStr)] String destName );
 
 		[DllImport("unrar.dll")]
-		private static extern void RARSetCallback(IntPtr hArcData, UNRARCallback callback, int userData);
+		private static extern void RARSetCallback(IntPtr hArcData, UNRARCallback callback, Int32 userData);
 
 		[DllImport("unrar.dll")]
 		private static extern void RARSetPassword(IntPtr hArcData,
-			[MarshalAs(UnmanagedType.LPStr)] string password);
+			[MarshalAs(UnmanagedType.LPStr)] String password);
 
 		// Unrar callback delegate signature
-		private delegate int UNRARCallback(uint msg, int UserData, IntPtr p1, int p2);
+		private delegate Int32 UNRARCallback(UInt32 msg, Int32 UserData, IntPtr p1, Int32 p2);
 
 		#endregion
 
@@ -305,14 +307,14 @@ namespace Rarlabs
 
 		#region Private fields
 
-		private string archivePathName=string.Empty;
+		private String archivePathName=String.Empty;
 		private IntPtr archiveHandle=new IntPtr(0);
 		private bool retrieveComment=true;
-		private string password=string.Empty;
-		private string comment=string.Empty;
+		private String password=String.Empty;
+		private String comment=String.Empty;
 		private ArchiveFlags archiveFlags=0;
 		private RARHeaderDataEx header=new RARHeaderDataEx();
-		private string destinationPath=string.Empty;
+		private String destinationPath=String.Empty;
 		private RARFileInfo currentFile=null;
 		private UNRARCallback callback=null;
 
@@ -325,7 +327,7 @@ namespace Rarlabs
 			this.callback=new UNRARCallback(RARCallback);
 		}
 
-		public Unrar(string archivePathName) : this()
+		public Unrar(String archivePathName) : this()
 		{
 			this.archivePathName=archivePathName;
 		}
@@ -355,7 +357,7 @@ namespace Rarlabs
 		/// <summary>
 		/// Path and name of RAR archive to open
 		/// </summary>
-		public string ArchivePathName
+		public String ArchivePathName
 		{
 			get
 			{
@@ -370,7 +372,7 @@ namespace Rarlabs
 		/// <summary>
 		/// Archive comment 
 		/// </summary>
-		public string Comment
+		public String Comment
 		{
 			get
 			{
@@ -392,7 +394,7 @@ namespace Rarlabs
 		/// <summary>
 		/// Default destination path for extraction
 		/// </summary>
-		public string DestinationPath
+		public String DestinationPath
 		{
 			get
 			{
@@ -407,7 +409,7 @@ namespace Rarlabs
 		/// <summary>
 		/// Password for opening encrypted archive
 		/// </summary>
-		public string Password
+		public String Password
 		{
 			get
 			{
@@ -436,7 +438,7 @@ namespace Rarlabs
 				return;
 
 			// Close archive
-			int result=Unrar.RARCloseArchive(this.archiveHandle);
+			Int32 result=Unrar.RARCloseArchive(this.archiveHandle);
 
 			// Check result
 			if(result!=0)
@@ -475,7 +477,7 @@ namespace Rarlabs
 		/// </summary>
 		/// <param name="archivePathName">Path of archive to open</param>
 		/// <param name="openMode">Mode in which to open archive</param>
-		public void Open(string archivePathName, OpenMode openMode)
+		public void Open(String archivePathName, OpenMode openMode)
 		{
 			IntPtr handle=IntPtr.Zero;
 
@@ -489,10 +491,10 @@ namespace Rarlabs
 			openStruct.Initialize();
 			openStruct.ArcName=this.archivePathName+"\0";
 			openStruct.ArcNameW=this.archivePathName+"\0";
-			openStruct.OpenMode=(uint)openMode;
+			openStruct.OpenMode=(UInt32)openMode;
 			if(this.retrieveComment)
 			{
-				openStruct.CmtBuf=new string((char)0,65536);
+				openStruct.CmtBuf=new String((char)0,65536);
 				openStruct.CmtBufSize=65536;
 			}
 			else
@@ -558,7 +560,7 @@ namespace Rarlabs
 
 			// Read next entry
 			currentFile=null;
-			int result=Unrar.RARReadHeaderEx(this.archiveHandle, ref this.header);
+			Int32 result=Unrar.RARReadHeaderEx(this.archiveHandle, ref this.header);
 
 			// Check for error or end of archive
 			if((RarError)result==RarError.EndOfArchive)
@@ -584,12 +586,12 @@ namespace Rarlabs
 					currentFile.UnpackedSize=(header.UnpSizeHigh * 0x100000000) + header.UnpSize;
 				else
 					currentFile.UnpackedSize=header.UnpSize;
-				currentFile.HostOS=(int)header.HostOS;
+				currentFile.HostOS=(Int32)header.HostOS;
 				currentFile.FileCRC=header.FileCRC;
 				currentFile.FileTime=FromMSDOSTime(header.FileTime);
-				currentFile.VersionToUnpack=(int)header.UnpVer;
-				currentFile.Method=(int)header.Method;
-				currentFile.FileAttributes=(int)header.FileAttr;
+				currentFile.VersionToUnpack=(Int32)header.UnpVer;
+				currentFile.Method=(Int32)header.Method;
+				currentFile.FileAttributes=(Int32)header.FileAttr;
 				currentFile.BytesExtracted=0;
 				if((header.Flags & 0xE0) == 0xE0)
 					currentFile.IsDirectory=true;
@@ -604,7 +606,7 @@ namespace Rarlabs
 		/// Returns array of file names contained in archive
 		/// </summary>
 		/// <returns></returns>
-		public string[] ListFiles()
+		public String[] ListFiles()
 		{
 			ArrayList fileNames=new ArrayList();
 			while(this.ReadHeader())
@@ -613,7 +615,7 @@ namespace Rarlabs
 					fileNames.Add(currentFile.FileName);
 				this.Skip();
 			}
-			string[] files=new string[fileNames.Count];
+			String[] files=new String[fileNames.Count];
 			fileNames.CopyTo(files);
 			return files;
 		}
@@ -624,7 +626,7 @@ namespace Rarlabs
 		/// <returns></returns>
 		public void Skip()
 		{
-			int result=Unrar.RARProcessFile(this.archiveHandle, (int)Operation.Skip, string.Empty, string.Empty);
+			Int32 result=Unrar.RARProcessFile(this.archiveHandle, (Int32)Operation.Skip, String.Empty, String.Empty);
 
 			// Check result
 			if(result!=0)
@@ -639,7 +641,7 @@ namespace Rarlabs
 		/// <returns></returns>
 		public void Test()
 		{
-			int result=Unrar.RARProcessFile(this.archiveHandle, (int)Operation.Test, string.Empty, string.Empty);
+			Int32 result=Unrar.RARProcessFile(this.archiveHandle, (Int32)Operation.Test, String.Empty, String.Empty);
 
 			// Check result
 			if(result!=0)
@@ -654,7 +656,7 @@ namespace Rarlabs
 		/// <returns></returns>
 		public void Extract()
 		{
-			this.Extract(this.destinationPath, string.Empty);
+			this.Extract(this.destinationPath, String.Empty);
 		}
 
 		/// <summary>
@@ -662,9 +664,9 @@ namespace Rarlabs
 		/// </summary>
 		/// <param name="destinationName">Path and name of extracted file</param>
 		/// <returns></returns>
-		public void Extract(string destinationName)
+		public void Extract(String destinationName)
 		{
-			this.Extract(string.Empty, destinationName);
+			this.Extract(String.Empty, destinationName);
 		}
 
 		/// <summary>
@@ -672,18 +674,18 @@ namespace Rarlabs
 		/// </summary>
 		/// <param name="destinationPath"></param>
 		/// <returns></returns>
-		public void ExtractToDirectory(string destinationPath)
+		public void ExtractToDirectory(String destinationPath)
 		{
-			this.Extract(destinationPath, string.Empty);
+			this.Extract(destinationPath, String.Empty);
 		}
 
 		#endregion
 
 		#region Private Methods
 
-		private void Extract(string destinationPath, string destinationName)
+		private void Extract(String destinationPath, String destinationName)
 		{
-			int result=Unrar.RARProcessFile(this.archiveHandle, (int)Operation.Extract, destinationPath, destinationName);
+			Int32 result=Unrar.RARProcessFile(this.archiveHandle, (Int32)Operation.Extract, destinationPath, destinationName);
 
 			// Check result
 			if(result!=0)
@@ -692,14 +694,14 @@ namespace Rarlabs
 			}
 		}
 
-		private DateTime FromMSDOSTime(uint dosTime)
+		private DateTime FromMSDOSTime(UInt32 dosTime)
 		{
-			int day=0;
-			int month=0;
-			int year=0;
-			int second=0;
-			int hour=0;
-			int minute=0;
+			Int32 day=0;
+			Int32 month=0;
+			Int32 year=0;
+			Int32 second=0;
+			Int32 hour=0;
+			Int32 minute=0;
 			ushort hiWord;
 			ushort loWord;
 			hiWord=(ushort)((dosTime & 0xFFFF0000) >> 16);
@@ -713,7 +715,7 @@ namespace Rarlabs
 			return new DateTime(year, month, day, hour, minute, second);
 		}
 
-		private void ProcessFileError(int result)
+		private void ProcessFileError(Int32 result)
 		{
 			switch((RarError)result)
 			{
@@ -743,11 +745,11 @@ namespace Rarlabs
 			}
 		}
 
-		private int RARCallback(uint msg, int UserData, IntPtr p1, int p2)
+		private Int32 RARCallback(UInt32 msg, Int32 UserData, IntPtr p1, Int32 p2)
 		{
-			string volume=string.Empty;
-			string newVolume=string.Empty;
-			int result=-1;
+			String volume=String.Empty;
+			String newVolume=String.Empty;
+			Int32 result=-1;
 
 			switch((CallbackMessages)msg)
 			{
@@ -764,11 +766,11 @@ namespace Rarlabs
 						{
 							if(newVolume!=volume)
 							{
-								for(int i=0; i<newVolume.Length; i++)
+								for(Int32 i=0; i<newVolume.Length; i++)
 								{
-									Marshal.WriteByte(p1, i, (byte)newVolume[i]);
+									Marshal.WriteByte(p1, i, (Byte)newVolume[i]);
 								}
-								Marshal.WriteByte(p1, newVolume.Length, (byte)0);
+								Marshal.WriteByte(p1, newVolume.Length, (Byte)0);
 							}
 							result=1;
 						}
@@ -799,18 +801,18 @@ namespace Rarlabs
 			}
 		}
 
-		protected virtual int OnPasswordRequired(IntPtr p1, int p2)
+		protected virtual Int32 OnPasswordRequired(IntPtr p1, Int32 p2)
 		{
-			int result=-1;
+			Int32 result=-1;
 			if(this.PasswordRequired!=null)
 			{
 				PasswordRequiredEventArgs e=new PasswordRequiredEventArgs();
 				this.PasswordRequired(this, e);
 				if(e.ContinueOperation && e.Password.Length>0)
 				{
-					for(int i=0; (i<e.Password.Length) && (i<p2); i++)
-						Marshal.WriteByte(p1, i, (byte)e.Password[i]);
-					Marshal.WriteByte(p1, e.Password.Length, (byte)0);
+					for(Int32 i=0; (i<e.Password.Length) && (i<p2); i++)
+						Marshal.WriteByte(p1, i, (Byte)e.Password[i]);
+					Marshal.WriteByte(p1, e.Password.Length, (Byte)0);
 					result=1;
 				}
 			}
@@ -821,14 +823,14 @@ namespace Rarlabs
 			return result;
 		}
 
-		protected virtual int OnDataAvailable(IntPtr p1, int p2)
+		protected virtual Int32 OnDataAvailable(IntPtr p1, Int32 p2)
 		{
-			int result=1;
+			Int32 result=1;
 			if(this.currentFile!=null)
 				this.currentFile.BytesExtracted+=p2;
 			if(this.DataAvailable!=null)
 			{
-				byte[] data=new byte[p2];
+				Byte[] data=new Byte[p2];
 				Marshal.Copy(p1, data, 0, p2);
 				DataAvailableEventArgs e=new DataAvailableEventArgs(data);
 				this.DataAvailable(this, e);
@@ -849,9 +851,9 @@ namespace Rarlabs
 			return result;
 		}
 
-		protected virtual int OnNewVolume(string volume)
+		protected virtual Int32 OnNewVolume(String volume)
 		{
-			int result=1;
+			Int32 result=1;
 			if(this.NewVolume!=null)
 			{
 				NewVolumeEventArgs e=new NewVolumeEventArgs(volume);
@@ -862,9 +864,9 @@ namespace Rarlabs
 			return result;
 		}
 
-		protected virtual string OnMissingVolume(string volume)
+		protected virtual String OnMissingVolume(String volume)
 		{
-			string result=string.Empty;
+			String result=String.Empty;
 			if(this.MissingVolume!=null)
 			{
 				MissingVolumeEventArgs e=new MissingVolumeEventArgs(volume);
@@ -882,10 +884,10 @@ namespace Rarlabs
 
 	public class NewVolumeEventArgs
 	{
-		public string VolumeName;
+		public String VolumeName;
 		public bool ContinueOperation=true;
 
-		public NewVolumeEventArgs(string volumeName)
+		public NewVolumeEventArgs(String volumeName)
 		{
 			this.VolumeName=volumeName;
 		}
@@ -893,10 +895,10 @@ namespace Rarlabs
 
 	public class MissingVolumeEventArgs
 	{
-		public string VolumeName;
+		public String VolumeName;
 		public bool ContinueOperation=false;
 
-		public MissingVolumeEventArgs(string volumeName)
+		public MissingVolumeEventArgs(String volumeName)
 		{
 			this.VolumeName=volumeName;
 		}
@@ -904,10 +906,10 @@ namespace Rarlabs
 
 	public class DataAvailableEventArgs
 	{
-		public readonly byte[] Data;
+		public readonly Byte[] Data;
 		public bool ContinueOperation=true;
 
-		public DataAvailableEventArgs(byte[] data)
+		public DataAvailableEventArgs(Byte[] data)
 		{
 			this.Data=data;
 		}
@@ -915,7 +917,7 @@ namespace Rarlabs
 
 	public class PasswordRequiredEventArgs
 	{
-		public string Password=string.Empty;
+		public String Password=String.Empty;
 		public bool ContinueOperation=true;
 	}
 
@@ -930,7 +932,7 @@ namespace Rarlabs
 
 	public class ExtractionProgressEventArgs
 	{
-		public string FileName;
+		public String FileName;
 		public long   FileSize;
 		public long   BytesExtracted;
 		public double PercentComplete;
@@ -939,18 +941,18 @@ namespace Rarlabs
 
 	public class RARFileInfo
 	{
-		public string FileName;
+		public String FileName;
 		public bool		ContinuedFromPrevious=false;
 		public bool		ContinuedOnNext=false;
 		public bool		IsDirectory=false;
 		public long		PackedSize=0;
 		public long		UnpackedSize=0;
-		public int		HostOS=0;
+		public Int32		HostOS=0;
 		public long		FileCRC=0;
 		public				DateTime FileTime;
-		public int		VersionToUnpack=0;
-		public int		Method=0;
-		public int		FileAttributes=0;
+		public Int32		VersionToUnpack=0;
+		public Int32		Method=0;
+		public Int32		FileAttributes=0;
 		public long		BytesExtracted=0;
 
 		public double PercentComplete

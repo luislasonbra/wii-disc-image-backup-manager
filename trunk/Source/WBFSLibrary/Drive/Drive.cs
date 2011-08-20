@@ -139,17 +139,20 @@
 
 #endregion
 
-using WBFSLibrary.Devices;
-using WBFSLibrary.Drives;
 using WBFSLibrary.IO;
+using WBFSLibrary.IO.Drives;
 using WBFSLibrary.IO.FileSystems;
 using WBFSLibrary.IO.FileTypes;
 using WBFSLibrary.IO.FileOperations;
+using WBFSLibrary.IO.Partitions;
 using WBFSLibrary.IO.Streams;
 using WBFSLibrary.Plugins;
+using WBFSLibrary.Network;
+using WBFSLibrary.Network.Internet;
+using WBFSLibrary.Network.Local;
 using WBFSLibrary.Properties;
 
-namespace WBFSLibrary.Drives
+namespace WBFSLibrary.IO.Drives
 {
 
     public class Drive
