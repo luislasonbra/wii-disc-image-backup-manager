@@ -30,6 +30,18 @@ namespace WBFSManager
         {
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+			Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+			Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+			Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+			Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+			Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+			Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+			Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+			Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+			Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+			Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+			Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+			Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
 			this.telerikTheme1 = new Telerik.WinControls.Themes.TelerikTheme();
 			this.radMenuItem_File = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
@@ -70,14 +82,13 @@ namespace WBFSManager
 			this.splitPanel8 = new Telerik.WinControls.UI.SplitPanel();
 			this.ultraPictureBox5 = new Infragistics.Win.UltraWinEditors.UltraPictureBox();
 			this.splitPanel2 = new Telerik.WinControls.UI.SplitPanel();
-			this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
-			this.radPageViewPage_Folders = new Telerik.WinControls.UI.RadPageViewPage();
-			this.c1List1 = new C1.Win.C1List.C1List();
-			this.radMenu2 = new Telerik.WinControls.UI.RadMenu();
-			this.radMenuItem_Folders_Add = new Telerik.WinControls.UI.RadMenuItem();
+			this.radPageView = new Telerik.WinControls.UI.RadPageView();
+			this.radPage_Grid_0x00000000 = new Telerik.WinControls.UI.RadPageViewPage();
+			this.radMenu_Grid_0x00000000 = new Telerik.WinControls.UI.RadMenu();
+			this.Page_0x0000_AddMenu = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem_Folders_Add_Files = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem_Folders_Add_Folders = new Telerik.WinControls.UI.RadMenuItem();
-			this.radMenuItem_Folders_Select = new Telerik.WinControls.UI.RadMenuItem();
+			this.Page_0x0000_SelectMenu = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem_Folders_Select_All = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem_Folders_Select_None = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuSeparatorItem_Folders_Select_1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
@@ -92,12 +103,12 @@ namespace WBFSManager
 			this.radMenuItem32 = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuSeparatorItem_Folders_Select_2 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
 			this.radMenuItem_Folders_Select_Invert = new Telerik.WinControls.UI.RadMenuItem();
-			this.radMenuItem_Folders_Edit = new Telerik.WinControls.UI.RadMenuItem();
+			this.Page_0x0000_EditMenu = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem18 = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem19 = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuSeparatorItem2 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
 			this.radMenuItem23 = new Telerik.WinControls.UI.RadMenuItem();
-			this.radMenuItem_Folders_Transfer = new Telerik.WinControls.UI.RadMenuItem();
+			this.Page_0x0000_TransferMenu = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem47 = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem48 = new Telerik.WinControls.UI.RadMenuItem();
@@ -105,44 +116,25 @@ namespace WBFSManager
 			this.radMenuItem50 = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem17 = new Telerik.WinControls.UI.RadMenuItem();
-			this.radMenuItem_Folders_Convert = new Telerik.WinControls.UI.RadMenuItem();
+			this.Page_0x0000_ConvertMenu = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem15 = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem16 = new Telerik.WinControls.UI.RadMenuItem();
-			this.radMenuItem_Folders_Tools = new Telerik.WinControls.UI.RadMenuItem();
+			this.Page_0x0000_ToolsMenu = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem20 = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem21 = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuSeparatorItem1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
 			this.radMenuItem22 = new Telerik.WinControls.UI.RadMenuItem();
 			this.radPageViewPage_FAT = new Telerik.WinControls.UI.RadPageViewPage();
-			this.radPageViewPage_WBFS = new Telerik.WinControls.UI.RadPageViewPage();
-			this.radPageViewPage_NTFS = new Telerik.WinControls.UI.RadPageViewPage();
+			this.radMenu2 = new Telerik.WinControls.UI.RadMenu();
 			this.radProgressBar1 = new Telerik.WinControls.UI.RadProgressBar();
 			this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
 			this.radLabelElement1 = new Telerik.WinControls.UI.RadLabelElement();
 			this.radToolStripSeparatorItem1 = new Telerik.WinControls.UI.RadToolStripSeparatorItem();
 			this.radLabelElement2 = new Telerik.WinControls.UI.RadLabelElement();
 			this.splitPanel3 = new Telerik.WinControls.UI.SplitPanel();
-			this.radScrollablePanel1 = new Telerik.WinControls.UI.RadScrollablePanel();
-			this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
-			this.radListControl2 = new Telerik.WinControls.UI.RadListControl();
-			this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
-			this.radProgressBar3 = new Telerik.WinControls.UI.RadProgressBar();
-			this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
-			this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
-			this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
-			this.radProgressBar5 = new Telerik.WinControls.UI.RadProgressBar();
-			this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-			this.radListControl1 = new Telerik.WinControls.UI.RadListControl();
-			this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-			this.radProgressBar2 = new Telerik.WinControls.UI.RadProgressBar();
-			this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
-			this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
-			this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-			this.radProgressBar4 = new Telerik.WinControls.UI.RadProgressBar();
-			this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
 			this.FolderFilesDataTable = new System.Data.DataTable();
 			this.radContextMenuManager1 = new Telerik.WinControls.UI.RadContextMenuManager();
-			this.radContextMenu_Files = new Telerik.WinControls.UI.RadContextMenu(this.components);
+			this.radContextMenu_Grid_0x00000000 = new Telerik.WinControls.UI.RadContextMenu(this.components);
 			this.radMenuItem_AddFiles = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
 			this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
@@ -154,10 +146,8 @@ namespace WBFSManager
 			this.radMenuItem_DefaultLanguage = new Telerik.WinControls.UI.RadMenuItem();
 			this.ultraMessageBoxManager1 = new Infragistics.Win.UltraMessageBox.UltraMessageBoxManager(this.components);
 			this.ultraToolTipManager1 = new Infragistics.Win.UltraWinToolTip.UltraToolTipManager(this.components);
-			this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
 			this.FAT32PartitionFilesDataTable = new System.Data.DataTable();
 			this.WBFSPartitionFilesDataTable = new System.Data.DataTable();
-			this.NTFSPartitionFilesDataTable = new System.Data.DataTable();
 			this.EXT2PartitionFilesDataTable = new System.Data.DataTable();
 			this.FilesSelectionDataColumn = new System.Data.DataColumn();
 			this.dataColumn2 = new System.Data.DataColumn();
@@ -183,6 +173,27 @@ namespace WBFSManager
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.Grid_0x00000000 = new Telerik.WinControls.UI.RadGridView();
+			this.gridViewTemplate1 = new Telerik.WinControls.UI.GridViewTemplate();
+			this.radMenuItem25 = new Telerik.WinControls.UI.RadMenuItem();
+			this.radMenuItem26 = new Telerik.WinControls.UI.RadMenuItem();
+			this.radMenuItem27 = new Telerik.WinControls.UI.RadMenuItem();
+			this.radMenuItem33 = new Telerik.WinControls.UI.RadMenuItem();
+			this.radMenuItem34 = new Telerik.WinControls.UI.RadMenuItem();
+			this.radMenuItem35 = new Telerik.WinControls.UI.RadMenuItem();
+			this.radMenuItem36 = new Telerik.WinControls.UI.RadMenuItem();
+			this.radMenuComboItem1 = new Telerik.WinControls.UI.RadMenuComboItem();
+			this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
+			this.ActionBox_Transfer = new Telerik.WinControls.UI.RadGroupBox();
+			this.radListControl1 = new Telerik.WinControls.UI.RadListControl();
+			this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+			this.radProgressBar2 = new Telerik.WinControls.UI.RadProgressBar();
+			this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
+			this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+			this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+			this.radProgressBar4 = new Telerik.WinControls.UI.RadProgressBar();
+			this.ActionsPanel_FlowManager = new Infragistics.Win.Misc.UltraFlowLayoutManager(this.components);
+			this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
 			((System.ComponentModel.ISupportInitialize)(this.radSplitContainer1)).BeginInit();
 			this.radSplitContainer1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitPanel1)).BeginInit();
@@ -201,29 +212,25 @@ namespace WBFSManager
 			this.splitPanel8.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitPanel2)).BeginInit();
 			this.splitPanel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
-			this.radPageView1.SuspendLayout();
-			this.radPageViewPage_Folders.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.c1List1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.radPageView)).BeginInit();
+			this.radPageView.SuspendLayout();
+			this.radPage_Grid_0x00000000.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.radMenu_Grid_0x00000000)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.radMenu2)).BeginInit();
+			this.radPageViewPage_FAT.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.radProgressBar1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.splitPanel3)).BeginInit();
 			this.splitPanel3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.radScrollablePanel1)).BeginInit();
-			this.radScrollablePanel1.PanelContainer.SuspendLayout();
-			this.radScrollablePanel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
-			this.radGroupBox2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.radListControl2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.radProgressBar3)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.radProgressBar5)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
-			this.radGroupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.FolderFilesDataTable)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.FAT32PartitionFilesDataTable)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.WBFSPartitionFilesDataTable)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.EXT2PartitionFilesDataTable)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.Grid_0x00000000)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.Grid_0x00000000.MasterTemplate)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.gridViewTemplate1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.ActionBox_Transfer)).BeginInit();
+			this.ActionBox_Transfer.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.radListControl1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.radProgressBar2)).BeginInit();
@@ -231,14 +238,9 @@ namespace WBFSManager
 			((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.radProgressBar4)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.FolderFilesDataTable)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.FAT32PartitionFilesDataTable)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.WBFSPartitionFilesDataTable)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.NTFSPartitionFilesDataTable)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.EXT2PartitionFilesDataTable)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.ActionsPanel_FlowManager)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// radMenuItem_File
@@ -416,7 +418,7 @@ namespace WBFSManager
 			this.radSplitContainer1.SplitterWidth = 2;
 			this.radSplitContainer1.TabIndex = 11;
 			this.radSplitContainer1.TabStop = false;
-			this.radSplitContainer1.Text = "radSplitContainer1";
+			this.radSplitContainer1.Text = "SplitContainer_Main";
 			this.radSplitContainer1.ThemeName = "Windows7";
 			// 
 			// splitPanel1
@@ -428,14 +430,14 @@ namespace WBFSManager
 			// 
 			// 
 			this.splitPanel1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-			this.splitPanel1.Size = new System.Drawing.Size(188, 531);
+			this.splitPanel1.Size = new System.Drawing.Size(185, 531);
 			this.splitPanel1.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(0.0956822F, 0F);
 			this.splitPanel1.SizeInfo.MinimumSize = new System.Drawing.Size(64, 128);
 			this.splitPanel1.SizeInfo.RelativeRatio = new System.Drawing.SizeF(0.15F, 1F);
 			this.splitPanel1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Relative;
 			this.splitPanel1.TabIndex = 0;
 			this.splitPanel1.TabStop = false;
-			this.splitPanel1.Text = "splitPanel1";
+			this.splitPanel1.Text = "SplitContainer_Covers";
 			this.splitPanel1.ThemeName = "Windows7";
 			// 
 			// radSplitContainer2
@@ -453,11 +455,11 @@ namespace WBFSManager
 			// 
 			// 
 			this.radSplitContainer2.RootElement.MinSize = new System.Drawing.Size(25, 25);
-			this.radSplitContainer2.Size = new System.Drawing.Size(188, 531);
+			this.radSplitContainer2.Size = new System.Drawing.Size(185, 531);
 			this.radSplitContainer2.SplitterWidth = 1;
 			this.radSplitContainer2.TabIndex = 0;
 			this.radSplitContainer2.TabStop = false;
-			this.radSplitContainer2.Text = "radSplitContainer2";
+			this.radSplitContainer2.Text = "SplitContainer_Covers";
 			// 
 			// splitPanel4
 			// 
@@ -468,13 +470,13 @@ namespace WBFSManager
 			// 
 			// 
 			this.splitPanel4.RootElement.MinSize = new System.Drawing.Size(25, 25);
-			this.splitPanel4.Size = new System.Drawing.Size(188, 118);
+			this.splitPanel4.Size = new System.Drawing.Size(185, 118);
 			this.splitPanel4.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(0F, 0.0004132202F);
 			this.splitPanel4.SizeInfo.RelativeRatio = new System.Drawing.SizeF(1F, 0.225F);
 			this.splitPanel4.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Relative;
 			this.splitPanel4.TabIndex = 0;
 			this.splitPanel4.TabStop = false;
-			this.splitPanel4.Text = "splitPanel4";
+			this.splitPanel4.Text = "Cover_Disc";
 			// 
 			// ultraPictureBox3
 			// 
@@ -484,7 +486,7 @@ namespace WBFSManager
 			this.ultraPictureBox3.Location = new System.Drawing.Point(0, 0);
 			this.ultraPictureBox3.Name = "ultraPictureBox3";
 			this.ultraPictureBox3.Padding = new System.Drawing.Size(8, 8);
-			this.ultraPictureBox3.Size = new System.Drawing.Size(188, 118);
+			this.ultraPictureBox3.Size = new System.Drawing.Size(185, 118);
 			this.ultraPictureBox3.TabIndex = 8;
 			// 
 			// splitPanel5
@@ -496,13 +498,13 @@ namespace WBFSManager
 			// 
 			// 
 			this.splitPanel5.RootElement.MinSize = new System.Drawing.Size(25, 25);
-			this.splitPanel5.Size = new System.Drawing.Size(188, 118);
+			this.splitPanel5.Size = new System.Drawing.Size(185, 118);
 			this.splitPanel5.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(0F, 0.0004132202F);
 			this.splitPanel5.SizeInfo.RelativeRatio = new System.Drawing.SizeF(1F, 0.225F);
 			this.splitPanel5.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Relative;
 			this.splitPanel5.TabIndex = 1;
 			this.splitPanel5.TabStop = false;
-			this.splitPanel5.Text = "splitPanel5";
+			this.splitPanel5.Text = "Cover_2D";
 			// 
 			// ultraPictureBox4
 			// 
@@ -512,7 +514,7 @@ namespace WBFSManager
 			this.ultraPictureBox4.Location = new System.Drawing.Point(0, 0);
 			this.ultraPictureBox4.Name = "ultraPictureBox4";
 			this.ultraPictureBox4.Padding = new System.Drawing.Size(8, 8);
-			this.ultraPictureBox4.Size = new System.Drawing.Size(188, 118);
+			this.ultraPictureBox4.Size = new System.Drawing.Size(185, 118);
 			this.ultraPictureBox4.TabIndex = 9;
 			// 
 			// splitPanel6
@@ -524,13 +526,13 @@ namespace WBFSManager
 			// 
 			// 
 			this.splitPanel6.RootElement.MinSize = new System.Drawing.Size(25, 25);
-			this.splitPanel6.Size = new System.Drawing.Size(188, 119);
+			this.splitPanel6.Size = new System.Drawing.Size(185, 119);
 			this.splitPanel6.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(0F, 0.0004132202F);
 			this.splitPanel6.SizeInfo.RelativeRatio = new System.Drawing.SizeF(1F, 0.225F);
 			this.splitPanel6.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Relative;
 			this.splitPanel6.TabIndex = 2;
 			this.splitPanel6.TabStop = false;
-			this.splitPanel6.Text = "splitPanel6";
+			this.splitPanel6.Text = "Cover_3D";
 			// 
 			// ultraPictureBox1
 			// 
@@ -540,7 +542,7 @@ namespace WBFSManager
 			this.ultraPictureBox1.Location = new System.Drawing.Point(0, 0);
 			this.ultraPictureBox1.Name = "ultraPictureBox1";
 			this.ultraPictureBox1.Padding = new System.Drawing.Size(8, 8);
-			this.ultraPictureBox1.Size = new System.Drawing.Size(188, 119);
+			this.ultraPictureBox1.Size = new System.Drawing.Size(185, 119);
 			this.ultraPictureBox1.TabIndex = 10;
 			// 
 			// splitPanel7
@@ -552,14 +554,14 @@ namespace WBFSManager
 			// 
 			// 
 			this.splitPanel7.RootElement.MinSize = new System.Drawing.Size(25, 25);
-			this.splitPanel7.Size = new System.Drawing.Size(188, 119);
+			this.splitPanel7.Size = new System.Drawing.Size(185, 119);
 			this.splitPanel7.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(0F, -0.01404959F);
 			this.splitPanel7.SizeInfo.RelativeRatio = new System.Drawing.SizeF(1F, 0.225F);
 			this.splitPanel7.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Relative;
 			this.splitPanel7.SizeInfo.SplitterCorrection = new System.Drawing.Size(0, -7);
 			this.splitPanel7.TabIndex = 3;
 			this.splitPanel7.TabStop = false;
-			this.splitPanel7.Text = "splitPanel7";
+			this.splitPanel7.Text = "Cover_Full";
 			// 
 			// ultraPictureBox2
 			// 
@@ -569,7 +571,7 @@ namespace WBFSManager
 			this.ultraPictureBox2.Location = new System.Drawing.Point(0, 0);
 			this.ultraPictureBox2.Name = "ultraPictureBox2";
 			this.ultraPictureBox2.Padding = new System.Drawing.Size(8, 8);
-			this.ultraPictureBox2.Size = new System.Drawing.Size(188, 119);
+			this.ultraPictureBox2.Size = new System.Drawing.Size(185, 119);
 			this.ultraPictureBox2.TabIndex = 11;
 			// 
 			// splitPanel8
@@ -581,13 +583,13 @@ namespace WBFSManager
 			// 
 			// 
 			this.splitPanel8.RootElement.MinSize = new System.Drawing.Size(25, 25);
-			this.splitPanel8.Size = new System.Drawing.Size(188, 53);
+			this.splitPanel8.Size = new System.Drawing.Size(185, 53);
 			this.splitPanel8.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(0F, 0.01280991F);
 			this.splitPanel8.SizeInfo.RelativeRatio = new System.Drawing.SizeF(1F, 0.1F);
 			this.splitPanel8.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Relative;
 			this.splitPanel8.TabIndex = 4;
 			this.splitPanel8.TabStop = false;
-			this.splitPanel8.Text = "splitPanel8";
+			this.splitPanel8.Text = "PoweredByWiiTDB";
 			// 
 			// ultraPictureBox5
 			// 
@@ -596,103 +598,95 @@ namespace WBFSManager
 			this.ultraPictureBox5.Image = ((object)(resources.GetObject("ultraPictureBox5.Image")));
 			this.ultraPictureBox5.Location = new System.Drawing.Point(0, 0);
 			this.ultraPictureBox5.Name = "ultraPictureBox5";
-			this.ultraPictureBox5.Size = new System.Drawing.Size(188, 53);
+			this.ultraPictureBox5.Size = new System.Drawing.Size(185, 53);
 			this.ultraPictureBox5.TabIndex = 12;
 			// 
 			// splitPanel2
 			// 
-			this.splitPanel2.Controls.Add(this.radPageView1);
+			this.splitPanel2.Controls.Add(this.radPageView);
 			this.splitPanel2.Controls.Add(this.radProgressBar1);
 			this.splitPanel2.Controls.Add(this.radStatusStrip1);
-			this.splitPanel2.Location = new System.Drawing.Point(190, 0);
+			this.splitPanel2.Location = new System.Drawing.Point(187, 0);
 			this.splitPanel2.Name = "splitPanel2";
 			// 
 			// 
 			// 
 			this.splitPanel2.RootElement.MinSize = new System.Drawing.Size(25, 25);
-			this.splitPanel2.Size = new System.Drawing.Size(826, 531);
+			this.splitPanel2.Size = new System.Drawing.Size(809, 531);
 			this.splitPanel2.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(0.05526769F, 0F);
 			this.splitPanel2.SizeInfo.MinimumSize = new System.Drawing.Size(128, 128);
-			this.splitPanel2.SizeInfo.RelativeRatio = new System.Drawing.SizeF(0.66F, 1F);
+			this.splitPanel2.SizeInfo.RelativeRatio = new System.Drawing.SizeF(0.6598695F, 1F);
 			this.splitPanel2.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Relative;
+			this.splitPanel2.SizeInfo.SplitterCorrection = new System.Drawing.Size(-20, 0);
 			this.splitPanel2.TabIndex = 1;
 			this.splitPanel2.TabStop = false;
+			this.splitPanel2.Text = "Grids";
 			this.splitPanel2.ThemeName = "Windows7";
 			// 
-			// radPageView1
+			// radPageView
 			// 
-			this.radPageView1.Controls.Add(this.radPageViewPage_Folders);
-			this.radPageView1.Controls.Add(this.radPageViewPage_FAT);
-			this.radPageView1.Controls.Add(this.radPageViewPage_WBFS);
-			this.radPageView1.Controls.Add(this.radPageViewPage_NTFS);
-			this.radPageView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.radPageView1.Location = new System.Drawing.Point(0, 0);
-			this.radPageView1.Name = "radPageView1";
-			this.radPageView1.SelectedPage = this.radPageViewPage_Folders;
-			this.radPageView1.Size = new System.Drawing.Size(826, 482);
-			this.radPageView1.TabIndex = 5;
-			this.radPageView1.ThemeName = "Windows7";
+			this.radPageView.Controls.Add(this.radPage_Grid_0x00000000);
+			this.radPageView.Controls.Add(this.radPageViewPage_FAT);
+			this.radPageView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.radPageView.Location = new System.Drawing.Point(0, 0);
+			this.radPageView.Name = "radPageView";
+			this.radPageView.SelectedPage = this.radPageViewPage_FAT;
+			this.radPageView.Size = new System.Drawing.Size(809, 482);
+			this.radPageView.TabIndex = 5;
+			this.radPageView.ThemeName = "Windows7";
+			((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.None;
+			((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView.GetChildAt(0))).ItemAlignment = Telerik.WinControls.UI.StripViewItemAlignment.Center;
+			((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.None;
+			((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView.GetChildAt(0))).StripAlignment = Telerik.WinControls.UI.StripViewAlignment.Bottom;
+			((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView.GetChildAt(0))).ItemDragMode = Telerik.WinControls.UI.PageViewItemDragMode.Preview;
+			((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView.GetChildAt(0))).ItemSpacing = -4;
+			((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView.GetChildAt(0))).ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
+			((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView.GetChildAt(0))).ItemContentOrientation = Telerik.WinControls.UI.PageViewContentOrientation.Horizontal;
 			// 
-			// radPageViewPage_Folders
+			// radPage_Grid_0x00000000
 			// 
-			this.radPageViewPage_Folders.Controls.Add(this.c1List1);
-			this.radPageViewPage_Folders.Controls.Add(this.radMenu2);
-			this.radPageViewPage_Folders.Location = new System.Drawing.Point(11, 37);
-			this.radPageViewPage_Folders.Name = "radPageViewPage_Folders";
-			this.radPageViewPage_Folders.Size = new System.Drawing.Size(804, 434);
-			this.radPageViewPage_Folders.Text = "Files & Folders";
+			this.radPage_Grid_0x00000000.Controls.Add(this.Grid_0x00000000);
+			this.radPage_Grid_0x00000000.Controls.Add(this.radMenu_Grid_0x00000000);
+			this.radPage_Grid_0x00000000.Location = new System.Drawing.Point(11, 11);
+			this.radPage_Grid_0x00000000.Name = "radPage_Grid_0x00000000";
+			this.radPage_Grid_0x00000000.Size = new System.Drawing.Size(787, 434);
+			this.radPage_Grid_0x00000000.Text = "Files & Folders";
 			// 
-			// c1List1
+			// radMenu_Grid_0x00000000
 			// 
-			this.c1List1.AddItemSeparator = ';';
-			this.c1List1.AlternatingRows = true;
-			this.c1List1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.c1List1.Caption = "";
-			this.c1List1.CaptionHeight = 0;
-			this.c1List1.ColumnCaptionHeight = 16;
-			this.c1List1.ColumnFooterHeight = 16;
-			this.c1List1.DeadAreaBackColor = System.Drawing.SystemColors.ControlDark;
-			this.c1List1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.c1List1.EmptyRows = true;
-			this.c1List1.ExtendRightColumn = true;
-			this.c1List1.Images.Add(((System.Drawing.Image)(resources.GetObject("c1List1.Images"))));
-			this.c1List1.ItemHeight = 15;
-			this.c1List1.Location = new System.Drawing.Point(0, 22);
-			this.c1List1.MatchEntryTimeout = ((long)(2000));
-			this.c1List1.Name = "c1List1";
-			this.c1List1.RowDivider.Style = C1.Win.C1List.LineStyleEnum.None;
-			this.c1List1.RowSubDividerColor = System.Drawing.Color.DarkGray;
-			this.c1List1.SelectionMode = C1.Win.C1List.SelectionModeEnum.CheckBox;
-			this.c1List1.Size = new System.Drawing.Size(804, 412);
-			this.c1List1.TabIndex = 3;
-			this.c1List1.VisualStyle = C1.Win.C1List.VisualStyle.Office2007Blue;
-			this.c1List1.PropBag = resources.GetString("c1List1.PropBag");
+			this.radMenu_Grid_0x00000000.BackColor = System.Drawing.Color.Transparent;
+			this.radMenu_Grid_0x00000000.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.Page_0x0000_AddMenu,
+            this.Page_0x0000_SelectMenu,
+            this.Page_0x0000_EditMenu,
+            this.Page_0x0000_TransferMenu,
+            this.Page_0x0000_ConvertMenu,
+            this.Page_0x0000_ToolsMenu});
+			this.radMenu_Grid_0x00000000.Location = new System.Drawing.Point(0, 0);
+			this.radMenu_Grid_0x00000000.Name = "radMenu_Grid_0x00000000";
 			// 
-			// radMenu2
 			// 
-			this.radMenu2.BackColor = System.Drawing.Color.Transparent;
-			this.radMenu2.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuItem_Folders_Add,
-            this.radMenuItem_Folders_Select,
-            this.radMenuItem_Folders_Edit,
-            this.radMenuItem_Folders_Transfer,
-            this.radMenuItem_Folders_Convert,
-            this.radMenuItem_Folders_Tools});
-			this.radMenu2.Location = new System.Drawing.Point(0, 0);
-			this.radMenu2.Name = "radMenu2";
-			this.radMenu2.Size = new System.Drawing.Size(804, 22);
-			this.radMenu2.TabIndex = 1;
-			this.radMenu2.Text = "radMenu2";
-			this.radMenu2.ThemeName = "Windows7";
-			((Telerik.WinControls.Primitives.FillPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.Color.Transparent;
 			// 
-			// radMenuItem_Folders_Add
+			this.radMenu_Grid_0x00000000.RootElement.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			this.radMenu_Grid_0x00000000.RootElement.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+			this.radMenu_Grid_0x00000000.RootElement.UseDefaultDisabledPaint = false;
+			this.radMenu_Grid_0x00000000.Size = new System.Drawing.Size(787, 22);
+			this.radMenu_Grid_0x00000000.TabIndex = 1;
+			this.radMenu_Grid_0x00000000.Text = "radMenu2";
+			this.radMenu_Grid_0x00000000.ThemeName = "Windows7";
+			((Telerik.WinControls.Primitives.BorderPrimitive)(this.radMenu_Grid_0x00000000.GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(1))).BottomWidth = 1F;
+			((Telerik.WinControls.Primitives.FillPrimitive)(this.radMenu_Grid_0x00000000.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.Color.Transparent;
+			((Telerik.WinControls.Primitives.BorderPrimitive)(this.radMenu_Grid_0x00000000.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2))).BottomWidth = 1F;
+			((Telerik.WinControls.Primitives.BorderPrimitive)(this.radMenu_Grid_0x00000000.GetChildAt(0).GetChildAt(3))).Width = 1F;
+			((Telerik.WinControls.Primitives.BorderPrimitive)(this.radMenu_Grid_0x00000000.GetChildAt(0).GetChildAt(3))).BottomWidth = 1F;
 			// 
-			this.radMenuItem_Folders_Add.Items.AddRange(new Telerik.WinControls.RadItem[] {
+			// Page_0x0000_AddMenu
+			// 
+			this.Page_0x0000_AddMenu.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem_Folders_Add_Files,
             this.radMenuItem_Folders_Add_Folders});
-			this.radMenuItem_Folders_Add.Name = "radMenuItem_Folders_Add";
-			this.radMenuItem_Folders_Add.Text = "Add";
+			this.Page_0x0000_AddMenu.Name = "Page_0x0000_AddMenu";
+			this.Page_0x0000_AddMenu.Text = "Add";
 			// 
 			// radMenuItem_Folders_Add_Files
 			// 
@@ -705,9 +699,9 @@ namespace WBFSManager
 			this.radMenuItem_Folders_Add_Folders.Text = "Folders...";
 			this.radMenuItem_Folders_Add_Folders.Click += new System.EventHandler(this.radMenuItem_Folders_Add_Folders_Click);
 			// 
-			// radMenuItem_Folders_Select
+			// Page_0x0000_SelectMenu
 			// 
-			this.radMenuItem_Folders_Select.Items.AddRange(new Telerik.WinControls.RadItem[] {
+			this.Page_0x0000_SelectMenu.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem_Folders_Select_All,
             this.radMenuItem_Folders_Select_None,
             this.radMenuSeparatorItem_Folders_Select_1,
@@ -715,9 +709,9 @@ namespace WBFSManager
             this.radMenuItem_Folders_Select_DiscStorageFormat,
             this.radMenuSeparatorItem_Folders_Select_2,
             this.radMenuItem_Folders_Select_Invert});
-			this.radMenuItem_Folders_Select.Name = "radMenuItem_Folders_Select";
-			this.radMenuItem_Folders_Select.Text = "Select";
-			this.radMenuItem_Folders_Select.Click += new System.EventHandler(this.radMenuItem1_Click);
+			this.Page_0x0000_SelectMenu.Name = "Page_0x0000_SelectMenu";
+			this.Page_0x0000_SelectMenu.Text = "Select";
+			this.Page_0x0000_SelectMenu.Click += new System.EventHandler(this.radMenuItem1_Click);
 			// 
 			// radMenuItem_Folders_Select_All
 			// 
@@ -800,15 +794,15 @@ namespace WBFSManager
 			this.radMenuItem_Folders_Select_Invert.Name = "radMenuItem_Folders_Select_Invert";
 			this.radMenuItem_Folders_Select_Invert.Text = "Invert";
 			// 
-			// radMenuItem_Folders_Edit
+			// Page_0x0000_EditMenu
 			// 
-			this.radMenuItem_Folders_Edit.Items.AddRange(new Telerik.WinControls.RadItem[] {
+			this.Page_0x0000_EditMenu.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem18,
             this.radMenuItem19,
             this.radMenuSeparatorItem2,
             this.radMenuItem23});
-			this.radMenuItem_Folders_Edit.Name = "radMenuItem_Folders_Edit";
-			this.radMenuItem_Folders_Edit.Text = "Edit";
+			this.Page_0x0000_EditMenu.Name = "Page_0x0000_EditMenu";
+			this.Page_0x0000_EditMenu.Text = "Edit";
 			// 
 			// radMenuItem18
 			// 
@@ -830,13 +824,13 @@ namespace WBFSManager
 			this.radMenuItem23.Name = "radMenuItem23";
 			this.radMenuItem23.Text = "radMenuItem23";
 			// 
-			// radMenuItem_Folders_Transfer
+			// Page_0x0000_TransferMenu
 			// 
-			this.radMenuItem_Folders_Transfer.Items.AddRange(new Telerik.WinControls.RadItem[] {
+			this.Page_0x0000_TransferMenu.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem1,
             this.radMenuItem5});
-			this.radMenuItem_Folders_Transfer.Name = "radMenuItem_Folders_Transfer";
-			this.radMenuItem_Folders_Transfer.Text = "Transfer";
+			this.Page_0x0000_TransferMenu.Name = "Page_0x0000_TransferMenu";
+			this.Page_0x0000_TransferMenu.Text = "Transfer";
 			// 
 			// radMenuItem1
 			// 
@@ -881,13 +875,13 @@ namespace WBFSManager
 			this.radMenuItem17.Name = "radMenuItem17";
 			this.radMenuItem17.Text = "Browse...";
 			// 
-			// radMenuItem_Folders_Convert
+			// Page_0x0000_ConvertMenu
 			// 
-			this.radMenuItem_Folders_Convert.Items.AddRange(new Telerik.WinControls.RadItem[] {
+			this.Page_0x0000_ConvertMenu.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem15,
             this.radMenuItem16});
-			this.radMenuItem_Folders_Convert.Name = "radMenuItem_Folders_Convert";
-			this.radMenuItem_Folders_Convert.Text = "Convert";
+			this.Page_0x0000_ConvertMenu.Name = "Page_0x0000_ConvertMenu";
+			this.Page_0x0000_ConvertMenu.Text = "Convert";
 			// 
 			// radMenuItem15
 			// 
@@ -899,15 +893,15 @@ namespace WBFSManager
 			this.radMenuItem16.Name = "radMenuItem16";
 			this.radMenuItem16.Text = "radMenuItem16";
 			// 
-			// radMenuItem_Folders_Tools
+			// Page_0x0000_ToolsMenu
 			// 
-			this.radMenuItem_Folders_Tools.Items.AddRange(new Telerik.WinControls.RadItem[] {
+			this.Page_0x0000_ToolsMenu.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem20,
             this.radMenuItem21,
             this.radMenuSeparatorItem1,
             this.radMenuItem22});
-			this.radMenuItem_Folders_Tools.Name = "radMenuItem_Folders_Tools";
-			this.radMenuItem_Folders_Tools.Text = "Tools";
+			this.Page_0x0000_ToolsMenu.Name = "Page_0x0000_ToolsMenu";
+			this.Page_0x0000_ToolsMenu.Text = "Tools";
 			// 
 			// radMenuItem20
 			// 
@@ -931,24 +925,66 @@ namespace WBFSManager
 			// 
 			// radPageViewPage_FAT
 			// 
-			this.radPageViewPage_FAT.Location = new System.Drawing.Point(5, 31);
+			// 
+			// radMenu2
+			// 
+			this.radMenu2.BackColor = System.Drawing.Color.Transparent;
+			this.radMenu2.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuComboItem1,
+            this.radMenuItem26,
+            this.radMenuItem27,
+            this.radMenuItem33,
+            this.radMenuItem34,
+            this.radMenuItem35,
+            this.radMenuItem36});
+			this.radMenu2.Location = new System.Drawing.Point(0, 0);
+			this.radMenu2.Name = "radMenu2";
+			// 
+			// 
+			// 
+			this.radMenu2.RootElement.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			this.radMenu2.RootElement.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+			this.radMenu2.RootElement.UseDefaultDisabledPaint = false;
+			this.radMenu2.Size = new System.Drawing.Size(787, 24);
+			this.radMenu2.TabIndex = 2;
+			this.radMenu2.Text = "radMenu2";
+			this.radMenu2.ThemeName = "Windows7";
+			((Telerik.WinControls.UI.RadMenuElement)(this.radMenu2.GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.UI.RadMenuItem)(this.radMenu2.GetChildAt(0).GetChildAt(0).GetChildAt(0))).Text = "Type here";
+			((Telerik.WinControls.UI.RadMenuItem)(this.radMenu2.GetChildAt(0).GetChildAt(0).GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.UI.RadMenuCheckmark)(this.radMenu2.GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.UI.RadMenuCheckmark)(this.radMenu2.GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0))).Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+			((Telerik.WinControls.Primitives.ImagePrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(3))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(2).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.ArrowPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(2).GetChildAt(2))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.ArrowPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(2).GetChildAt(2))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+			((Telerik.WinControls.Primitives.FillPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.Color.Transparent;
+			((Telerik.WinControls.UI.RadImageButtonElement)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.ImagePrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(1).GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(1).GetChildAt(1))).TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(1).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(1).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+			((Telerik.WinControls.Primitives.BorderPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2))).BottomWidth = 1F;
+			((Telerik.WinControls.Primitives.FocusPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(3))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.UI.RadImageButtonElement)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.ImagePrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(1))).TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+			((Telerik.WinControls.Primitives.FocusPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(3))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.UI.RadImageButtonElement)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(2))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.ImagePrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(2).GetChildAt(1).GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(2).GetChildAt(1).GetChildAt(1))).TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(2).GetChildAt(1).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(2).GetChildAt(1).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+			((Telerik.WinControls.Primitives.FocusPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(2).GetChildAt(2).GetChildAt(3))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.BorderPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(3))).Width = 1F;
+			((Telerik.WinControls.Primitives.BorderPrimitive)(this.radMenu2.GetChildAt(0).GetChildAt(3))).BottomWidth = 1F;
+			this.radPageViewPage_FAT.Controls.Add(this.radMenu2);
+			this.radPageViewPage_FAT.Location = new System.Drawing.Point(11, 11);
 			this.radPageViewPage_FAT.Name = "radPageViewPage_FAT";
-			this.radPageViewPage_FAT.Size = new System.Drawing.Size(750, 411);
+			this.radPageViewPage_FAT.Size = new System.Drawing.Size(787, 434);
 			this.radPageViewPage_FAT.Text = "FAT Partition";
-			// 
-			// radPageViewPage_WBFS
-			// 
-			this.radPageViewPage_WBFS.Location = new System.Drawing.Point(11, 37);
-			this.radPageViewPage_WBFS.Name = "radPageViewPage_WBFS";
-			this.radPageViewPage_WBFS.Size = new System.Drawing.Size(775, 558);
-			this.radPageViewPage_WBFS.Text = "WBFS Partition";
-			// 
-			// radPageViewPage_NTFS
-			// 
-			this.radPageViewPage_NTFS.Location = new System.Drawing.Point(5, 31);
-			this.radPageViewPage_NTFS.Name = "radPageViewPage_NTFS";
-			this.radPageViewPage_NTFS.Size = new System.Drawing.Size(750, 411);
-			this.radPageViewPage_NTFS.Text = "NTFS Partition";
 			// 
 			// radProgressBar1
 			// 
@@ -958,8 +994,13 @@ namespace WBFSManager
 			this.radProgressBar1.Font = new System.Drawing.Font("Kartika", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.radProgressBar1.Location = new System.Drawing.Point(0, 482);
 			this.radProgressBar1.Name = "radProgressBar1";
+			// 
+			// 
+			// 
+			this.radProgressBar1.RootElement.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			this.radProgressBar1.RootElement.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
 			this.radProgressBar1.SeparatorWidth = 10;
-			this.radProgressBar1.Size = new System.Drawing.Size(826, 22);
+			this.radProgressBar1.Size = new System.Drawing.Size(809, 22);
 			this.radProgressBar1.Step = 8;
 			this.radProgressBar1.StepWidth = 2;
 			this.radProgressBar1.TabIndex = 4;
@@ -981,7 +1022,12 @@ namespace WBFSManager
 			this.radStatusStrip1.LayoutStyle = Telerik.WinControls.UI.RadStatusBarLayoutStyle.Stack;
 			this.radStatusStrip1.Location = new System.Drawing.Point(0, 504);
 			this.radStatusStrip1.Name = "radStatusStrip1";
-			this.radStatusStrip1.Size = new System.Drawing.Size(826, 27);
+			// 
+			// 
+			// 
+			this.radStatusStrip1.RootElement.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			this.radStatusStrip1.RootElement.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+			this.radStatusStrip1.Size = new System.Drawing.Size(809, 27);
 			this.radStatusStrip1.SizingGrip = false;
 			this.radStatusStrip1.TabIndex = 3;
 			this.radStatusStrip1.TabStop = false;
@@ -1013,297 +1059,36 @@ namespace WBFSManager
 			// 
 			// splitPanel3
 			// 
-			this.splitPanel3.Controls.Add(this.radScrollablePanel1);
-			this.splitPanel3.Location = new System.Drawing.Point(1018, 0);
+			this.splitPanel3.AutoScroll = true;
+			this.splitPanel3.Controls.Add(this.ActionBox_Transfer);
+			this.splitPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.splitPanel3.Location = new System.Drawing.Point(998, 0);
 			this.splitPanel3.Name = "splitPanel3";
 			// 
 			// 
 			// 
 			this.splitPanel3.RootElement.MinSize = new System.Drawing.Size(25, 25);
-			this.splitPanel3.Size = new System.Drawing.Size(212, 531);
+			this.splitPanel3.Size = new System.Drawing.Size(232, 531);
 			this.splitPanel3.SizeInfo.AbsoluteSize = new System.Drawing.Size(128, 200);
 			this.splitPanel3.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(-0.1509499F, 0F);
 			this.splitPanel3.SizeInfo.MinimumSize = new System.Drawing.Size(64, 128);
-			this.splitPanel3.SizeInfo.RelativeRatio = new System.Drawing.SizeF(0.17F, 1F);
+			this.splitPanel3.SizeInfo.RelativeRatio = new System.Drawing.SizeF(0.1892333F, 1F);
 			this.splitPanel3.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Relative;
+			this.splitPanel3.SizeInfo.SplitterCorrection = new System.Drawing.Size(20, 0);
 			this.splitPanel3.TabIndex = 2;
 			this.splitPanel3.TabStop = false;
-			this.splitPanel3.Text = "splitPanel3";
+			this.splitPanel3.Text = "Actions";
 			this.splitPanel3.ThemeName = "Windows7";
 			// 
-			// radScrollablePanel1
+			// radContextMenu_Grid_0x00000000
 			// 
-			this.radScrollablePanel1.AutoScroll = true;
-			this.radScrollablePanel1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-			this.radScrollablePanel1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-			this.radScrollablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.radScrollablePanel1.Location = new System.Drawing.Point(0, 0);
-			this.radScrollablePanel1.Name = "radScrollablePanel1";
-			this.radScrollablePanel1.Padding = new System.Windows.Forms.Padding(1);
-			// 
-			// radScrollablePanel1.PanelContainer
-			// 
-			this.radScrollablePanel1.PanelContainer.AutoScroll = true;
-			this.radScrollablePanel1.PanelContainer.Controls.Add(this.radGroupBox2);
-			this.radScrollablePanel1.PanelContainer.Controls.Add(this.radGroupBox1);
-			this.radScrollablePanel1.PanelContainer.Controls.Add(this.radLabel5);
-			this.radScrollablePanel1.PanelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.radScrollablePanel1.PanelContainer.Location = new System.Drawing.Point(1, 1);
-			this.radScrollablePanel1.PanelContainer.Name = "PanelContainer";
-			this.radScrollablePanel1.PanelContainer.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
-			this.radScrollablePanel1.PanelContainer.Size = new System.Drawing.Size(210, 529);
-			this.radScrollablePanel1.PanelContainer.TabIndex = 0;
-			// 
-			// 
-			// 
-			this.radScrollablePanel1.RootElement.Padding = new System.Windows.Forms.Padding(1);
-			this.radScrollablePanel1.Size = new System.Drawing.Size(212, 531);
-			this.radScrollablePanel1.TabIndex = 0;
-			this.radScrollablePanel1.Text = "radScrollablePanel1";
-			this.radScrollablePanel1.ThemeName = "Windows7";
-			// 
-			// radGroupBox2
-			// 
-			this.radGroupBox2.Controls.Add(this.radListControl2);
-			this.radGroupBox2.Controls.Add(this.radLabel6);
-			this.radGroupBox2.Controls.Add(this.radProgressBar3);
-			this.radGroupBox2.Controls.Add(this.radLabel7);
-			this.radGroupBox2.Controls.Add(this.radLabel8);
-			this.radGroupBox2.Controls.Add(this.radLabel9);
-			this.radGroupBox2.Controls.Add(this.radProgressBar5);
-			this.radGroupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radGroupBox2.FooterImageIndex = -1;
-			this.radGroupBox2.FooterImageKey = "";
-			this.radGroupBox2.HeaderImageIndex = -1;
-			this.radGroupBox2.HeaderImageKey = "";
-			this.radGroupBox2.HeaderMargin = new System.Windows.Forms.Padding(0);
-			this.radGroupBox2.HeaderText = "Search";
-			this.radGroupBox2.ImageScalingSize = new System.Drawing.Size(1, 1);
-			this.radGroupBox2.Location = new System.Drawing.Point(8, 170);
-			this.radGroupBox2.MaximumSize = new System.Drawing.Size(512, 512);
-			this.radGroupBox2.MinimumSize = new System.Drawing.Size(64, 160);
-			this.radGroupBox2.Name = "radGroupBox2";
-			this.radGroupBox2.Padding = new System.Windows.Forms.Padding(10, 28, 10, 8);
-			// 
-			// 
-			// 
-			this.radGroupBox2.RootElement.MaxSize = new System.Drawing.Size(512, 512);
-			this.radGroupBox2.RootElement.MinSize = new System.Drawing.Size(64, 160);
-			this.radGroupBox2.RootElement.Padding = new System.Windows.Forms.Padding(10, 28, 10, 8);
-			this.radGroupBox2.Size = new System.Drawing.Size(194, 160);
-			this.radGroupBox2.TabIndex = 21;
-			this.radGroupBox2.Text = "Search";
-			this.radGroupBox2.ThemeName = "Windows7";
-			// 
-			// radListControl2
-			// 
-			this.radListControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.radListControl2.AutoSize = true;
-			this.radListControl2.CaseSensitiveSort = true;
-			this.radListControl2.Location = new System.Drawing.Point(10, 106);
-			this.radListControl2.Name = "radListControl2";
-			this.radListControl2.Size = new System.Drawing.Size(174, 43);
-			this.radListControl2.TabIndex = 17;
-			this.radListControl2.Text = "radListControl2";
-			// 
-			// radLabel6
-			// 
-			this.radLabel6.AutoSize = false;
-			this.radLabel6.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radLabel6.Location = new System.Drawing.Point(10, 98);
-			this.radLabel6.Name = "radLabel6";
-			this.radLabel6.Size = new System.Drawing.Size(174, 8);
-			this.radLabel6.TabIndex = 16;
-			// 
-			// radProgressBar3
-			// 
-			this.radProgressBar3.Dash = false;
-			this.radProgressBar3.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radProgressBar3.Location = new System.Drawing.Point(10, 79);
-			this.radProgressBar3.Name = "radProgressBar3";
-			this.radProgressBar3.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
-			// 
-			// 
-			// 
-			this.radProgressBar3.RootElement.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
-			this.radProgressBar3.Size = new System.Drawing.Size(174, 19);
-			this.radProgressBar3.TabIndex = 15;
-			this.radProgressBar3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// radLabel7
-			// 
-			this.radLabel7.AutoSize = false;
-			this.radLabel7.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radLabel7.Location = new System.Drawing.Point(10, 71);
-			this.radLabel7.Name = "radLabel7";
-			this.radLabel7.Size = new System.Drawing.Size(174, 8);
-			this.radLabel7.TabIndex = 14;
-			// 
-			// radLabel8
-			// 
-			this.radLabel8.AutoSize = false;
-			this.radLabel8.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radLabel8.Location = new System.Drawing.Point(10, 55);
-			this.radLabel8.Name = "radLabel8";
-			this.radLabel8.Size = new System.Drawing.Size(174, 16);
-			this.radLabel8.TabIndex = 10;
-			this.radLabel8.Text = "Ready";
-			// 
-			// radLabel9
-			// 
-			this.radLabel9.AutoSize = false;
-			this.radLabel9.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radLabel9.Location = new System.Drawing.Point(10, 47);
-			this.radLabel9.Name = "radLabel9";
-			this.radLabel9.Size = new System.Drawing.Size(174, 8);
-			this.radLabel9.TabIndex = 7;
-			// 
-			// radProgressBar5
-			// 
-			this.radProgressBar5.Dash = false;
-			this.radProgressBar5.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radProgressBar5.Location = new System.Drawing.Point(10, 28);
-			this.radProgressBar5.Name = "radProgressBar5";
-			this.radProgressBar5.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
-			// 
-			// 
-			// 
-			this.radProgressBar5.RootElement.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
-			this.radProgressBar5.Size = new System.Drawing.Size(174, 19);
-			this.radProgressBar5.TabIndex = 5;
-			this.radProgressBar5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// radGroupBox1
-			// 
-			this.radGroupBox1.Controls.Add(this.radListControl1);
-			this.radGroupBox1.Controls.Add(this.radLabel4);
-			this.radGroupBox1.Controls.Add(this.radProgressBar2);
-			this.radGroupBox1.Controls.Add(this.radLabel3);
-			this.radGroupBox1.Controls.Add(this.radLabel2);
-			this.radGroupBox1.Controls.Add(this.radLabel1);
-			this.radGroupBox1.Controls.Add(this.radProgressBar4);
-			this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radGroupBox1.FooterImageIndex = -1;
-			this.radGroupBox1.FooterImageKey = "";
-			this.radGroupBox1.HeaderImageIndex = -1;
-			this.radGroupBox1.HeaderImageKey = "";
-			this.radGroupBox1.HeaderMargin = new System.Windows.Forms.Padding(0);
-			this.radGroupBox1.HeaderText = "Transfer";
-			this.radGroupBox1.ImageScalingSize = new System.Drawing.Size(1, 1);
-			this.radGroupBox1.Location = new System.Drawing.Point(8, 10);
-			this.radGroupBox1.MaximumSize = new System.Drawing.Size(512, 512);
-			this.radGroupBox1.MinimumSize = new System.Drawing.Size(64, 160);
-			this.radGroupBox1.Name = "radGroupBox1";
-			this.radGroupBox1.Padding = new System.Windows.Forms.Padding(10, 28, 10, 8);
-			// 
-			// 
-			// 
-			this.radGroupBox1.RootElement.MaxSize = new System.Drawing.Size(512, 512);
-			this.radGroupBox1.RootElement.MinSize = new System.Drawing.Size(64, 160);
-			this.radGroupBox1.RootElement.Padding = new System.Windows.Forms.Padding(10, 28, 10, 8);
-			this.radGroupBox1.Size = new System.Drawing.Size(194, 160);
-			this.radGroupBox1.TabIndex = 20;
-			this.radGroupBox1.Text = "Transfer";
-			this.radGroupBox1.ThemeName = "Windows7";
-			// 
-			// radListControl1
-			// 
-			this.radListControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.radListControl1.CaseSensitiveSort = true;
-			this.radListControl1.Location = new System.Drawing.Point(10, 106);
-			this.radListControl1.Name = "radListControl1";
-			this.radListControl1.Size = new System.Drawing.Size(174, 43);
-			this.radListControl1.TabIndex = 17;
-			this.radListControl1.Text = "radListControl1";
-			// 
-			// radLabel4
-			// 
-			this.radLabel4.AutoSize = false;
-			this.radLabel4.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radLabel4.Location = new System.Drawing.Point(10, 98);
-			this.radLabel4.Name = "radLabel4";
-			this.radLabel4.Size = new System.Drawing.Size(174, 8);
-			this.radLabel4.TabIndex = 16;
-			// 
-			// radProgressBar2
-			// 
-			this.radProgressBar2.Dash = false;
-			this.radProgressBar2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radProgressBar2.Location = new System.Drawing.Point(10, 79);
-			this.radProgressBar2.Name = "radProgressBar2";
-			this.radProgressBar2.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
-			// 
-			// 
-			// 
-			this.radProgressBar2.RootElement.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
-			this.radProgressBar2.Size = new System.Drawing.Size(174, 19);
-			this.radProgressBar2.TabIndex = 15;
-			this.radProgressBar2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// radLabel3
-			// 
-			this.radLabel3.AutoSize = false;
-			this.radLabel3.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radLabel3.Location = new System.Drawing.Point(10, 71);
-			this.radLabel3.Name = "radLabel3";
-			this.radLabel3.Size = new System.Drawing.Size(174, 8);
-			this.radLabel3.TabIndex = 14;
-			// 
-			// radLabel2
-			// 
-			this.radLabel2.AutoSize = false;
-			this.radLabel2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radLabel2.Location = new System.Drawing.Point(10, 55);
-			this.radLabel2.Name = "radLabel2";
-			this.radLabel2.Size = new System.Drawing.Size(174, 16);
-			this.radLabel2.TabIndex = 10;
-			this.radLabel2.Text = "Ready";
-			// 
-			// radLabel1
-			// 
-			this.radLabel1.AutoSize = false;
-			this.radLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radLabel1.Location = new System.Drawing.Point(10, 47);
-			this.radLabel1.Name = "radLabel1";
-			this.radLabel1.Size = new System.Drawing.Size(174, 8);
-			this.radLabel1.TabIndex = 7;
-			// 
-			// radProgressBar4
-			// 
-			this.radProgressBar4.Dash = false;
-			this.radProgressBar4.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radProgressBar4.Location = new System.Drawing.Point(10, 28);
-			this.radProgressBar4.Name = "radProgressBar4";
-			this.radProgressBar4.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
-			// 
-			// 
-			// 
-			this.radProgressBar4.RootElement.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
-			this.radProgressBar4.Size = new System.Drawing.Size(174, 19);
-			this.radProgressBar4.TabIndex = 5;
-			this.radProgressBar4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// radLabel5
-			// 
-			this.radLabel5.AutoSize = false;
-			this.radLabel5.Dock = System.Windows.Forms.DockStyle.Top;
-			this.radLabel5.Location = new System.Drawing.Point(8, 2);
-			this.radLabel5.Name = "radLabel5";
-			this.radLabel5.Size = new System.Drawing.Size(194, 8);
-			this.radLabel5.TabIndex = 19;
-			// 
-			// radContextMenu_Files
-			// 
-			this.radContextMenu_Files.Items.AddRange(new Telerik.WinControls.RadItem[] {
+			this.radContextMenu_Grid_0x00000000.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem_AddFiles,
             this.radMenuItem2,
             this.radMenuItem3,
-            this.radMenuItem4});
-			this.radContextMenu_Files.ThemeName = "Windows7";
+            this.radMenuItem4,
+            this.radMenuItem25});
+			this.radContextMenu_Grid_0x00000000.ThemeName = "Windows7";
 			// 
 			// radMenuItem_AddFiles
 			// 
@@ -1363,6 +1148,438 @@ namespace WBFSManager
 			// 
 			this.ultraToolTipManager1.ContainingControl = this;
 			// 
+			// openFileDialog1
+			// 
+			this.openFileDialog1.FileName = "openFileDialog1";
+			// 
+			// Grid_0x00000000
+			// 
+			this.Grid_0x00000000.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
+			this.Grid_0x00000000.BeginEditMode = Telerik.WinControls.RadGridViewBeginEditMode.BeginEditProgrammatically;
+			this.Grid_0x00000000.Cursor = System.Windows.Forms.Cursors.Default;
+			this.Grid_0x00000000.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.Grid_0x00000000.EnableCustomFiltering = true;
+			this.Grid_0x00000000.EnableCustomGrouping = true;
+			this.Grid_0x00000000.EnableCustomSorting = true;
+			this.Grid_0x00000000.EnableFastScrolling = true;
+			this.Grid_0x00000000.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+			this.Grid_0x00000000.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.Grid_0x00000000.GroupExpandAnimationType = Telerik.WinControls.UI.GridExpandAnimationType.Accordion;
+			this.Grid_0x00000000.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.Grid_0x00000000.Location = new System.Drawing.Point(0, 22);
+			// 
+			// Grid_0x00000000
+			// 
+			this.Grid_0x00000000.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
+			this.Grid_0x00000000.MasterTemplate.AllowAddNewRow = false;
+			this.Grid_0x00000000.MasterTemplate.AllowDeleteRow = false;
+			this.Grid_0x00000000.MasterTemplate.AllowDragToGroup = false;
+			this.Grid_0x00000000.MasterTemplate.AllowEditRow = false;
+			this.Grid_0x00000000.MasterTemplate.AllowNaturalSort = true;
+			this.Grid_0x00000000.MasterTemplate.AllowRowResize = false;
+			this.Grid_0x00000000.MasterTemplate.AutoExpandGroups = true;
+			this.Grid_0x00000000.MasterTemplate.AutoGenerateColumns = false;
+			this.Grid_0x00000000.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+			this.Grid_0x00000000.MasterTemplate.CaseSensitive = true;
+			this.Grid_0x00000000.MasterTemplate.ChildViewTabsPosition = Telerik.WinControls.UI.TabPositions.Left;
+			gridViewCheckBoxColumn1.AllowGroup = false;
+			gridViewCheckBoxColumn1.AllowResize = false;
+			gridViewCheckBoxColumn1.FieldName = "selection";
+			gridViewCheckBoxColumn1.FormatString = "";
+			gridViewCheckBoxColumn1.MinWidth = 32;
+			gridViewCheckBoxColumn1.Name = "Grid_0x00000000_Selection";
+			gridViewCheckBoxColumn1.ReadOnly = true;
+			gridViewCheckBoxColumn1.Width = 32;
+			gridViewTextBoxColumn1.AllowGroup = false;
+			gridViewTextBoxColumn1.FieldName = "game_id";
+			gridViewTextBoxColumn1.FormatString = "";
+			gridViewTextBoxColumn1.HeaderText = "Game ID";
+			gridViewTextBoxColumn1.MinWidth = 32;
+			gridViewTextBoxColumn1.Name = "Grid_0x00000000_GameID";
+			gridViewTextBoxColumn1.ReadOnly = true;
+			gridViewTextBoxColumn1.Width = 68;
+			gridViewTextBoxColumn2.AllowGroup = false;
+			gridViewTextBoxColumn2.FieldName = "game_title";
+			gridViewTextBoxColumn2.FormatString = "";
+			gridViewTextBoxColumn2.HeaderText = "Game Title";
+			gridViewTextBoxColumn2.MinWidth = 64;
+			gridViewTextBoxColumn2.Name = "Grid_0x00000000_GameTitle";
+			gridViewTextBoxColumn2.ReadOnly = true;
+			gridViewTextBoxColumn2.Width = 87;
+			gridViewDecimalColumn1.AllowGroup = false;
+			gridViewDecimalColumn1.FormatString = "";
+			gridViewDecimalColumn1.HeaderText = "Size";
+			gridViewDecimalColumn1.MinWidth = 32;
+			gridViewDecimalColumn1.Name = "Grid_0x00000000_Size";
+			gridViewDecimalColumn1.ReadOnly = true;
+			gridViewDecimalColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+			gridViewDecimalColumn1.Width = 43;
+			gridViewDecimalColumn2.AllowGroup = false;
+			gridViewDecimalColumn2.FormatString = "";
+			gridViewDecimalColumn2.HeaderText = "Game Index";
+			gridViewDecimalColumn2.MinWidth = 32;
+			gridViewDecimalColumn2.Name = "Grid_0x00000000_GameIndex";
+			gridViewDecimalColumn2.ReadOnly = true;
+			gridViewDecimalColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+			gridViewDecimalColumn2.Width = 92;
+			gridViewTextBoxColumn3.AllowGroup = false;
+			gridViewTextBoxColumn3.FormatString = "";
+			gridViewTextBoxColumn3.HeaderText = "Region";
+			gridViewTextBoxColumn3.MinWidth = 32;
+			gridViewTextBoxColumn3.Name = "Grid_0x00000000_Region";
+			gridViewTextBoxColumn3.ReadOnly = true;
+			gridViewTextBoxColumn3.Width = 58;
+			gridViewTextBoxColumn4.AllowGroup = false;
+			gridViewTextBoxColumn4.FormatString = "";
+			gridViewTextBoxColumn4.HeaderText = "Type";
+			gridViewTextBoxColumn4.MinWidth = 32;
+			gridViewTextBoxColumn4.Name = "Grid_0x00000000_Type";
+			gridViewTextBoxColumn4.ReadOnly = true;
+			gridViewTextBoxColumn4.Width = 43;
+			gridViewTextBoxColumn5.AllowGroup = false;
+			gridViewTextBoxColumn5.FormatString = "";
+			gridViewTextBoxColumn5.HeaderText = "Partitions";
+			gridViewTextBoxColumn5.MinWidth = 32;
+			gridViewTextBoxColumn5.Name = "Grid_0x00000000_Partitions";
+			gridViewTextBoxColumn5.ReadOnly = true;
+			gridViewTextBoxColumn5.Width = 74;
+			gridViewTextBoxColumn6.AllowGroup = false;
+			gridViewTextBoxColumn6.FormatString = "";
+			gridViewTextBoxColumn6.HeaderText = "Filename";
+			gridViewTextBoxColumn6.MinWidth = 64;
+			gridViewTextBoxColumn6.Name = "Grid_0x00000000_Filename";
+			gridViewTextBoxColumn6.ReadOnly = true;
+			gridViewTextBoxColumn6.Width = 87;
+			gridViewTextBoxColumn7.AllowGroup = false;
+			gridViewTextBoxColumn7.FormatString = "";
+			gridViewTextBoxColumn7.HeaderText = "File Access";
+			gridViewTextBoxColumn7.MinWidth = 32;
+			gridViewTextBoxColumn7.Name = "Grid_0x00000000_FileAccess";
+			gridViewTextBoxColumn7.ReadOnly = true;
+			gridViewTextBoxColumn7.Width = 84;
+			gridViewTextBoxColumn8.AllowGroup = false;
+			gridViewTextBoxColumn8.FormatString = "";
+			gridViewTextBoxColumn8.HeaderText = "IOS Version";
+			gridViewTextBoxColumn8.MinWidth = 32;
+			gridViewTextBoxColumn8.Name = "Grid_0x00000000_IOSVersion";
+			gridViewTextBoxColumn8.ReadOnly = true;
+			gridViewTextBoxColumn8.Width = 91;
+			this.Grid_0x00000000.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewCheckBoxColumn1,
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewDecimalColumn1,
+            gridViewDecimalColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8});
+			this.Grid_0x00000000.MasterTemplate.EnableAlternatingRowColor = true;
+			this.Grid_0x00000000.MasterTemplate.EnableCustomFiltering = true;
+			this.Grid_0x00000000.MasterTemplate.EnableCustomGrouping = true;
+			this.Grid_0x00000000.MasterTemplate.EnableCustomSorting = true;
+			this.Grid_0x00000000.MasterTemplate.EnableFiltering = true;
+			this.Grid_0x00000000.MasterTemplate.EnableGrouping = false;
+			this.Grid_0x00000000.MasterTemplate.HorizontalScrollState = Telerik.WinControls.UI.ScrollState.AlwaysShow;
+			this.Grid_0x00000000.MasterTemplate.MultiSelect = true;
+			this.Grid_0x00000000.MasterTemplate.ReadOnly = true;
+			this.Grid_0x00000000.MasterTemplate.SelectLastAddedRow = false;
+			this.Grid_0x00000000.MasterTemplate.ShowGroupedColumns = true;
+			this.Grid_0x00000000.MasterTemplate.ShowRowHeaderColumn = false;
+			sortDescriptor1.Direction = System.ComponentModel.ListSortDirection.Descending;
+			sortDescriptor1.PropertyName = "Grid_0x00000000_Selection";
+			this.Grid_0x00000000.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
+            sortDescriptor1});
+			this.Grid_0x00000000.MasterTemplate.Templates.AddRange(new Telerik.WinControls.UI.GridViewTemplate[] {
+            this.gridViewTemplate1});
+			this.Grid_0x00000000.MasterTemplate.VerticalScrollState = Telerik.WinControls.UI.ScrollState.AlwaysShow;
+			this.Grid_0x00000000.Name = "Grid_0x00000000";
+			this.Grid_0x00000000.ReadOnly = true;
+			this.Grid_0x00000000.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			// 
+			// 
+			// 
+			this.Grid_0x00000000.RootElement.AutoSize = false;
+			this.Grid_0x00000000.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.Auto;
+			this.Grid_0x00000000.RootElement.ShouldPaint = true;
+			this.Grid_0x00000000.RootElement.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			this.Grid_0x00000000.RootElement.TextOrientation = System.Windows.Forms.Orientation.Horizontal;
+			this.Grid_0x00000000.RootElement.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+			this.Grid_0x00000000.RootElement.UseDefaultDisabledPaint = false;
+			this.Grid_0x00000000.ShowGroupPanel = false;
+			this.Grid_0x00000000.Size = new System.Drawing.Size(787, 412);
+			this.Grid_0x00000000.TabIndex = 4;
+			this.Grid_0x00000000.Text = "Grid_0x00000000";
+			this.Grid_0x00000000.UseScrollbarsInHierarchy = true;
+			((Telerik.WinControls.UI.RadGridViewElement)(this.Grid_0x00000000.GetChildAt(0))).DrawBorder = false;
+			// 
+			// gridViewTemplate1
+			// 
+			this.gridViewTemplate1.EnableAlternatingRowColor = true;
+			// 
+			// radMenuItem25
+			// 
+			this.radMenuItem25.Name = "radMenuItem25";
+			this.radMenuItem25.Text = "radMenuItem25";
+			// 
+			// radMenuItem26
+			// 
+			this.radMenuItem26.Class = "";
+			this.radMenuItem26.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem_Folders_Add_Files,
+            this.radMenuItem_Folders_Add_Folders});
+			this.radMenuItem26.Name = "radMenuItem26";
+			this.radMenuItem26.Text = "Add";
+			((Telerik.WinControls.Primitives.BorderPrimitive)(this.radMenuItem26.GetChildAt(1))).BottomWidth = 1F;
+			// 
+			// radMenuItem27
+			// 
+			this.radMenuItem27.Class = "";
+			this.radMenuItem27.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem_Folders_Select_All,
+            this.radMenuItem_Folders_Select_None,
+            this.radMenuSeparatorItem_Folders_Select_1,
+            this.radMenuItem_Folders_Select_DiscNotInPartition,
+            this.radMenuItem_Folders_Select_DiscStorageFormat,
+            this.radMenuSeparatorItem_Folders_Select_2,
+            this.radMenuItem_Folders_Select_Invert});
+			this.radMenuItem27.Name = "radMenuItem27";
+			this.radMenuItem27.Text = "Select";
+			// 
+			// radMenuItem33
+			// 
+			this.radMenuItem33.Class = "";
+			this.radMenuItem33.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem18,
+            this.radMenuItem19,
+            this.radMenuSeparatorItem2,
+            this.radMenuItem23});
+			this.radMenuItem33.Name = "radMenuItem33";
+			this.radMenuItem33.Text = "Edit";
+			// 
+			// radMenuItem34
+			// 
+			this.radMenuItem34.Class = "";
+			this.radMenuItem34.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem1,
+            this.radMenuItem5});
+			this.radMenuItem34.Name = "radMenuItem34";
+			this.radMenuItem34.Text = "Transfer";
+			// 
+			// radMenuItem35
+			// 
+			this.radMenuItem35.Class = "";
+			this.radMenuItem35.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem15,
+            this.radMenuItem16});
+			this.radMenuItem35.Name = "radMenuItem35";
+			this.radMenuItem35.Text = "Convert";
+			// 
+			// radMenuItem36
+			// 
+			this.radMenuItem36.Class = "";
+			this.radMenuItem36.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem20,
+            this.radMenuItem21,
+            this.radMenuSeparatorItem1,
+            this.radMenuItem22});
+			this.radMenuItem36.Name = "radMenuItem36";
+			this.radMenuItem36.Text = "Tools";
+			// 
+			// radMenuComboItem1
+			// 
+			this.radMenuComboItem1.AutoSize = false;
+			this.radMenuComboItem1.Bounds = new System.Drawing.Rectangle(0, 0, 128, 24);
+			// 
+			// 
+			// 
+			this.radMenuComboItem1.ComboBoxElement.ArrowButtonMinWidth = 16;
+			this.radMenuComboItem1.ComboBoxElement.DefaultValue = null;
+			this.radMenuComboItem1.ComboBoxElement.EditorElement = this.radMenuComboItem1.ComboBoxElement;
+			this.radMenuComboItem1.ComboBoxElement.EditorManager = null;
+			this.radMenuComboItem1.ComboBoxElement.Focusable = true;
+			this.radMenuComboItem1.ComboBoxElement.MaxValue = null;
+			this.radMenuComboItem1.ComboBoxElement.MinValue = null;
+			this.radMenuComboItem1.ComboBoxElement.NullTextColor = System.Drawing.SystemColors.GrayText;
+			this.radMenuComboItem1.ComboBoxElement.NullValue = null;
+			this.radMenuComboItem1.ComboBoxElement.OwnerOffset = 0;
+			this.radMenuComboItem1.ComboBoxElement.Value = null;
+			this.radMenuComboItem1.DisplayStyle = Telerik.WinControls.DisplayStyle.Text;
+			this.radMenuComboItem1.Name = "radMenuComboItem1";
+			this.radMenuComboItem1.PopupDirection = Telerik.WinControls.UI.RadDirection.Down;
+			this.radMenuComboItem1.Text = "";
+			this.radMenuComboItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			// 
+			// ActionBox_Transfer
+			// 
+			this.ActionBox_Transfer.AutoSize = true;
+			this.ActionBox_Transfer.Controls.Add(this.radListControl1);
+			this.ActionBox_Transfer.Controls.Add(this.radLabel4);
+			this.ActionBox_Transfer.Controls.Add(this.radProgressBar2);
+			this.ActionBox_Transfer.Controls.Add(this.radLabel3);
+			this.ActionBox_Transfer.Controls.Add(this.radLabel2);
+			this.ActionBox_Transfer.Controls.Add(this.radLabel1);
+			this.ActionBox_Transfer.Controls.Add(this.radProgressBar4);
+			this.ActionBox_Transfer.FooterImageIndex = -1;
+			this.ActionBox_Transfer.FooterImageKey = "";
+			this.ActionBox_Transfer.HeaderAlignment = Telerik.WinControls.UI.HeaderAlignment.Center;
+			this.ActionBox_Transfer.HeaderImageIndex = -1;
+			this.ActionBox_Transfer.HeaderImageKey = "";
+			this.ActionBox_Transfer.HeaderMargin = new System.Windows.Forms.Padding(0, 0, 0, 16);
+			this.ActionBox_Transfer.HeaderText = "Transfer";
+			this.ActionBox_Transfer.HeaderTextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.ActionBox_Transfer.ImageScalingSize = new System.Drawing.Size(1, 1);
+			this.ActionBox_Transfer.Location = new System.Drawing.Point(18, 16);
+			this.ActionBox_Transfer.MaximumSize = new System.Drawing.Size(196, 196);
+			this.ActionsPanel_FlowManager.SetMinimumSize(this.ActionBox_Transfer, new System.Drawing.Size(196, 196));
+			this.ActionBox_Transfer.MinimumSize = new System.Drawing.Size(196, 196);
+			this.ActionBox_Transfer.Name = "ActionBox_Transfer";
+			this.ActionBox_Transfer.Padding = new System.Windows.Forms.Padding(10, 28, 10, 8);
+			this.ActionsPanel_FlowManager.SetPreferredSize(this.ActionBox_Transfer, new System.Drawing.Size(196, 196));
+			// 
+			// 
+			// 
+			this.ActionBox_Transfer.RootElement.MaxSize = new System.Drawing.Size(196, 196);
+			this.ActionBox_Transfer.RootElement.MinSize = new System.Drawing.Size(196, 196);
+			this.ActionBox_Transfer.RootElement.Padding = new System.Windows.Forms.Padding(10, 28, 10, 8);
+			this.ActionBox_Transfer.RootElement.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			this.ActionBox_Transfer.RootElement.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+			this.ActionBox_Transfer.Size = new System.Drawing.Size(196, 196);
+			this.ActionBox_Transfer.TabIndex = 25;
+			this.ActionBox_Transfer.Text = "Transfer";
+			this.ActionBox_Transfer.ThemeName = "Windows7";
+			this.ActionBox_Transfer.Visible = false;
+			((Telerik.WinControls.UI.RadGroupBoxElement)(this.ActionBox_Transfer.GetChildAt(0))).HeaderAlignment = Telerik.WinControls.UI.HeaderAlignment.Center;
+			((Telerik.WinControls.UI.RadGroupBoxElement)(this.ActionBox_Transfer.GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.UI.RadGroupBoxElement)(this.ActionBox_Transfer.GetChildAt(0))).Padding = new System.Windows.Forms.Padding(10, 28, 10, 8);
+			((Telerik.WinControls.UI.GroupBoxContent)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.UI.GroupBoxHeader)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(1))).GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Standard;
+			((Telerik.WinControls.UI.GroupBoxHeader)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.UI.GroupBoxHeader)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(1))).Margin = new System.Windows.Forms.Padding(0, 0, 0, 16);
+			((Telerik.WinControls.Primitives.ImagePrimitive)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(1).GetChildAt(2).GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.ImagePrimitive)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(1).GetChildAt(2).GetChildAt(0))).Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(1).GetChildAt(2).GetChildAt(1))).Text = "Transfer";
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(1).GetChildAt(2).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(1).GetChildAt(2).GetChildAt(1))).Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+			((Telerik.WinControls.UI.GroupBoxFooter)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(2))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.UI.GroupBoxFooter)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(2))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+			((Telerik.WinControls.Primitives.ImagePrimitive)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(2).GetChildAt(2).GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.ImagePrimitive)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(2).GetChildAt(2).GetChildAt(0))).Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(2).GetChildAt(2).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			((Telerik.WinControls.Primitives.TextPrimitive)(this.ActionBox_Transfer.GetChildAt(0).GetChildAt(2).GetChildAt(2).GetChildAt(1))).Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// radListControl1
+			// 
+			this.radListControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.radListControl1.CaseSensitiveSort = true;
+			this.radListControl1.Location = new System.Drawing.Point(10, 112);
+			this.radListControl1.Name = "radListControl1";
+			this.radListControl1.Size = new System.Drawing.Size(176, 74);
+			this.radListControl1.TabIndex = 17;
+			this.radListControl1.Text = "radListControl1";
+			this.radListControl1.ThemeName = "Windows7";
+			// 
+			// radLabel4
+			// 
+			this.radLabel4.AutoSize = false;
+			this.radLabel4.Dock = System.Windows.Forms.DockStyle.Top;
+			this.radLabel4.Location = new System.Drawing.Point(10, 98);
+			this.radLabel4.Name = "radLabel4";
+			this.radLabel4.Size = new System.Drawing.Size(176, 8);
+			this.radLabel4.TabIndex = 16;
+			// 
+			// radProgressBar2
+			// 
+			this.radProgressBar2.Dash = false;
+			this.radProgressBar2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.radProgressBar2.Location = new System.Drawing.Point(10, 79);
+			this.radProgressBar2.Name = "radProgressBar2";
+			this.radProgressBar2.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
+			// 
+			// 
+			// 
+			this.radProgressBar2.RootElement.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
+			this.radProgressBar2.SeparatorWidth = 0;
+			this.radProgressBar2.Size = new System.Drawing.Size(176, 19);
+			this.radProgressBar2.TabIndex = 15;
+			this.radProgressBar2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+			this.radProgressBar2.ThemeName = "Windows7";
+			this.radProgressBar2.Value1 = 66;
+			this.radProgressBar2.Value2 = 33;
+			// 
+			// radLabel3
+			// 
+			this.radLabel3.AutoSize = false;
+			this.radLabel3.Dock = System.Windows.Forms.DockStyle.Top;
+			this.radLabel3.Location = new System.Drawing.Point(10, 71);
+			this.radLabel3.Name = "radLabel3";
+			this.radLabel3.Size = new System.Drawing.Size(176, 8);
+			this.radLabel3.TabIndex = 14;
+			// 
+			// radLabel2
+			// 
+			this.radLabel2.AutoSize = false;
+			this.radLabel2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.radLabel2.Location = new System.Drawing.Point(10, 55);
+			this.radLabel2.Name = "radLabel2";
+			// 
+			// 
+			// 
+			this.radLabel2.RootElement.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			this.radLabel2.RootElement.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+			this.radLabel2.Size = new System.Drawing.Size(176, 16);
+			this.radLabel2.TabIndex = 10;
+			this.radLabel2.Text = "Ready";
+			this.radLabel2.ThemeName = "Windows7";
+			// 
+			// radLabel1
+			// 
+			this.radLabel1.AutoSize = false;
+			this.radLabel1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.radLabel1.Location = new System.Drawing.Point(10, 47);
+			this.radLabel1.Name = "radLabel1";
+			this.radLabel1.Size = new System.Drawing.Size(176, 8);
+			this.radLabel1.TabIndex = 7;
+			// 
+			// radProgressBar4
+			// 
+			this.radProgressBar4.Dash = false;
+			this.radProgressBar4.Dock = System.Windows.Forms.DockStyle.Top;
+			this.radProgressBar4.Location = new System.Drawing.Point(10, 28);
+			this.radProgressBar4.Name = "radProgressBar4";
+			this.radProgressBar4.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
+			// 
+			// 
+			// 
+			this.radProgressBar4.RootElement.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
+			this.radProgressBar4.SeparatorWidth = 0;
+			this.radProgressBar4.Size = new System.Drawing.Size(176, 19);
+			this.radProgressBar4.TabIndex = 5;
+			this.radProgressBar4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+			this.radProgressBar4.ThemeName = "Windows7";
+			this.radProgressBar4.Value1 = 33;
+			this.radProgressBar4.Value2 = 66;
+			// 
+			// ActionsPanel_FlowManager
+			// 
+			this.ActionsPanel_FlowManager.ContainerControl = this.splitPanel3;
+			this.ActionsPanel_FlowManager.HorizontalAlignment = Infragistics.Win.Layout.DefaultableFlowLayoutAlignment.Center;
+			this.ActionsPanel_FlowManager.HorizontalGap = 8;
+			this.ActionsPanel_FlowManager.Margins.Bottom = 8;
+			this.ActionsPanel_FlowManager.Margins.Top = 8;
+			this.ActionsPanel_FlowManager.VerticalAlignment = Infragistics.Win.Layout.DefaultableFlowLayoutAlignment.Near;
+			this.ActionsPanel_FlowManager.VerticalGap = 8;
+			// 
+			// MainWindow
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(1230, 553);
+			// 
 			// radMenu1
 			// 
 			this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
@@ -1374,22 +1591,20 @@ namespace WBFSManager
             this.radMenuItem_Help});
 			this.radMenu1.Location = new System.Drawing.Point(0, 0);
 			this.radMenu1.Name = "radMenu1";
+			// 
+			// 
+			// 
+			this.radMenu1.RootElement.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			this.radMenu1.RootElement.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+			this.radMenu1.RootElement.UseDefaultDisabledPaint = false;
 			this.radMenu1.Size = new System.Drawing.Size(1230, 22);
 			this.radMenu1.TabIndex = 10;
 			this.radMenu1.Text = "radMenu1";
 			this.radMenu1.ThemeName = "Windows7";
-			// 
-			// openFileDialog1
-			// 
-			this.openFileDialog1.FileName = "openFileDialog1";
-			// 
-			// MainWindow
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1230, 553);
+			((Telerik.WinControls.UI.RadMenuElement)(this.radMenu1.GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 			this.Controls.Add(this.radSplitContainer1);
 			this.Controls.Add(this.radMenu1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainWindow";
 			// 
 			// 
@@ -1417,32 +1632,28 @@ namespace WBFSManager
 			((System.ComponentModel.ISupportInitialize)(this.splitPanel2)).EndInit();
 			this.splitPanel2.ResumeLayout(false);
 			this.splitPanel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.radPageView1)).EndInit();
-			this.radPageView1.ResumeLayout(false);
-			this.radPageViewPage_Folders.ResumeLayout(false);
-			this.radPageViewPage_Folders.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.c1List1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.radPageView)).EndInit();
+			this.radPageView.ResumeLayout(false);
+			this.radPage_Grid_0x00000000.ResumeLayout(false);
+			this.radPage_Grid_0x00000000.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.radMenu_Grid_0x00000000)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.radMenu2)).EndInit();
+			this.radPageViewPage_FAT.ResumeLayout(false);
+			this.radPageViewPage_FAT.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.radProgressBar1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.splitPanel3)).EndInit();
 			this.splitPanel3.ResumeLayout(false);
-			this.radScrollablePanel1.PanelContainer.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.radScrollablePanel1)).EndInit();
-			this.radScrollablePanel1.ResumeLayout(false);
-			this.radScrollablePanel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).EndInit();
-			this.radGroupBox2.ResumeLayout(false);
-			this.radGroupBox2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.radListControl2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.radProgressBar3)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.radProgressBar5)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
-			this.radGroupBox1.ResumeLayout(false);
+			this.splitPanel3.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.FolderFilesDataTable)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.FAT32PartitionFilesDataTable)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.WBFSPartitionFilesDataTable)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.EXT2PartitionFilesDataTable)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.Grid_0x00000000.MasterTemplate)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.Grid_0x00000000)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.gridViewTemplate1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.ActionBox_Transfer)).EndInit();
+			this.ActionBox_Transfer.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.radListControl1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.radProgressBar2)).EndInit();
@@ -1450,13 +1661,8 @@ namespace WBFSManager
 			((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.radProgressBar4)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.FolderFilesDataTable)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.ActionsPanel_FlowManager)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.FAT32PartitionFilesDataTable)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.WBFSPartitionFilesDataTable)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.NTFSPartitionFilesDataTable)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.EXT2PartitionFilesDataTable)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -1496,12 +1702,9 @@ namespace WBFSManager
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem13;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem14;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Settings;
-		private Telerik.WinControls.UI.RadPageView radPageView1;
-		private Telerik.WinControls.UI.RadPageViewPage radPageViewPage_Folders;
+		private Telerik.WinControls.UI.RadPageView radPageView;
+		private Telerik.WinControls.UI.RadPageViewPage radPage_Grid_0x00000000;
 		private Telerik.WinControls.UI.RadPageViewPage radPageViewPage_FAT;
-		private Telerik.WinControls.UI.RadPageViewPage radPageViewPage_WBFS;
-		private Telerik.WinControls.UI.RadPageViewPage radPageViewPage_NTFS;
-		private Telerik.WinControls.UI.RadContextMenuManager radContextMenuManager1;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_BugReport;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_FeatureRequest;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Feedback;
@@ -1510,16 +1713,14 @@ namespace WBFSManager
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_EditLanguage;
 		private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem_Language1;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_DefaultLanguage;
-		private Telerik.WinControls.UI.RadMenu radMenu1;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Statistics;
-		private Telerik.WinControls.UI.RadContextMenu radContextMenu_Files;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_AddFiles;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem2;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem3;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem4;
 		private Infragistics.Win.UltraMessageBox.UltraMessageBoxManager ultraMessageBoxManager1;
 		private Infragistics.Win.UltraWinToolTip.UltraToolTipManager ultraToolTipManager1;
-		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Folders_Select;
+		private Telerik.WinControls.UI.RadMenuItem Page_0x0000_SelectMenu;
 		private System.Data.DataTable FolderFilesDataTable;
 		private System.Data.DataTable FAT32PartitionFilesDataTable;
 		private System.Data.DataColumn FilesSelectionDataColumn;
@@ -1530,7 +1731,6 @@ namespace WBFSManager
 		private System.Data.DataColumn dataColumn6;
 		private System.Data.DataColumn dataColumn7;
 		private System.Data.DataTable WBFSPartitionFilesDataTable;
-		private System.Data.DataTable NTFSPartitionFilesDataTable;
 		private System.Data.DataTable EXT2PartitionFilesDataTable;
 		private System.Data.DataColumn SelectionDataColumn;
 		private System.Data.DataColumn dataColumn8;
@@ -1546,17 +1746,7 @@ namespace WBFSManager
 		private Telerik.WinControls.Themes.Office2007SilverTheme office2007SilverTheme1;
 		private Telerik.WinControls.Themes.Office2007BlackTheme office2007BlackTheme1;
 		private Telerik.WinControls.Themes.BreezeTheme breezeTheme1;
-		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Folders_Edit;
-		private Telerik.WinControls.UI.RadScrollablePanel radScrollablePanel1;
-		private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
-		private Telerik.WinControls.UI.RadListControl radListControl1;
-		private Telerik.WinControls.UI.RadLabel radLabel4;
-		private Telerik.WinControls.UI.RadProgressBar radProgressBar2;
-		private Telerik.WinControls.UI.RadLabel radLabel3;
-		private Telerik.WinControls.UI.RadLabel radLabel2;
-		private Telerik.WinControls.UI.RadLabel radLabel1;
-		private Telerik.WinControls.UI.RadProgressBar radProgressBar4;
-		private Telerik.WinControls.UI.RadLabel radLabel5;
+		private Telerik.WinControls.UI.RadMenuItem Page_0x0000_EditMenu;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Folders_Select_All;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Folders_Select_None;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem18;
@@ -1572,20 +1762,11 @@ namespace WBFSManager
 		private Infragistics.Win.UltraWinEditors.UltraPictureBox ultraPictureBox2;
 		private Telerik.WinControls.UI.SplitPanel splitPanel8;
 		private Infragistics.Win.UltraWinEditors.UltraPictureBox ultraPictureBox5;
-		private Telerik.WinControls.UI.RadGroupBox radGroupBox2;
-		private Telerik.WinControls.UI.RadListControl radListControl2;
-		private Telerik.WinControls.UI.RadLabel radLabel6;
-		private Telerik.WinControls.UI.RadProgressBar radProgressBar3;
-		private Telerik.WinControls.UI.RadLabel radLabel7;
-		private Telerik.WinControls.UI.RadLabel radLabel8;
-		private Telerik.WinControls.UI.RadLabel radLabel9;
-		private Telerik.WinControls.UI.RadProgressBar radProgressBar5;
-		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Folders_Add;
-		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Folders_Transfer;
-		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Folders_Tools;
+		private Telerik.WinControls.UI.RadMenuItem Page_0x0000_AddMenu;
+		private Telerik.WinControls.UI.RadMenuItem Page_0x0000_TransferMenu;
+		private Telerik.WinControls.UI.RadMenuItem Page_0x0000_ToolsMenu;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Folders_Add_Files;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Folders_Add_Folders;
-		private C1.Win.C1List.C1List c1List1;
 		private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem_Folders_Select_1;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Folders_Select_DiscNotInPartition;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Folders_Select_DiscStorageFormat;
@@ -1608,15 +1789,39 @@ namespace WBFSManager
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem48;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem49;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem50;
-		private Telerik.WinControls.UI.RadMenuItem radMenuItem_Folders_Convert;
+		private Telerik.WinControls.UI.RadMenuItem Page_0x0000_ConvertMenu;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem17;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem15;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem16;
-		private Telerik.WinControls.UI.RadMenu radMenu2;
 		private Telerik.WinControls.UI.RadMenuItem radMenuItem24;
 		private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem3;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 		private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
+		internal Telerik.WinControls.UI.RadGridView Grid_0x00000000;
+		private Telerik.WinControls.UI.GridViewTemplate gridViewTemplate1;
+		internal Telerik.WinControls.UI.RadMenu radMenu_Grid_0x00000000;
+		private Telerik.WinControls.UI.RadMenu radMenu1;
+		internal Telerik.WinControls.UI.RadContextMenuManager radContextMenuManager1;
+		private Telerik.WinControls.UI.RadMenuItem radMenuItem25;
+		internal Telerik.WinControls.UI.RadContextMenu radContextMenu_Grid_0x00000000;
+		internal Telerik.WinControls.UI.RadMenu radMenu2;
+		internal Telerik.WinControls.UI.RadMenuComboItem radMenuComboItem1;
+		private Telerik.WinControls.UI.RadMenuItem radMenuItem26;
+		private Telerik.WinControls.UI.RadMenuItem radMenuItem27;
+		private Telerik.WinControls.UI.RadMenuItem radMenuItem33;
+		private Telerik.WinControls.UI.RadMenuItem radMenuItem34;
+		private Telerik.WinControls.UI.RadMenuItem radMenuItem35;
+		private Telerik.WinControls.UI.RadMenuItem radMenuItem36;
+		private Telerik.WinControls.RadThemeManager radThemeManager1;
+		private Telerik.WinControls.UI.RadGroupBox ActionBox_Transfer;
+		private Telerik.WinControls.UI.RadListControl radListControl1;
+		private Telerik.WinControls.UI.RadLabel radLabel4;
+		private Telerik.WinControls.UI.RadProgressBar radProgressBar2;
+		private Telerik.WinControls.UI.RadLabel radLabel3;
+		private Telerik.WinControls.UI.RadLabel radLabel2;
+		private Telerik.WinControls.UI.RadLabel radLabel1;
+		private Telerik.WinControls.UI.RadProgressBar radProgressBar4;
+		private Infragistics.Win.Misc.UltraFlowLayoutManager ActionsPanel_FlowManager;
     }
 }
