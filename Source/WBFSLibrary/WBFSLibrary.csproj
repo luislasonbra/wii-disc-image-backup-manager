@@ -137,12 +137,19 @@
     <Compile Include="Collections\FolderCollection.cs" />
     <Compile Include="Collections\FileAttributesCollection.cs" />
     <Compile Include="Devices\Device.cs" />
+    <Compile Include="Drive\Interfaces\IDrive.cs" />
+    <Compile Include="Drive\Interfaces\IDrivePlugin.cs" />
     <Compile Include="Drive\InternalTypes\PATADrive.cs" />
     <Compile Include="Drive\InternalTypes\SATADrive.cs" />
     <Compile Include="Drive\InternalTypes\SDDrive.cs" />
     <Compile Include="Drive\InternalTypes\SDHCDrive.cs" />
     <Compile Include="Drive\InternalTypes\USBDrive.cs" />
     <Compile Include="Extensions\Collection.cs" />
+    <Compile Include="FilesSystems\InternalTypes\EXT2FileSystem.cs" />
+    <Compile Include="FilesSystems\InternalTypes\FAT16FileSystem.cs" />
+    <Compile Include="FilesSystems\InternalTypes\FAT32FileSystem.cs" />
+    <Compile Include="FilesSystems\InternalTypes\NTFSFileSystem.cs" />
+    <Compile Include="FilesSystems\InternalTypes\WBFSFileSystem.cs" />
     <Compile Include="File\Interfaces\IFile.cs" />
     <Compile Include="File\Interfaces\IFilePlugin.cs" />
     <Compile Include="Folders\Folder.cs" />
@@ -156,12 +163,22 @@
     <Compile Include="FileOperations\Interfaces\IFileOperationPlugin.cs" />
     <Compile Include="FilesSystems\FileSystem.cs" />
     <Compile Include="FilesSystems\Interfaces\IFileSystemPlugin.cs" />
-    <Compile Include="FilesSystems\InternalTypes\FAT16Partition.cs" />
     <Compile Include="Collections\FileInfoCollection.cs" />
     <Compile Include="File\File.cs" />
     <Compile Include="Folders\Interfaces\IFolderPlugin.cs" />
     <Compile Include="Folders\Interfaces\IFolder.cs" />
     <Compile Include="Native\Constants\Uncategorised.cs" />
+    <Compile Include="Network\Internet\Internet.cs" />
+    <Compile Include="Network\Network.cs" />
+    <Compile Include="Network\Local\Local.cs" />
+    <Compile Include="Partitions\InternalTypes\ExtendedPartition.cs" />
+    <Compile Include="Partitions\InternalTypes\PrimaryPartition.cs" />
+    <Compile Include="Partitions\InternalTypes\ActivePartition.cs" />
+    <Compile Include="Partitions\InternalTypes\LogicalPartition.cs" />
+    <Compile Include="Partitions\Partition.cs" />
+    <Compile Include="Partitions\Interfaces\IPartition.cs" />
+    <Compile Include="Partitions\Interfaces\IPartitionPlugin.cs" />
+    <Compile Include="Shared\Interfaces\INamed.cs" />
     <Compile Include="Shared\Interfaces\IProcessor.cs" />
     <Compile Include="FileTypes\Interfaces\IFileTypePlugin.cs" />
     <Compile Include="Native\Callbacks\LPOVERLAPPED_COMPLETION_ROUTINE.cs" />
@@ -219,7 +236,6 @@
     <Compile Include="Devices\InternalTypes\SDHCDevice.cs" />
     <Compile Include="Devices\InternalTypes\USBDevice.cs" />
     <Compile Include="Devices\InternalTypes\SDDevice.cs" />
-    <Compile Include="FilesSystems\InternalTypes\EXT2Partition.cs" />
     <Compile Include="Native\Kernel32.cs" />
     <None Include="Properties\WBFSLibrary.snk" />
     <Compile Include="Plugins\Plugins.cs" />
@@ -235,9 +251,6 @@
     <Compile Include="Threading\ThreadOperation.cs" />
     <Compile Include="Threading\Threads.cs" />
     <Compile Include="WBFSLibrary.cs" />
-    <Compile Include="FilesSystems\InternalTypes\NTFSPartition.cs" />
-    <Compile Include="FilesSystems\InternalTypes\FAT32Partition.cs" />
-    <Compile Include="FilesSystems\InternalTypes\WBFSPartition.cs" />
     <Compile Include="FileTypes\InternalTypes\WBFS.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -259,12 +272,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Drive\Interfaces\" />
     <Folder Include="FileOperations\InternalTypes\" />
     <Folder Include="File\InternalTypes\" />
     <Folder Include="Folders\InternalTypes\" />
-    <Folder Include="Network\Internet\" />
-    <Folder Include="Network\Local\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Shared\Enumerations\" />
     <Folder Include="Streams\InternalTypes\" />
   </ItemGroup>
   <ItemGroup>
@@ -272,9 +284,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

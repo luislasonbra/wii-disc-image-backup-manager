@@ -7,6 +7,17 @@
 	using System.Collections.ObjectModel;
 	using System.Collections.Specialized;
 	using System.ComponentModel;
+	using System.ComponentModel.Composition;
+	using System.ComponentModel.Composition.AttributedModel;
+	using System.ComponentModel.Composition.Diagnostics;
+	using System.ComponentModel.Composition.Hosting;
+	using System.ComponentModel.Composition.Primitives;
+	using System.ComponentModel.Composition.ReflectionModel;
+	using System.ComponentModel.DataAnnotations;
+	using System.ComponentModel.DataAnnotations.Resources;
+	using System.ComponentModel.Design;
+	using System.ComponentModel.Design.Data;
+	using System.ComponentModel.Design.Serialization;
 	using System.Configuration;
 	using System.Configuration.Assemblies;
 	using System.Data;
@@ -116,6 +127,7 @@
 	using Microsoft;
 	using Microsoft.Runtime;
 	using Microsoft.Runtime.Hosting;
+	using Microsoft.Internal;
 	using Microsoft.Internal.Collections;
 	using Microsoft.Internal.Performance;
 	using Microsoft.Internal.Runtime;
@@ -123,18 +135,27 @@
 	using Microsoft.Win32;
 	using Microsoft.Win32.SafeHandles;
 
+	using Trinet.NTFS;
+
 #endregion
 
-using WBFSLibrary.Plugins;
-
 using WBFSLibrary.IO;
+using WBFSLibrary.IO.Drives;
+using WBFSLibrary.IO.FileSystems;
 using WBFSLibrary.IO.FileTypes;
 using WBFSLibrary.IO.FileOperations;
+using WBFSLibrary.IO.Partitions;
+using WBFSLibrary.IO.Streams;
+using WBFSLibrary.Plugins;
+using WBFSLibrary.Network;
+using WBFSLibrary.Network.Internet;
+using WBFSLibrary.Network.Local;
+using WBFSLibrary.Properties;
 
 namespace WBFSLibrary.IO.FileSystems
 {
 
-	public class WBFSPartition : FileSystem
+	public class FAT32Partition : FileSystem
 	{
 
 	}
